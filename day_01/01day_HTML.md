@@ -3,24 +3,24 @@
 ## 浏览器
 
 1. Chrome--blink内核
-![Chrome](/day_01/media/Chrome.png)
-2. Firefox--Gecko内核
-![Firefox](/day_01/media/Firefox.png)
+![Chrome](./media/Chrome.png)
+1. Firefox--Gecko内核
+![Firefox](./media/Firefox.png)
 3. IE--trident
-![IE](/day_01/media/IE.png)
+![IE](./media/IE.png)
 4. safari--Webkit内核
-![safari](/day_01/media/safari.png)
+![safari](./media/safari.png)
 5. Opera--blink内核 
-![Opera](/day_01/media/Opera.png)
+![Opera](./media/Opera.png)
 
 ## Web标准
 
 1. html--格式
-![格式](/day_01/media/hb1.png)
+![格式](./media/hb1.png)
 2. css--样式
-![样式](/day_01/media/hb2.png)
+![样式](./media/hb2.png)
 3. js--行为
-![行为](/day_01/media/hb3.jpg)
+![行为](./media/hb3.jpg)
 
 ## html骨架
 
