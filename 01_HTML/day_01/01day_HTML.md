@@ -4,12 +4,16 @@
 
 1. Chrome--blink内核
 ![Chrome](./media/Chrome.png)
-1. Firefox--Gecko内核
+
+2. Firefox--Gecko内核
 ![Firefox](./media/Firefox.png)
+
 3. IE--trident
 ![IE](./media/IE.png)
+
 4. safari--Webkit内核
 ![safari](./media/safari.png)
+
 5. Opera--blink内核 
 ![Opera](./media/Opera.png)
 
@@ -17,8 +21,10 @@
 
 1. html--格式（好比渤儿哥的身子，骨架）
 ![格式](./media/hb1.png)
+
 2. css--样式（给渤儿哥化个妆）
 ![样式](./media/hb2.png)
+
 3. js--行为（能动起来的渤儿哥）
 ![行为](./media/hb3.jpg)
 
