@@ -3,8 +3,7 @@
 ## 浏览器
 
 1. Chrome--blink内核
-<!-- ![Chrome](./media/Chrome.png) -->
-{% asset_img Chrome.png This is an test image %}
+![Chrome](./media/Chrome.png)
 1. Firefox--Gecko内核
 ![Firefox](./media/Firefox.png)
 3. IE--trident
