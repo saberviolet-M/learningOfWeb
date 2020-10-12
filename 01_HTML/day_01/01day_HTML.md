@@ -3,18 +3,23 @@
 ## 浏览器
 
 1. Chrome--blink内核
+
 ![Chrome](./media/Chrome.png)
 
 2. Firefox--Gecko内核
+
 ![Firefox](./media/Firefox.png)
 
 3. IE--trident
+
 ![IE](./media/IE.png)
 
 4. safari--Webkit内核
+
 ![safari](./media/safari.png)
 
-5. Opera--blink内核 
+5. Opera--blink内核
+
 ![Opera](./media/Opera.png)
 
 ## Web标准
