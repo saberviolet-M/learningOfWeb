@@ -24,7 +24,7 @@
           </body>
           ```
 
-          ![属性值输错](.\media\属性值输错.jpg)
+          ![属性值输错](./media/属性值输错.jpg)
 
    - password
 
@@ -46,7 +46,7 @@
           </body>
           ```
 
-          ![单选按钮](.\media\单选按钮.gif)
+          ![单选按钮](./media/单选按钮.gif)
 
        3. 配合checked属性可以实现默认选中
 
@@ -58,7 +58,7 @@
           </body>
           ```
 
-          ![radio无默认](.\media\radio无默认.jpg)
+          ![radio无默认](./media/radio无默认.jpg)
 
           ```html
           <body>
@@ -68,7 +68,7 @@
           </body>
           ```
 
-          ![radio默认](.\media\radio默认.jpg)
+          ![radio默认](./media/radio默认.jpg)
 
    - checkbox
 
@@ -92,7 +92,7 @@
          </body>
          ```
 
-         ![button](.\media\button.jpg)
+         ![button](./media/button.jpg)
 
      - submit
 
@@ -110,7 +110,7 @@
          </body>
          ```
 
-         ![submit](.\media\submit.gif)
+         ![submit](./media/submit.gif)
 
        - 同上可以通过value属性修改按钮内容
 
@@ -122,7 +122,7 @@
          </body>
          ```
 
-         ![submit](.\media\submit.jpg)
+         ![submit](./media/submit.jpg)
 
      - reset
 
@@ -144,7 +144,7 @@
          </body>
          ```
 
-         ![reset](.\media\reset.gif)
+         ![reset](./media/reset.gif)
 
      - image
 
@@ -166,7 +166,7 @@
          </body>
          ```
 
-         ![image](.\media\image.gif)
+         ![image](./media/image.gif)
 
 2. value
 
@@ -198,7 +198,7 @@
         </body>
         ```
 
-        ![label1](.\media\label1.gif)
+        ![label1](./media/label1.gif)
 
    - 2. 只包含描述性文字
 
@@ -220,7 +220,7 @@
           </body>
           ```
 
-          ![label2](.\media\label2.gif)
+          ![label2](./media/label2.gif)
 
 ### select下拉列表
 
@@ -240,7 +240,7 @@
    </body>
    ```
 
-   ![select](.\media\select.gif)
+   ![select](./media/select.gif)
 
 ### textarea文本域
 
@@ -256,7 +256,7 @@
    </body>
    ```
 
-   ![textarea](.\media\textarea.gif)
+   ![textarea](./media/textarea.gif)
 
 
 
