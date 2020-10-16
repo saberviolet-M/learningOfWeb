@@ -35,7 +35,7 @@
 
    ```html
    <head>
-   	<link rel="stylesheet" src="">
+   	<link rel="stylesheet" href="">
    </head>
    <!-- 
    	1.书写在<head></head>标签的内部
