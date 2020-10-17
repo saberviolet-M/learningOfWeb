@@ -24,3 +24,25 @@ A2:
 
 ```
 
+Q3：DoM点击事件
+
+```html
+<body>
+    <img id="pic" src="./03_静态页面/day03_金山云/images/31.png">
+    <button onclick="demo()">更换图片</button>
+    <script>
+        function demo() {
+            document.getElementById(pic).src = "./03_静态页面/day03_金山云/images/40.jpg";
+        }
+    </script>
+</body>
+```
+
+![Q3_DOM点击事件](./image/Q3_DOM点击事件.jpg)
+
+A3:
+
+```
+
+```
+
