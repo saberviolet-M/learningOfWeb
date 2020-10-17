@@ -5,14 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .div {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+        }
+    </style>
 </head>
 
 <body>
-    <img id="pic" src="./03_静态页面/day03_金山云/images/31.png">
+
+    <!-- <img id="pic" src="./03_静态页面/day03_金山云/images/31.png">
     <button onclick="demo()">更换图片</button>
     <script>
         function demo() {
             document.getElementById(pic).src = "./03_静态页面/day03_金山云/images/40.jpg";
+        }
+    </script> -->
+
+    <button id="btn">你点鸭</button>
+    <script>
+        let x = document.getElementById('btn');
+        x.addEventListener("click", hello);
+        x.addEventListener("click", world);
+        x.removeEventListener("click", hello);
+
+        function hello() {
+            alert('hello');
+        }
+
+        function world() {
+            alert('world');
         }
     </script>
 </body>
