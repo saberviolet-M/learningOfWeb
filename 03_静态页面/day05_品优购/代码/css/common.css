@@ -1,0 +1,43 @@
+/* -------------------initial----------------- */
+
+.fl {
+    /* 单左浮动 */
+    float: left;
+}
+
+.fr {
+    /* 单右浮动 */
+    float: right;
+}
+
+.style_red {
+    color: #c81623;
+}
+
+.typePage {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* -------------------shortcut----------------- */
+
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+
+.shortcut li {
+    float: left;
+}
+
+.shortcut .fr ul li:nth-child(even) {
+    /* 偶数child */
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0;
+}
+
+.arrow-icon::after {}
