@@ -1,16 +1,23 @@
 /* 把我们所有标签的内外边距清零 */
+
 * {
     margin: 0;
     padding: 0;
     /* css3盒子模型 */
     box-sizing: border-box;
 }
+
+
 /* em 和 i 斜体的文字不倾斜 */
+
 em,
 i {
     font-style: normal
 }
+
+
 /* 去掉li 的小圆点 */
+
 li {
     list-style: none
 }
@@ -41,7 +48,7 @@ input {
     /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
     font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
     /* 默认有灰色边框我们需要手动去掉 */
-    border: 0; 
+    border: 0;
     outline: none;
 }
 
@@ -57,8 +64,12 @@ body {
 .none {
     display: none
 }
+
+
 /* 清除浮动 */
-.clearfix:after {
+
+
+/* .clearfix:after {
     visibility: hidden;
     clear: both;
     display: block;
@@ -68,4 +79,18 @@ body {
 
 .clearfix {
     *zoom: 1
+} */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
 }
