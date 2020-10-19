@@ -3,8 +3,8 @@
 @font-face {
     /* 字体图标声明 */
     font-family: 'icomoon';
-    src: url('../fonts/icomoon.eot?p4ssmb');
-    src: url('../fonts/icomoon.eot?p4ssmb#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?p4ssmb') format('truetype'), url('../fonts/icomoon.woff?p4ssmb') format('woff'), url('../fonts/icomoon.svg?p4ssmb#icomoon') format('svg');
+    src: url('fonts/icomoon.eot?p4ssmb');
+    src: url('fonts/icomoon.eot?p4ssmb#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?p4ssmb') format('truetype'), url('fonts/icomoon.woff?p4ssmb') format('woff'), url('fonts/icomoon.svg?p4ssmb#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -50,4 +50,7 @@
     margin: 9px 15px 0;
 }
 
-.arrow-icon::after {}
+.arrow-icon::after {
+    font-family: 'icomoon';
+    content: '\e91e';
+}
