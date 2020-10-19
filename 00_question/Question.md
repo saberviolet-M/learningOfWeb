@@ -21,7 +21,7 @@ Q2:
 A2:
 
 ```
-
+文本类型的css文本
 ```
 
 Q3：DoM点击事件
@@ -43,6 +43,6 @@ Q3：DoM点击事件
 A3:
 
 ```
-
+document.getElementById(pic).src--------pic要加引号。
 ```
 
