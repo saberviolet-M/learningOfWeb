@@ -205,11 +205,12 @@ section .video span:first-child {
 section li:nth-child(4) span:nth-child(2)::before,
 section li:nth-child(4) span:nth-child(3)::before,
 section li:nth-child(4) span:nth-child(4)::before {
-    content: '.....';
+    content: '';
+    display: inline-block;
     margin-left: 14px;
     margin-right: 6px;
-    /* width: 18px;
-    height: 21px; */
+    width: 18px;
+    height: 21px;
 }
 
 section .file span:nth-child(2)::before,
@@ -226,7 +227,7 @@ section .video span:nth-child(3)::before {
 
 section .file span:nth-child(4)::before,
 section .audio span:nth-child(4)::before {
-    background: url(./images/developer_img4.png) no-repeat 0px -89px;
+    background: url(./images/developer_img4.png) no-repeat 0px -88px;
 }
 
 
