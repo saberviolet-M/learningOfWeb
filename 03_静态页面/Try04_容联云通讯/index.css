@@ -353,14 +353,14 @@ footer .middle li span.no2 {
 
 /* ----------------------底部 bottom-------------------- */
 
-.bottom {
+footer .bottom {
     height: 72px;
     padding-left: 188px;
     padding-top: 20px;
     background-color: #000;
 }
 
-.bottom p {
+footer .bottom p {
     margin-bottom: 10px;
     font-size: 12px;
     color: #888888;
