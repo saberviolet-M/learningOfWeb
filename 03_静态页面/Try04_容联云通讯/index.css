@@ -1,0 +1,367 @@
+/* ----------------------初始化------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #aaaaaa;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.typePage {
+    width: 915px;
+    margin: 0 auto;
+}
+
+
+/* ----------------------头部 top-------------------- */
+
+header .top {
+    height: 72px;
+}
+
+header .top .typePage {
+    position: relative;
+}
+
+header .top .logo {
+    position: absolute;
+    left: -115px;
+    top: 24px;
+}
+
+header .top ul {
+    float: right;
+    height: 72px;
+    padding: 24px 0;
+}
+
+header .top ul li {
+    float: left;
+    padding-bottom: 10px;
+    margin-right: 46px;
+}
+
+header .top ul li:hover {
+    border-bottom: 2px solid #b8c0c6;
+}
+
+header .top ul li:hover a {
+    color: black;
+}
+
+
+/* ----------------------头部 middle-------------------- */
+
+.banner {
+    height: 386px;
+    background: url(./images/developer_img1.jpg) no-repeat top center;
+}
+
+
+/* ----------------------头部 bottom-------------------- */
+
+.nav {
+    height: 408px;
+    background: url(./images/developer_img2.jpg) repeat-x;
+}
+
+.nav ul li {
+    float: left;
+    width: 216px;
+    height: 311px;
+    margin-top: 48px;
+    margin-right: 7px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+}
+
+.nav ul li:first-child {
+    margin-left: 14px;
+}
+
+.nav ul li:last-child {
+    margin-right: 14px;
+}
+
+.nav ul li .pic {
+    height: 177px;
+    border-bottom: 1px solid #fff;
+    background: url(./images/developer_img3.png) no-repeat 0px 0px;
+}
+
+.nav ul li:nth-child(2) .pic {
+    background-position: 0px -312px;
+}
+
+.nav ul li:nth-child(3) .pic {
+    background-position: 0px -623px;
+}
+
+.nav ul li:nth-child(4) .pic {
+    background-position: 0px -933px;
+}
+
+.nav ul li .char {
+    margin: 26px 21px 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+/* ----------------------主体-标题 -------------------- */
+
+section h1 {
+    margin-top: 80px;
+    margin-bottom: 31px;
+    text-align: center;
+}
+
+section h1 span {
+    padding: 0 31px 11px;
+    border-bottom: 1px solid #e7eaec;
+}
+
+
+/* ----------------------主体-列表-第奇数行 -------------------- */
+
+section ul {
+    border: 1px solid #f1f1f1;
+    border-left: none;
+    border-top: none;
+}
+
+section li:nth-child(odd) {
+    padding-left: 15px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+    background-color: #e7e8e8;
+}
+
+section li:nth-child(even) {
+    padding-left: 16px;
+}
+
+
+/* ----------------------主体-列表-第2、6行 -------------------- */
+
+section li:nth-child(2),
+section li:nth-child(6) {
+    padding: 25px 0 25px 16px;
+}
+
+section li span {
+    font-size: 16px;
+    background-color: #f1f1f1;
+}
+
+section li:nth-child(2) span,
+section li:nth-child(6) span {
+    margin-right: 42px;
+}
+
+
+/* ----------------------主体-列表-第4行 -------------------- */
+
+section li:nth-child(4) span {
+    display: inline-block;
+    margin: 35px 23px 35px 16px;
+    padding-right: 19px;
+}
+
+section .file span:first-child,
+section .audio span:first-child,
+section .video span:first-child {
+    width: 97px;
+    margin-left: 0;
+    padding-right: 0;
+    background-color: #fff;
+}
+
+section li:nth-child(4) span:nth-child(2)::before,
+section li:nth-child(4) span:nth-child(3)::before,
+section li:nth-child(4) span:nth-child(4)::before {
+    content: '.....';
+    margin-left: 14px;
+    margin-right: 6px;
+    /* width: 18px;
+    height: 21px; */
+}
+
+section .file span:nth-child(2)::before,
+section .audio span:nth-child(2)::before,
+section .video span:nth-child(2)::before {
+    background: url(./images/developer_img4.png) no-repeat 0px 0px;
+}
+
+section .file span:nth-child(3)::before,
+section .audio span:nth-child(3)::before,
+section .video span:nth-child(3)::before {
+    background: url(./images/developer_img4.png) no-repeat 0px -28px;
+}
+
+section .file span:nth-child(4)::before,
+section .audio span:nth-child(4)::before {
+    background: url(./images/developer_img4.png) no-repeat 0px -89px;
+}
+
+
+/* ----------------------底部 top-------------------- */
+
+footer .top {
+    position: relative;
+    height: 384px;
+    background: url(./images/developer_img5.jpg) no-repeat top center;
+}
+
+footer .top div {
+    position: absolute;
+    top: 230px;
+}
+
+footer .top div:nth-child(1) {
+    left: 246px;
+}
+
+footer .top div:nth-child(2) {
+    left: 652px;
+}
+
+footer .top div:nth-child(3) {
+    left: 1059px;
+}
+
+footer .top ul {
+    position: relative;
+    width: 214px;
+    height: 72px;
+}
+
+footer .top ul li {
+    position: absolute;
+    width: 100px;
+    height: 24px;
+    color: #fff;
+    text-align: center;
+    background-color: black;
+}
+
+footer .top ul li:nth-child(1) {
+    top: 0;
+    right: 0;
+}
+
+footer .top ul li:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+footer .top ul li:nth-child(3) {
+    bottom: 0;
+    right: 0;
+}
+
+footer .top ul li:nth-child(4) {
+    bottom: 0;
+    left: 0;
+}
+
+
+/* ----------------------底部 middle-------------------- */
+
+footer .middle {
+    height: 326px;
+}
+
+footer .middle ul {
+    position: relative;
+    margin-top: 80px;
+}
+
+footer .middle li {
+    position: absolute;
+    top: 0;
+    width: 212px;
+    height: 153px;
+    text-align: center;
+}
+
+footer .middle li:nth-child(1) {
+    left: 0;
+}
+
+footer .middle li:nth-child(2) {
+    left: 212px;
+}
+
+footer .middle li:nth-child(3) {
+    left: 424px;
+}
+
+footer .middle li:nth-child(4) {
+    left: 636px;
+}
+
+footer .middle li span {
+    display: inline-block;
+    margin-top: 34px;
+    height: 24px;
+    padding: 0 13px 0 10px;
+    line-height: 24px;
+    font-size: 12px;
+    background-color: #f1f1f1;
+}
+
+footer .middle li span.no1 {
+    margin-top: 4px;
+}
+
+footer .middle li span.no2,
+footer .middle li span.no3 {
+    margin-top: 8px;
+    background-color: #fff;
+}
+
+footer .middle li span.no2 {
+    margin-top: 14px;
+}
+
+
+/* ----------------------底部 bottom-------------------- */
+
+.bottom {
+    height: 72px;
+    padding-left: 188px;
+    padding-top: 20px;
+    background-color: #000;
+}
+
+.bottom p {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #888888;
+}
