@@ -46,3 +46,6 @@ A3:
 document.getElementById(pic).src--------pic要加引号。
 ```
 
+Q4:
+
+A4:

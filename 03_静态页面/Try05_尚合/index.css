@@ -1,0 +1,295 @@
+/* ----------------------初始化------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #666666;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.typePage {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+/* ----------------------头部 top------------------------- */
+
+.top {
+    height: 62px;
+    padding-top: 24px;
+}
+
+.top .logo {
+    float: left;
+    width: 180px;
+    height: 24px;
+}
+
+.top .search {
+    float: right;
+    width: 198px;
+    height: 30px;
+}
+
+.search input {
+    float: left;
+    width: 165px;
+    height: 28px;
+    padding-left: 6px;
+    border: 2px solid #d2d2d2;
+    border-right: 0;
+    outline: none;
+    font-size: 12px;
+}
+
+.search button {
+    float: left;
+    width: 28px;
+    height: 28px;
+    background: url(./images/search.png) no-repeat right;
+    outline: none;
+    border: 0;
+    border-left: 2px solid #d2d2d2;
+}
+
+
+/* ----------------------头部 nav------------------------- */
+
+.nav {
+    height: 55px;
+    background: url(./images/nav_bg.png) repeat-x;
+    border-top: 1px solid #e1e1e1;
+}
+
+.nav li:nth-child(odd) {
+    float: left;
+    height: 54px;
+    margin: 0 35px;
+    line-height: 54px;
+    font-size: 14px;
+}
+
+.nav li:nth-child(odd):hover {
+    cursor: pointer;
+}
+
+.nav li:nth-child(even) {
+    float: left;
+    width: 2px;
+    height: 54px;
+    background: url(./images/nav_border.png) no-repeat;
+}
+
+
+/* ----------------------主体 banner------------------------- */
+
+.announce {
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #efefef;
+    border-left: 0;
+    border-right: 0;
+    font-size: 12px;
+}
+
+.announce strong {
+    margin-right: 27px;
+}
+
+.announce img {
+    float: right;
+    margin: 8px 0;
+}
+
+
+/* ----------------------主体 news-li-common------------------------- */
+
+.news {
+    height: 293px;
+}
+
+.news li {
+    float: left;
+    height: 226px;
+    margin-right: 11px;
+    margin-top: 15px;
+    border: 1px solid #e4e4e4;
+}
+
+.news li h3 {
+    margin-top: 16px;
+    margin-left: 6px;
+    font-size: 12px;
+    color: #7ab800;
+}
+
+.news li h3::before {
+    content: url(./images/jiantou.png);
+    display: inline-block;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+
+
+/* ----------------------主体 li-(1)------------------------- */
+
+.news li:nth-child(1) {
+    position: relative;
+    width: 310px;
+    background: url(./images/shouji.png) no-repeat center;
+}
+
+.news li:nth-child(1)::before,
+.news li:nth-child(1)::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+}
+
+.news li:nth-child(1)::before {
+    content: url(./images/left_icon.png);
+    left: 0;
+    margin-left: 23px;
+}
+
+.news li:nth-child(1)::after {
+    content: url(./images/right_icon.png);
+    right: 0;
+    margin-right: 23px;
+}
+
+
+/* ----------------------主体 li-(2)------------------------- */
+
+.news li:nth-child(2) .sub::before {
+    content: none;
+}
+
+.news li:nth-child(2) .sub {
+    margin-right: 11px;
+    color: #000
+}
+
+.sorry {
+    width: 373px;
+    padding: 43px 23px 0 18px;
+}
+
+.sorry dt {
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #dcdcdc;
+    font-size: 12px;
+    color: #ff0000;
+}
+
+.sorry dd {
+    padding: 6px 0;
+    border-bottom: 1px dashed #dcdcdc;
+    font-size: 12px;
+    color: #666666;
+}
+
+
+/* ----------------------主体 li-(3)------------------------- */
+
+.news li:nth-child(3) {
+    width: 268px;
+    margin-right: 0;
+}
+
+.news .service {
+    margin-top: 7px;
+    margin-left: 28px;
+}
+
+.news .service a {
+    display: block;
+    margin-bottom: 4px;
+    padding-left: 4px;
+    border-left: 3px solid #98cb00;
+}
+
+.news .service p {
+    margin-top: 44px;
+    margin-bottom: 11px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.news .service p:last-child {
+    margin: 0;
+}
+
+
+/* ----------------------底部------------------------- */
+
+footer {
+    height: 306px;
+    background-color: #2d2d2d;
+    text-align: center;
+}
+
+footer dl {
+    float: left;
+    height: 221px;
+    margin-top: 16px;
+    margin-right: 49px;
+    color: #c7c7c7;
+}
+
+footer .last {
+    margin-right: 0;
+}
+
+footer dl dt {
+    margin-bottom: 22px;
+}
+
+footer dl dd {
+    color: #707070;
+}
+
+
+/* ----------------------底部 bottom------------------------- */
+
+footer .bottom {
+    border-top: 1px dashed #414141;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer .bottom p {
+    margin-bottom: 5px;
+}
