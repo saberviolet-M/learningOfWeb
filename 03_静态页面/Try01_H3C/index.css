@@ -1,0 +1,261 @@
+/* ------------------------------初始化--------------------- */
+
+body {
+    height: 3000px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+input {
+    border: 0;
+    outline-style: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.w {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* ------------------------------head--------------------- */
+
+header {
+    height: 660px;
+    background: url(./images/04.jpg) no-repeat top center;
+}
+
+
+/* ----------------------head-shortcut-------------------- */
+
+header .shortcut {
+    height: 100px;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.shortcut .logo {
+    margin: 36px 68px 0 43px;
+    vertical-align: middle;
+}
+
+.shortcut .fl li {
+    float: left;
+    height: 100px;
+    padding-top: 54px;
+    margin-right: 46px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+
+/* ----------------------shortcut-search-------------------- */
+
+.shortcut .search {
+    margin-right: 24px;
+}
+
+.search li {
+    float: left;
+    margin-top: 25px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.search ul li span {
+    margin-left: 9px;
+}
+
+.search ul li::after {
+    content: url(./images/02.png);
+    display: inline-block;
+    width: 11px;
+    margin: 0 10px;
+}
+
+.search .btn {
+    width: 240px;
+    height: 30px;
+    border: 1px solid #929093;
+}
+
+.search .btn input {
+    width: 205px;
+    height: 28px;
+    padding-left: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.search .btn button {
+    width: 28px;
+    height: 28px;
+    outline-style: none;
+    border: 0;
+    background: url(./images/01.png);
+    vertical-align: middle;
+}
+
+
+/* ------------------------shortcut-pointer---------------------- */
+
+.pointer {
+    position: relative;
+}
+
+.pointer .pl,
+.pointer .pr {
+    position: absolute;
+    top: 330px;
+    width: 22px;
+    height: 42px;
+    margin: -21px;
+}
+
+.pointer .pl {
+    left: 0;
+    background: url(./images/leftbtn.png);
+}
+
+.pointer .pr {
+    right: 0;
+    background: url(./images/rightbtn.png);
+}
+
+.pointer ul {
+    position: absolute;
+    top: 580px;
+    right: 50%;
+    margin-right: -77px;
+}
+
+.pointer li {
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.pointer li:nth-child(3) {
+    background-color: red;
+}
+
+
+/* ------------------------shortcut-news---------------------- */
+
+.news {
+    margin-top: 510px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.news p {
+    padding-left: 21px;
+    line-height: 50px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.news p span {
+    margin: 0 20px 0 6px;
+}
+
+.news p span:last-child {
+    margin: 0;
+    margin-left: 22px;
+    color: #979b9a;
+}
+
+
+/* ------------------------main---------------------- */
+
+.main {
+    text-align: center;
+}
+
+.main h1 {
+    font-weight: 400;
+    margin: 55px 0 20px;
+}
+
+.main p {
+    font-size: 14px;
+    color: #7f7f7f;
+    margin-bottom: 8px;
+}
+
+.main p:last-child {
+    margin-bottom: 63px;
+}
+
+.main .box_img {
+    position: relative;
+    float: left;
+    width: 397px;
+    height: 223px;
+    margin: 63px 14px 0;
+}
+
+.main .box_img:nth-child(1) {
+    background: url(./images/32.jpg) no-repeat;
+    background-size: contain;
+}
+
+.main .box_img:nth-child(2) {
+    background: url(./images/3.jpg) no-repeat;
+    background-size: contain;
+}
+
+.main .box_img:nth-child(3) {
+    background: url(./images/31.jpg) no-repeat;
+    background-size: contain;
+}
+
+.main .box_img p {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: left;
+    margin: 0;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 14px;
+    color: #fff;
+}
