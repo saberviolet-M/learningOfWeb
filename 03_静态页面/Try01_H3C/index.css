@@ -1,9 +1,5 @@
 /* ------------------------------初始化--------------------- */
 
-body {
-    height: 3000px;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -258,4 +254,228 @@ header .shortcut {
     background-color: rgba(0, 0, 0, .5);
     font-size: 14px;
     color: #fff;
+}
+
+
+/* ------------------------main-middle---------------------- */
+
+.main .main_middle {
+    position: relative;
+    height: 402px;
+    margin: 89px auto 82px;
+}
+
+.main_middle .middle_left {
+    position: absolute;
+    top: 0;
+    left: -43px;
+    width: 678px;
+    height: 100%;
+    background: url(./images/768.png);
+}
+
+.main_middle .middle_right {
+    float: right;
+    width: 564px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.middle_right h2 {
+    height: 46px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.middle_right h3 {
+    height: 62px;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.middle_right .div_39,
+.middle_right .div_144,
+.middle_right .div_800 {
+    float: left;
+    width: 174px;
+    height: 129px;
+}
+
+.middle_right .div_39 img {
+    width: 174px;
+}
+
+.middle_right .div_144 img {
+    width: 193px;
+}
+
+.middle_right .div_800 img {
+    width: 197px;
+}
+
+.middle_right .div_144 {
+    width: 193px;
+}
+
+.middle_right .div_800 {
+    width: 197px;
+}
+
+.div_39 .div_title,
+.div_144 .div_title,
+.div_800 .div_title {
+    font-size: 12px;
+    color: #000;
+}
+
+.div_39 .div_content,
+.div_144 .div_content,
+.div_800 .div_content {
+    height: 21px;
+    line-height: 21px;
+    font-size: 12px;
+}
+
+
+/* ------------------------main-middle---------------------- */
+
+.main_bottom {
+    height: 800px;
+}
+
+.img_left {
+    position: relative;
+    float: left;
+    width: 629px;
+    height: 695px;
+    padding-top: 41px;
+    background: url(./images/H3C_ITnew_21.jpg);
+    background-size: contain;
+}
+
+.img_content {
+    position: absolute;
+    z-index: 1;
+    text-align: left;
+    margin-left: 64px;
+}
+
+.img_content span {
+    display: block;
+    width: 97px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #0076c5;
+}
+
+.img_content h4 {
+    line-height: 82px;
+    font-size: 37px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.img_content h5 {
+    line-height: 22px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.img_content a {
+    display: block;
+    width: 103px;
+    height: 27px;
+    margin-top: 28px;
+    border: 1px solid #fff;
+    text-align: center;
+    line-height: 25px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.img_right {
+    float: right;
+    width: 629px;
+    background-size: contain;
+}
+
+.img_right_top {
+    position: relative;
+    height: 344px;
+    padding-top: 41px;
+    margin-bottom: 23px;
+    background: url(./images/H3C_ITnew_23.jpg);
+}
+
+.img_right_bottom {
+    position: relative;
+    height: 330px;
+    padding-top: 41px;
+    background: url(./images/H3C_ITnew_26.jpg);
+}
+
+.img_left::after,
+.img_right_top::after,
+.img_right_bottom::after {
+    position: absolute;
+    top: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+
+/* ------------------------footer---------------------- */
+
+footer {
+    height: 335px;
+    padding-top: 60px;
+    padding-left: 43px;
+    background-color: #404143;
+}
+
+footer dl {
+    float: left;
+    margin-right: 76px;
+}
+
+footer dt {
+    height: 35px;
+    font-size: 14px;
+    color: #fff;
+}
+
+footer dd {
+    line-height: 26px;
+    font-size: 12px;
+    color: #989898;
+}
+
+footer .weibo,
+footer .weixin {
+    width: 117px;
+    height: 140px;
+    padding-top: 127px;
+}
+
+footer .weixin {
+    margin-right: 25px;
+    background: url(./images/h3c_weixin.png) no-repeat;
+}
+
+footer .weibo {
+    margin-right: 35px;
+    background: url(./images/weibo.jpg) no-repeat;
+}
+
+.fr p {
+    text-align: center;
+    font-size: 12px;
+    color: #80828f;
 }
