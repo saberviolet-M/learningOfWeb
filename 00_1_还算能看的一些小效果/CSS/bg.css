@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 100px);
+    list-style: none;
+}
+
+button img {
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+}
+
+li {
+    display: inline-block;
+}
+
+li img {
+    width: 100px;
+    height: 70px;
+    vertical-align: middle;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+    cursor: pointer;
+}
+
+li img:hover,
+button img:hover {
+    transition: all 1s;
+    width: 200px;
+    height: auto;
+}
+
+button {
+    display: none;
+}
