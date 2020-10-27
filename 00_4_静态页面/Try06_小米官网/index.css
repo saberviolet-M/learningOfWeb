@@ -1,0 +1,152 @@
+/* ----------------------------------------------initial */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.w {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+
+/* -------------------------------------------------header */
+
+header {
+    height: 40px;
+    background-color: #333333;
+}
+
+header li {
+    float: left;
+    line-height: 40px;
+}
+
+header li a {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+header li span {
+    color: #fff;
+    margin: 0 7px;
+}
+
+
+/* ----------------------------------------------shortcut */
+
+.shortcut {
+    height: 55px;
+    margin-top: 22px;
+}
+
+.shortcut .logo {
+    width: 55px;
+    height: 55px;
+}
+
+.shortcut li {
+    float: left;
+    line-height: 55px;
+    margin-right: 25px;
+}
+
+.shortcut li a {
+    font-size: 16px;
+    color: #333333;
+}
+
+
+/* -------------------------------------------------banner */
+
+.banner {
+    height: 460px;
+    margin-top: 23px;
+    background-color: violet;
+    background: #6dc9ee url(./images/banner.png) no-repeat center right;
+}
+
+.banner ul {
+    width: 234px;
+    height: 100%;
+    padding-top: 35px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.banner ul li {
+    height: 42px;
+}
+
+.banner ul a {
+    line-height: 42px;
+    padding-left: 24px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.banner ul li span {
+    float: right;
+    line-height: 42px;
+    margin-right: 24px;
+}
+
+
+/* ---------------------------------------------------pic */
+
+.pic {
+    margin-top: 14px;
+    margin-bottom: 66px;
+}
+
+.pic .color {
+    float: left;
+    width: 234px;
+    height: 170px;
+    margin-right: 13px;
+    padding-top: 56px;
+    text-align: center;
+    background-color: #5f5750;
+    color: #fff;
+}
+
+.pic .color p {
+    height: 38px;
+}
+
+.pic img {
+    float: left;
+    margin-right: 14px;
+}
+
+.pic img:last-child {
+    float: right;
+    margin-right: 0;
+}
