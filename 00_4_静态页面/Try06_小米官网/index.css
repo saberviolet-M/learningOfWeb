@@ -150,3 +150,191 @@ header li span {
     float: right;
     margin-right: 0;
 }
+
+
+/* ---------------------------------------------------main */
+
+.main {
+    height: 798px;
+    padding-top: 79px;
+    background-color: #f5f5f5;
+}
+
+.main .litter {
+    height: 39px;
+    font-size: 22px;
+    color: #333333;
+}
+
+.main .litter a {
+    float: right;
+    font-size: 16px;
+    color: #424242;
+}
+
+.main .pic_left {
+    width: 234px;
+}
+
+.main .sub_pic ul {
+    width: 992px;
+}
+
+.main .sub_pic li {
+    float: left;
+    width: 236px;
+    height: 300px;
+    margin-left: 12px;
+    margin-bottom: 14px;
+    padding-top: 35px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.main .sub_pic li img {
+    width: auto;
+    height: 135px;
+}
+
+.main .sub_pic li:nth-of-type(1),
+.main .sub_pic li:nth-of-type(3),
+.main .sub_pic li:nth-of-type(7) {
+    position: relative;
+}
+
+.main .sub_pic li p {
+    font-size: 12px;
+}
+
+.main .sub_pic li:nth-of-type(1)::before,
+.main .sub_pic li:nth-of-type(3)::before,
+.main .sub_pic li:nth-of-type(7)::before {
+    display: block;
+    width: 64px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.main .sub_pic li:nth-of-type(1)::before,
+.main .sub_pic li:nth-of-type(3)::before {
+    content: '免邮费';
+    background-color: #ffac13;
+}
+
+.main .sub_pic li:nth-of-type(7)::before {
+    content: '享九折';
+    background-color: #e53935;
+}
+
+.main .sub_pic li p:nth-of-type(1) {
+    height: 22px;
+    color: #333333;
+}
+
+.main .sub_pic li p:nth-of-type(2) {
+    height: 29px;
+    color: #b0b0b0;
+}
+
+.main .sub_pic li p:nth-of-type(3) {
+    color: #ff6700;
+}
+
+
+/* ---------------------------------------------------footer */
+
+footer {
+    height: 212px;
+    padding-top: 59px;
+}
+
+footer dl {
+    float: left;
+    width: 160px;
+}
+
+footer dl dt {
+    height: 44px;
+    font-size: 14px;
+    color: #424242;
+}
+
+footer dl dd {
+    height: 29px;
+    font-size: 12px;
+    color: #757575;
+}
+
+footer .tel {
+    float: right;
+    width: 251px;
+    height: 112px;
+    border-left: 1px solid #ececec;
+    text-align: center;
+}
+
+footer .tel p:nth-of-type(1) {
+    height: 30px;
+    font-size: 18px;
+    color: #ff6700;
+}
+
+footer .tel p:nth-of-type(2),
+footer .tel p:nth-of-type(3) {
+    height: 18px;
+    font-size: 12px;
+    color: #616161;
+}
+
+
+/* ---------------------------------------------------copyright */
+
+.copyright {
+    height: 165px;
+    padding-top: 30px;
+    background-color: #fafafa;
+}
+
+.copyright .logo {
+    margin-right: 11px;
+}
+
+.copyright .fl li {
+    float: left;
+}
+
+.copyright .fl li a {
+    line-height: 18px;
+    font-size: 12px;
+    color: #757575;
+}
+
+.copyright .fl li i {
+    margin: 0 4px;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.copyright .fl p {
+    line-height: 18px;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.copyright .w {
+    position: relative;
+    height: 100%;
+}
+
+.copyright .w .bottom {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -100%);
+}
