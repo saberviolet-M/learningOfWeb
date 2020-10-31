@@ -175,6 +175,7 @@
   | E[attr*="val"] |  选择具有attr属性并且**属性值*包含*val** 的 E元素  |
 
 - **过渡属性transition**
+  
   - transition-duration---过渡持续时间（时间单位s--秒）
   - transition-property---需要过渡的属性
     - all--默认值，全部能够过度的属性全部选中
@@ -187,8 +188,8 @@
   - ps：**transition连写**时第一个时间表示**过度持续时间**，如果存在第二个时间值，才表示延时
   - ps：谁进行过渡变化**transition**就加在谁的身上
   - ps：**transition**只作用于存在**中间状态的属性**
-    - 例如：display：none；---display：block；不存在过渡
-
+  - 例如：display：none；---display：block；不存在过渡
+  
 - **文字阴影---text-shadow**
 
   ```css
@@ -281,9 +282,7 @@
 
     
 
-  # H5的说法
-
-## H5的说法
+# H5的说法
 
 - 狭义的H5表示HTML5的版本标签
 - 广义来说H5表示了html5本身+css3+JavaScript
