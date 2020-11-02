@@ -48,4 +48,47 @@ document.getElementById(pic).src--------pic要加引号。
 
 Q4:
 
+```css
+.header {
+    /* 宽度自适应 */
+    position: fixed;
+    top: 0px;
+    overflow: hidden;
+    height: 40px;
+    background-color: #e22b2f;
+    z-index: 999;
+}
+---宽度未能达到预期目标，与父元素相同
+```
+
+![Q4_固定定位](./image/Q4_固定定位.jpg)
+
 A4:
+
+```
+ position: fixed;固定定位后脱标，宽度由内容决定
+```
+
+Q5:
+
+```css
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    overflow: hidden;
+    height: 40px;
+    background-color: #e22b2f;
+    z-index: 999;
+}
+---宽度设置width: 100%;后，一直延伸到浏览器之外
+```
+
+![Q5_固定定位](./image/Q5_固定定位.jpg)
+
+A5：
+
+```
+ position: fixed;width: 100%;固定定位后盒子宽度和浏览器一致
+```
+
