@@ -43,7 +43,9 @@ Q3：DoM点击事件
 A3:
 
 ```
-document.getElementById(pic).src--------pic要加引号。
+document.getElementById(pic).src
+----pic要加引号。----
+document.getElementById(“pic”).src
 ```
 
 Q4:
@@ -58,7 +60,7 @@ Q4:
     background-color: #e22b2f;
     z-index: 999;
 }
----宽度未能达到预期目标，与父元素相同
+---宽度未能达到预期目标-与父元素相同
 ```
 
 ![Q4_固定定位](./image/Q4_固定定位.jpg)
