@@ -1,0 +1,261 @@
+body {
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding-top: 40px;
+    background-color: #f7f7f7;
+}
+
+
+/* ---------------------------------------------header */
+
+.header {
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    height: 40px;
+    background-color: #e22b2f;
+    max-width: 640px;
+    min-width: 320px;
+}
+
+.header .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 22px;
+    margin: 8px;
+    background-position: 0 -110px;
+}
+
+.header .login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+}
+
+.header .search {
+    position: relative;
+    height: 30px;
+    margin: 5px 100px 0 72px;
+}
+
+.header .search input {
+    width: 100%;
+    height: 30px;
+    padding-left: 35px;
+    border-radius: 15px;
+}
+
+.header .search i {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background-position: -60px -109px;
+    vertical-align: middle;
+}
+
+
+/* ---------------------------------------------banner */
+
+
+/* ---------------------------------------------nav */
+
+.nav a {
+    display: block;
+    float: left;
+    width: 20%;
+    height: 90px;
+    padding: 10px 0;
+}
+
+.nav a img {
+    height: 40px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.nav a p {
+    line-height: 30px;
+    text-align: center;
+}
+
+
+/* ---------------------------------------------news */
+
+.news {
+    height: 30px;
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    /* --------------------- */
+    display: flex;
+}
+
+.news_title {
+    padding: 6px 0;
+}
+
+.news_title img {
+    height: 18px;
+    width: 83px;
+}
+
+.news_banner {
+    line-height: 30px;
+    flex: 1;
+}
+
+.news_more {
+    line-height: 30px;
+}
+
+
+/* ---------------------------------------------main */
+
+.main {
+    overflow: auto;
+    background-color: #fff;
+}
+
+.main .main_top {
+    height: 30px;
+    /* ------------------- */
+    display: flex;
+}
+
+.main .alarm {
+    width: 18px;
+    height: 22px;
+    background-position: -84px -109px;
+    margin-left: 14px;
+    margin-top: 2px;
+}
+
+.main .litter {
+    margin: 6px 10px 0 2px;
+    color: #e22b2f;
+}
+
+.main .down {
+    flex: 1;
+}
+
+.main .down li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+    border-radius: 5px;
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+}
+
+.main .down li:nth-child(even) {
+    width: 10px;
+    background-color: transparent;
+    color: #000;
+}
+
+.main .more {
+    width: 58px;
+    height: 30px;
+    margin-right: 21px;
+    line-height: 30px;
+}
+
+.main .merchandise {
+    width: 610px;
+}
+
+.main .merchandise li {
+    position: relative;
+    float: left;
+    width: 87px;
+    height: 106px;
+}
+
+.main .merchandise li:nth-child(-n+6)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 71px;
+    background-color: #ccc;
+}
+
+.main .merchandise li p {
+    text-align: center;
+    line-height: 18px;
+}
+
+.main .merchandise li p:nth-of-type(1) {
+    color: #e22b2f;
+}
+
+.main .merchandise li p:nth-of-type(2) {
+    text-decoration: line-through;
+}
+
+.main .merchandise li img {
+    width: 61px;
+    height: 61px;
+    margin: 0 auto;
+}
+
+
+/* ---------------------------------------------big_pic */
+
+.big_pic {
+    /* -------------------- */
+    display: flex;
+}
+
+.big_pic a {
+    flex: 1;
+}
+
+
+/* ---------------------------------------------major */
+
+.major {
+    /* ----------------- */
+    display: flex;
+}
+
+.major a {
+    flex: 1;
+}
+
+
+/* ---------------------------------------------footer */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer a img {
+    width: 65px;
+    height: 50px;
+}
