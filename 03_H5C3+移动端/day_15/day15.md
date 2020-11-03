@@ -12,7 +12,7 @@
 
 - ### -ms-[IE]---IE浏览器
 
-- ## -moz-[firefox]---火狐llq
+- ## -moz-[firefox]---火狐浏览器
 
 - ###-o-[opera]---欧朋浏览器
 
