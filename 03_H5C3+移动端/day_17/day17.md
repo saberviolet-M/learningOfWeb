@@ -209,5 +209,45 @@
 
     ![rem适配比例关系](./media/rem适配比例关系.png)
 
-  - 即设计图屏幕宽度**750px**html的font-size为**50px**时比例为**750/50=15**
+  - ```less
+    /* 1、把px单位通过计算转换成rem单位（除以设计图尺寸屏幕中自定义的font-size：比如50px） */
+    div {
+        width: 8rem;
+        height: 8rem;
+        background-color: pink;
+    }
+    
+    /* ---------------------------------------------------------------------------- */
+    /* 2、保持比例相同，进行不同屏幕的适配 */
+    /* 
+    此时需要适配640px的屏幕的font-size
+    比例：15
+    font-size = 屏幕宽度/比例 = 375 / 15 = 25
+    */
+    @media screen and (min-width: 375px) {
+        html {
+            font-size: 25px;
+        }
+    }
+    
+    /* 此时需要适配640px的屏幕的font-size
+    比例：15
+    屏幕的宽度/font-size =  15
+    font-size = 屏幕宽度 / 比例 = 640 / 15 = 42.66
+    */
+    @media screen and (min-width:640px) {
+        html {
+            font-size: 42.66px;
+        }
+    }
+    
+    /* 此时这是适配750px的屏幕的font-size的设置
+    比例：屏幕的宽度 / font-size = 750 / 50 = 15
+    */
+    @media screen and (min-width:750px) {
+        html {
+            font-size: 50px;
+        }
+    }
+    ```
 
