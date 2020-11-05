@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+.nav {
+  height: 90px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+  display: flex;
+}
+.nav .left {
+  flex: 1;
+  line-height: 90px;
+}
+.nav .right {
+  flex: 2;
+}
+.nav .right .first,
+.nav .right .second {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav .right .first li,
+.nav .right .second li {
+  flex: 1;
+  height: 45px;
+  line-height: 45px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.nav .right .first li a,
+.nav .right .second li a {
+  color: #fff;
+}
+.nav .right .second li {
+  border-bottom: none  ;
+}
+.nav:nth-of-type(1) {
+  background-color: skyblue;
+}
+.nav:nth-of-type(2) {
+  background-color: limegreen;
+}
+.nav:nth-of-type(3) {
+  background-color: blueviolet;
+}
+.nav:nth-of-type(4) {
+  background-color: tomato;
+}
+.footer .pic ul {
+  display: flex;
+}
+.footer .pic ul li {
+  flex: 1;
+}
+.footer .service ul {
+  display: flex;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.footer .service ul li {
+  flex: 1;
+  text-align: center;
+}
+.footer p {
+  display: flex;
+  justify-content: center;
+}
+.footer p a {
+  flex: 1;
+}
