@@ -1,6 +1,7 @@
 body {
   width: 12.8rem;
   margin: 0 auto;
+  background-color: #f7f7f7;
   height: 3000px;
 }
 .header {
@@ -32,4 +33,156 @@ body {
 .header .pic {
   width: 0.44rem;
   align-self: center;
+}
+.banner .circle {
+  position: relative;
+}
+.banner .circle ul {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0.06rem;
+  width: 2.4rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.banner .circle ul li {
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.banner .circle ul li:nth-of-type(1) {
+  background-color: #fff;
+}
+.nav_top ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav_top ul li {
+  width: 33.33%;
+}
+.nav_top ul li img {
+  border: 0.08rem solid #f1f1f1;
+}
+.nav_middle ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.08rem;
+  margin-bottom: 0.22rem;
+}
+.nav_middle ul li {
+  width: 25%;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.nav_middle ul li:nth-of-type(4n) {
+  border-right: none;
+}
+.nav_middle ul li:nth-of-type(n+5) {
+  border-bottom: 1px solid #ccc;
+}
+.nav_bottom ul {
+  display: flex;
+  margin-bottom: 0.32rem;
+}
+.nav_bottom ul li {
+  width: 50%;
+  border-bottom: 1px solid #ccc;
+}
+.nav_bottom ul li:nth-of-type(2) ul {
+  display: flex;
+  flex-direction: column;
+}
+.nav_bottom ul li:nth-of-type(2) ul li {
+  width: 100%;
+  border-left: 1px solid #ccc;
+}
+.nav_bottom ul li:nth-of-type(2) ul li:nth-of-type(2) {
+  border-bottom: none;
+}
+.active {
+  margin-bottom: 0.32rem;
+}
+.active h2 {
+  height: 0.72rem;
+  padding-left: 0.32rem;
+  line-height: 0.72rem;
+  border-bottom: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.active ul li {
+  border-bottom: 1px solid #ccc;
+}
+.main ul li:nth-of-type(1) ul {
+  height: 0.9rem;
+  display: flex;
+  border-top: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.main ul li:nth-of-type(1) ul li {
+  width: 50%;
+  align-self: center;
+  text-align: center;
+}
+.main ul li:nth-of-type(1) ul li a {
+  display: block;
+  width: 1.2rem;
+  height: 0.9rem;
+  margin: 0 auto;
+  padding: 0 0.2rem;
+  line-height: 0.9rem;
+}
+.main ul li:nth-of-type(1) ul li a:hover {
+  border-bottom: 1px solid #d3079e;
+  color: #d3079e;
+}
+.main ul li:nth-of-type(n+2) {
+  margin-bottom: 0.32rem;
+  border-bottom: 1px solid #ccc;
+}
+.main ul li:nth-of-type(n+2) p {
+  color: #000;
+  background-color: #fff;
+  height: 0.54rem;
+}
+.main ul li:nth-of-type(n+2) p:nth-of-type(1) {
+  padding-top: 0.2rem;
+}
+.main ul li:nth-last-of-type(1) {
+  position: relative;
+  height: 0.62rem;
+}
+.main ul li:nth-last-of-type(1) a {
+  display: flex;
+  justify-content: center;
+}
+.main ul li:nth-last-of-type(1) a::after {
+  content: '';
+  display: block;
+  width: 0.14rem;
+  height: 0.14rem;
+  margin-left: 0.6rem;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  transform: rotate(45deg);
+}
+.footer {
+  height: 0.6rem;
+  padding: 0 0.22rem;
+  background-color: #d3079e;
+}
+.footer ul li {
+  float: left;
+}
+.footer ul li:last-child {
+  float: right;
+}
+.footer ul li a {
+  line-height: 0.6rem;
+  color: #fff;
+  font-weight: 700;
+}
+.footer ul li a:first-child {
+  margin-right: 0.44rem;
 }
