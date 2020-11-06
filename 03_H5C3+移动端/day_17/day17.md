@@ -192,7 +192,7 @@
 - #### 媒体查询
 
   - 语法：
-    - `media screen and (条件){}`
+    - `@media screen and (条件){}`
   - 条件：
     - min-width---样式生效的最小宽（实际网页宽度>=（大于等于）min-width时候生效）
     - max-width---样式生效的最大宽（实际网页宽度<=（小于等于）max-width时候生效）
@@ -200,8 +200,8 @@
   - **ps：**
     - 媒体查询相当于**屏蔽原有代码**，如果**不满足条件**，则被屏蔽的样式代码**不会出现**
     - 媒体查询，**不会**提升优先级，即权重不变，如果满足条件后代码权重没有后面的代码权重高则**会被覆盖**
-    - `media screen and (条件)`单词和单词，单词和括号之间**空格**不能删除
-    -  `media screen and (min-width:) and (max-width:)`---样式生效的范围（min-width<= 实际网页宽度 <=max-width）
+    - `@media screen and (条件)`单词和单词，单词和括号之间**空格**不能删除
+    -  `@media screen and (min-width:) and (max-width:)`---样式生效的范围（min-width<= 实际网页宽度 <=max-width）
 
 - #### rem适配方案（其一）
 
