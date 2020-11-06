@@ -1,0 +1,45 @@
+// ------------------------------body
+body {
+    width: 12.8rem;
+    margin: 0 auto;
+    height: 3000px;
+}
+
+// ------------------------------header
+.header {
+    height: .9rem;
+    padding: 0 11px;
+    display: flex;
+
+    .chose {
+        align-self: center;
+        color: #d3079e;
+        display: flex;
+
+        &::after {
+            content: '';
+            display: block;
+            align-self: flex-end;
+            width: 0;
+            height: 0;
+            margin-left: 4px;
+            border: .1rem solid transparent;
+            border-top: .1rem solid #d3079e;
+        }
+    }
+
+
+    h1 {
+        flex: 1;
+        align-self: center;
+        text-align: center;
+        font-size: .48rem;
+    }
+
+    .pic {
+        width: .44rem;
+        align-self: center;
+    }
+}
+
+// ------------------------------banner
