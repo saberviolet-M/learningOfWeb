@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* css reset:为什么? 为了重置默认样式, 并让各大浏览器的样式统一 */
 /* 初始化 */
 body,
@@ -43,11 +44,13 @@ section {
   /* 给我们能用到的盒子都加上了, box-sizing: border-box; */
   box-sizing: border-box;
 }
+
 body {
   font: 12px/1.5 'Microsoft YaHei', '宋体', Tahoma, Arial, sans-serif;
   color: #555;
   background-color: #f7f7f7;
 }
+
 /*去除边框*/
 fieldset,
 img,
@@ -58,26 +61,31 @@ textarea {
   /*去除的蓝色小边框*/
   outline-style: none;
 }
+
 /*禁止表单域缩放*/
 textarea {
   resize: none;
 }
+
 a {
   text-decoration: none;
   color: #969696;
   /* 取消链接高亮(移动端)  */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 /* 图片自适应 */
 img {
   width: 100%;
   /*解决图片底部对其问题, 底部对齐问题, 只对于行内块元素有 */
   display: block;
 }
+
 ul,
 ol {
   list-style: none;
 }
+
 /* 把所有的标题的样式全部重置了 */
 h1,
 h2,
@@ -89,27 +97,33 @@ h6 {
   font-weight: normal;
   font-size: 100%;
 }
+
 /* 废物利用 */
 em,
 i {
   font-style: normal;
 }
+
 /* 提供了一些公共类 */
 .fl {
   float: left;
 }
+
 .fr {
   float: right;
 }
+
 /*清除浮动*/
 .clearfix:before,
 .clearfix:after {
   content: '';
   display: table;
 }
+
 .clearfix:after {
   clear: both;
 }
+
 /*单行溢出*/
 .one-txt-cut {
   overflow: hidden;
@@ -118,6 +132,7 @@ i {
   /* 文字溢出显示省略号 */
   text-overflow: ellipsis;
 }
+
 /*多行溢出*/
 .txt-cut {
   overflow: hidden;
@@ -145,9 +160,13 @@ i {
     html {
       // round(数值)：让这个数值四舍五入
       // round(数值，保留几位小数)
-      font-size: round(@width/15,2);
+      font-size: round(@width/15, 2);
     }
   }
+}
+
+html {
+  font-size: 50px;
 }
 
 .adaptor(320px);
@@ -170,4 +189,3 @@ i {
 //     font-size: 50px;
 //   }
 // }
-

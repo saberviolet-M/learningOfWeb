@@ -1,0 +1,181 @@
+body {
+  width: 15rem;
+  margin: 0 auto;
+  background-color: #f3f4f7;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 15rem;
+  height: 1.5rem;
+  padding: 0 0.3rem;
+  display: flex;
+  background-color: #fff;
+  z-index: 999;
+}
+.header .login {
+  width: 1.72rem;
+  align-self: center;
+}
+.header .login a {
+  text-align: left;
+  font-size: 0.52rem;
+}
+.header .search {
+  flex: 1;
+  display: flex;
+}
+.header .search input {
+  flex: 1;
+  height: 1.2rem;
+  margin: 0.1rem 0;
+  padding-left: 0.4rem;
+  border-radius: 1.2rem;
+  background-color: #f3f4f7;
+}
+.header .category {
+  width: 1.6rem;
+  align-self: center;
+}
+.header .category img {
+  width: 0.8rem;
+  height: auto;
+  margin-left: 0.5rem;
+  align-self: center;
+}
+.shortcut {
+  margin-top: 1.5rem;
+  height: 1.72rem;
+  background-color: #fff;
+}
+.shortcut ul li {
+  float: left;
+}
+.shortcut ul li a {
+  display: block;
+  height: 1.68rem;
+  line-height: 1.68rem;
+  padding: 0 0.42rem;
+  font-size: 0.52rem;
+}
+.shortcut ul li a:hover {
+  color: #d34ba8;
+  border-bottom: 2px solid #d34ba8;
+}
+.shortcut ul li:last-child {
+  float: right;
+}
+.shortcut ul li:last-child a {
+  display: flex;
+  align-items: center;
+}
+.shortcut ul li:last-child a img {
+  width: 0.66rem;
+  height: 0.46rem;
+}
+.shortcut ul li:last-child a:hover {
+  border-bottom: none;
+}
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav ul li {
+  position: relative;
+  width: 20%;
+}
+.nav ul li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.3rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: -1;
+}
+.main .time_cut {
+  height: 9.2rem;
+  margin: 5px;
+  background-color: #fff;
+  border-radius: 0.4rem;
+}
+.main .time_cut .shop {
+  display: flex;
+  justify-content: center;
+}
+.main .time_cut .shop img {
+  width: 6.44rem;
+  height: 2rem;
+}
+.main .time_cut ul {
+  display: flex;
+}
+.main .time_cut ul li {
+  flex: 1;
+}
+.main .time_cut ul .img_box img {
+  border-radius: 0.2rem;
+}
+.main .time_cut ul .img_box p {
+  text-align: center;
+  font-size: 0.48rem;
+  display: flex;
+  justify-content: center;
+}
+.main .time_cut ul .img_box p::before {
+  content: '疯抢价';
+  display: block;
+  width: 1.3rem;
+  height: 0.52rem;
+  margin-top: 0.1rem;
+  font-size: 0.36rem;
+  color: #fff;
+  background: url(../images/bg.png);
+}
+.main .news {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 0.64rem;
+  text-align: center;
+}
+.main .show {
+  border-radius: 0.2rem;
+  background-color: #fff;
+  margin-bottom: 0.2rem;
+}
+.main .show img {
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+.main .show p {
+  margin-top: 0.64rem;
+  padding-left: 0.3rem;
+}
+.main .show p:nth-of-type(1) {
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #000;
+}
+.main .show p:nth-of-type(2) {
+  font-size: 0.48rem;
+  color: #555;
+}
+.main .show p:nth-of-type(2) i {
+  color: #d34ba8;
+}
+.main .show .cutdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .show .cutdown::after {
+  content: '剩2天';
+  display: block;
+  width: 1.28rem;
+  height: 0.72rem;
+  font-size: 0.48rem;
+  font-weight: 400;
+}

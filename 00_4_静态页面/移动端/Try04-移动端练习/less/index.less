@@ -1,0 +1,237 @@
+// ----------------------------------------body
+body {
+    width: 15rem;
+    margin: 0 auto;
+    background-color: #f3f4f7;
+}
+
+// ----------------------------------------body
+.header {
+    position: fixed;
+    top: 0;
+    width: 15rem;
+    height: 1.5rem;
+    padding: 0 .3rem;
+    display: flex;
+    background-color: #fff;
+    z-index: 999;
+
+    .login {
+        width: 1.72rem;
+        align-self: center;
+
+        a {
+            text-align: left;
+            font-size: .52rem;
+        }
+    }
+
+    .search {
+        flex: 1;
+        display: flex;
+
+        input {
+            flex: 1;
+            height: 1.2rem;
+            margin: .1rem 0;
+            padding-left: .4rem;
+            border-radius: 1.2rem;
+            background-color: #f3f4f7;
+        }
+    }
+
+    .category {
+        width: 1.6rem;
+        align-self: center;
+
+        img {
+            width: .8rem;
+            height: auto;
+            margin-left: .5rem;
+            align-self: center;
+        }
+    }
+}
+
+// ----------------------------------------shortcut
+.shortcut {
+    margin-top: 1.5rem;
+    height: 1.72rem;
+    background-color: #fff;
+
+    ul {
+        li {
+            float: left;
+
+            a {
+                display: block;
+                height: 1.68rem;
+                line-height: 1.68rem;
+                padding: 0 .42rem;
+                font-size: .52rem;
+
+                &:hover {
+                    color: #d34ba8;
+                    border-bottom: 2px solid #d34ba8;
+                }
+            }
+        }
+
+        li:last-child {
+            float: right;
+
+            a {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: .66rem;
+                    height: .46rem;
+                }
+
+                &:hover {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+// ----------------------------------------banner
+
+// ----------------------------------------nav
+.nav {
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            position: relative;
+            width: 20%;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: .3rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background-color: #fff;
+                z-index: -1;
+            }
+        }
+    }
+
+}
+
+// ----------------------------------------main
+.main {
+    .time_cut {
+        height: 9.2rem;
+        margin: 5px;
+        border-radius: .4rem;
+        background-color: #fff;
+        border-radius: .4rem;
+
+        .shop {
+
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 6.44rem;
+                height: 2rem;
+            }
+        }
+
+        ul {
+            display: flex;
+
+            li {
+                flex: 1;
+            }
+
+            .img_box {
+                img {
+                    border-radius: .2rem;
+                }
+
+                p {
+                    text-align: center;
+                    font-size: .48rem;
+                    display: flex;
+                    justify-content: center;
+
+
+                    &::before {
+                        content: '疯抢价';
+                        display: block;
+                        width: 1.3rem;
+                        height: .52rem;
+                        margin-top: .1rem;
+                        font-size: .36rem;
+                        color: #fff;
+                        background: url(../images/bg.png);
+                    }
+                }
+            }
+        }
+    }
+
+    .news {
+        height: 2.5rem;
+        line-height: 2.5rem;
+        font-size: .64rem;
+        text-align: center;
+    }
+
+    .show {
+        border-radius: .2rem;
+        background-color: #fff;
+        margin-bottom: .2rem;
+
+        img {
+            border-radius: .2rem .2rem 0 0;
+        }
+
+        p {
+            margin-top: .64rem;
+            padding-left: .3rem;
+
+            &:nth-of-type(1) {
+                font-size: .64rem;
+                font-weight: 700;
+                color: #000;
+            }
+
+            &:nth-of-type(2) {
+                font-size: .48rem;
+                color: #555;
+
+                i {
+                    color: #d34ba8;
+                }
+            }
+        }
+
+        .cutdown {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &::after {
+                content: '剩2天';
+                display: block;
+                width: 1.28rem;
+                height: .72rem;
+                font-size: .48rem;
+                font-weight: 400;
+            }
+        }
+
+    }
+}
