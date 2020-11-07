@@ -15,6 +15,11 @@
 
 ## bootstrap框架
 
+> 框架：顾名思义就是一套架构，它有一套比较完整的网页功能解决方案，而且控制权在框架本身，有预设的样式库、组件、插件等等。使用者要按照框架所规定的方式进行开发。
+>
+> Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。
+>
+
 - ####版本
 
   - 2.x.x---已经停止维护
@@ -72,17 +77,19 @@
 
     - bootstrap会把一行分成12列，通过该对应类名实现盒子宽度动态变化
 
-    - 宽度百分比+浮动+媒体查询
+    - 原理：
+
+      - 宽度百分比+浮动+媒体查询
 
     - 语法：
 
       - .col-[取值1]-[取值2]
 
     - 取值1：屏幕的情况
-
+  
       - lg：大屏**及以上**生效
       - md：中屏幕**及以上**生效
-      - sm：小屏及以上生效
+    - sm：小屏及以上生效
       - xs：超小屏**及以上**生效---所有屏幕都可生效
 
     - 取值2：在12份中占据的份数（可以不占满，但份数必须为整数）
@@ -98,7 +105,7 @@
       - .text-center
 
       - .text-right
-
+  
         ```html
         <html>
         <head>
@@ -117,7 +124,7 @@
             <div class="text-center">中间</div>
             <div class="text-right">右边</div>
         </body>
-        </html>
+      </html>
         ```
 
         
@@ -127,7 +134,7 @@
     - 表格：语法：**.table +** 
 
       - .table---普通表格
-
+  
         ```html
         <html>
         <head>
@@ -159,67 +166,67 @@
                 </table>
             </div>
         </body>
-        </html>
+      </html>
         ```
 
         ![table](./media/table.jpg)
 
       - .table-striped---隔行变色
-
+  
         ```html
-        <table class="table table-striped">
+      <table class="table table-striped">
         ```
 
         ![变色](./media/变色.jpg)
 
     - 按钮：语法：**.btn +** 
-
+  
       ```html
-      <button class="btn">按钮</button>
+    <button class="btn">按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-default"> default按钮</button>
+    <button class="btn btn-default"> default按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-primary">primary按钮</button>
+    <button class="btn btn-primary">primary按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-success">success按钮</button>
+    <button class="btn btn-success">success按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-info">info按钮</button>
+    <button class="btn btn-info">info按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-warning">warning按钮</button>
+    <button class="btn btn-warning">warning按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-danger">danger按钮</button>
+    <button class="btn btn-danger">danger按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-link">link按钮</button>
+    <button class="btn btn-link">link按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-lg">lg按钮</button>
+    <button class="btn btn-lg">lg按钮</button>
       ```
-
+  
       ```html
-      <button class="btn">默认按钮为中等大小</button>
+    <button class="btn">默认按钮为中等大小</button>
       ```
-
+  
       ```html
-      <button class="btn btn-sm">sm按钮</button>
+    <button class="btn btn-sm">sm按钮</button>
       ```
-
+  
       ```html
-      <button class="btn btn-xs">xs按钮</button>
+    <button class="btn btn-xs">xs按钮</button>
       ```
 
       ![btn](./media/btn.jpg)
@@ -227,17 +234,17 @@
   - bootstrap响应式工具
 
     - 控制元素在不同屏幕宽度下的显示与隐藏
-
+  
       - .hidden---元素隐藏（所有屏幕范围都隐藏）
       - .hidden-lg---**只有**大屏隐藏
       - .hidden-md---**只有**中屏隐藏
-      - .hidden-sm---**只有**小屏隐藏
+    - .hidden-sm---**只有**小屏隐藏
       - .hidden-xs---**只有**超小屏隐藏
 
       ![设备宽度](./media/设备宽度.png)
 
   - bootstrap组件（引用css文件，jQuery的js文件和js源文件后可以使用的功能组件）
-
+  
     - 字体图标
     - 导航条
     - ……
