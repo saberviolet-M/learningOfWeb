@@ -57,7 +57,7 @@
 
   - ps：旋转时**不影响**(不会挤开)其他盒子
 
-- ###transform连写
+- ### transform连写
 
   - 以第一个属性为主要转换属性
 
@@ -73,7 +73,7 @@
 
     ![rt](./media/rt.gif)
 
-- ###转换原点（transform-origin）
+- ### 转换原点（transform-origin）
 
   - 可用百分比指定坐标值。可以为负值。 
 
@@ -150,7 +150,7 @@
 
     ![3d旋转rotateX](./media/3d旋转rotateZ.gif)
 
-- ###3D缩放（scale）
+- ### 3D缩放（scale）
 
   - scale3d()：指定对象的3D缩放。第1个参数对应X轴，第2个参数对应Y轴，第3个参数对应Z轴，**参数不允许省略** 
   - scalez()：指定对象的z轴缩放 

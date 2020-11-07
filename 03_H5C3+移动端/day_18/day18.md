@@ -2,9 +2,9 @@
 
 ## 相应式布局
 
-- ####一套代码，同时适配pc端和移动端等屏幕宽度不一的场景
+- #### 一套代码，同时适配pc端和移动端等屏幕宽度不一的场景
 
-- ####四种基本情况
+- #### 四种基本情况
 
   - 超小屏---0~768px---移动端（手机）
   - 小屏---768px~992px---平板
@@ -20,13 +20,13 @@
 > Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。
 >
 
-- ####版本
+- #### 版本
 
   - 2.x.x---已经停止维护
   - 3.x.x---放弃IE6、7的兼容，偏向响应式布局，对IE8支持但界面效果不友好
   - 4.x.x---目前最新版
 
-- ####bootstrap中只初始化了一部分css样式
+- #### bootstrap中只初始化了一部分css样式
 
   - ```html
     <html>
@@ -46,12 +46,11 @@
     </body>
     </html>
     ```
-
-  - 
+ 
 
   ![bs样式初始化](./media/bs样式初始化.jpg)
 
-- ####bootstrap框架中的一些类（全部内容需要去官网查找原文文档）
+- #### bootstrap框架中的一些类（全部内容需要去官网查找原文文档）
 
   - **布局容器**
 
@@ -125,7 +124,6 @@
             <div class="text-right">右边</div>
         </body>
       </html>
-        ```
 
         
 
@@ -167,21 +165,21 @@
             </div>
         </body>
       </html>
-        ```
+
 
         ![table](./media/table.jpg)
 
       - .table-striped---隔行变色
   
-        ```html
+      ```html
       <table class="table table-striped">
-        ```
+      ```
 
         ![变色](./media/变色.jpg)
 
     - 按钮：语法：**.btn +** 
   
-      ```html
+    ```html
     <button class="btn">按钮</button>
       ```
   
