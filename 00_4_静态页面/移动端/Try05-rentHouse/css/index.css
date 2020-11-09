@@ -1,0 +1,253 @@
+body {
+  width: 15rem;
+  margin: 0 auto;
+}
+.container {
+  padding: 2.66rem 0.6rem 0;
+}
+.header {
+  position: fixed;
+  z-index: 999;
+  width: 15rem;
+  height: 2.66rem;
+  padding: 0.52rem 0 0.58rem;
+  background-color: #fff;
+  box-shadow: 0 0.1rem 0.2rem #ccc;
+  display: flex;
+}
+.header .area {
+  width: 2.64rem;
+  font-size: 0.48rem;
+  text-align: center;
+  line-height: 1.56rem;
+}
+.header .search {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.header .search i {
+  position: absolute;
+  top: 0.53rem;
+  left: 0.64rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.header .search input {
+  width: 100%;
+  height: 1.26rem;
+  padding-left: 1.56rem;
+  background-color: #f7f7f7;
+  border-radius: 0.63rem;
+  font-size: 0.48rem;
+}
+.header .msg {
+  width: 2.32rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .msg img {
+  width: 0.72rem;
+}
+.banner img {
+  box-shadow: 0 0.1rem 0.2rem #ccc;
+}
+.banner ul {
+  position: relative;
+  height: 0.1rem;
+  margin-top: 0.32rem;
+  margin-bottom: 0.8rem;
+}
+.banner ul li {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-0.8rem);
+  width: 0.32rem;
+  height: 0.1rem;
+  border-radius: 0.05rem;
+  background-color: #000;
+}
+.banner ul li:nth-of-type(2) {
+  margin-left: 0.64rem;
+  background-color: #dfdfdf;
+}
+.banner ul li:nth-of-type(3) {
+  margin-left: 1.28rem;
+  background-color: #dfdfdf;
+}
+.rent_nav {
+  margin-bottom: 1.56rem;
+  display: flex;
+  justify-content: space-between;
+}
+.rent_nav img {
+  width: 6.72rem;
+  box-shadow: 0 0.1rem 0.2rem #ccc;
+  border-radius: 0.2rem;
+}
+.discount {
+  margin-bottom: 1.28rem;
+}
+.discount .title {
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+.discount .title h2 {
+  font-size: 0.72rem;
+}
+.discount .title img {
+  width: 0.28rem;
+  height: 0.54rem;
+}
+.discount ul {
+  display: flex;
+  justify-content: space-between;
+}
+.discount ul li {
+  width: 6.74rem;
+  height: 7.3rem;
+}
+.discount ul li h3 {
+  margin-top: 0.52rem;
+  font-size: 0.5rem;
+}
+.discount ul li h4 {
+  margin-top: 0.38rem;
+  font-size: 0.4rem;
+  color: #999999;
+}
+.discount ul li p {
+  margin-top: 0.5rem;
+  font-size: 0.48rem;
+  color: #f39800;
+}
+.ad {
+  margin-bottom: 1.48rem;
+}
+.recommend .title {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.recommend .title h2 {
+  font-size: 0.72rem;
+}
+.recommend .title ul {
+  width: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.recommend .title ul li a {
+  font-size: 0.48rem;
+}
+.recommend .title ul li:nth-of-type(1) a {
+  position: relative;
+  color: #000;
+}
+.recommend .title ul li:nth-of-type(1) a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -0.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.4rem;
+  height: 0.12rem;
+  border-radius: 0.06rem;
+  background-color: #0d9eec;
+}
+.recommend ul {
+  margin-bottom: 1.04rem;
+}
+.recommend ul li {
+  display: flex;
+  justify-content: space-between;
+}
+.recommend ul li img {
+  width: 4.4rem;
+  height: 3.2rem;
+}
+.recommend ul li .litter {
+  width: 8.66rem;
+  height: 4.56rem;
+}
+.recommend ul li .litter h5 {
+  margin-top: 0.32rem;
+  font-size: 0.52rem;
+}
+.recommend ul li .litter h4,
+.recommend ul li .litter h3 {
+  margin-top: 0.32rem;
+  font-size: 0.42rem;
+  color: #A5A5A5;
+}
+.recommend ul li .litter p {
+  margin-top: 0.32rem;
+  display: flex;
+}
+.recommend ul li .litter p span {
+  width: 1.8rem;
+  margin-right: 0.44rem;
+  line-height: 0.6rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #999999;
+  border: 1px solid #A5A5A5;
+  border-radius: 0.1rem;
+}
+.recommend ul li .litter h2 {
+  margin-top: 0.4rem;
+  font-size: 0.4rem;
+  font-weight: 700;
+  color: #f39800;
+}
+.recommend .more {
+  margin-bottom: 0.94rem;
+}
+.recommend .more a {
+  display: block;
+  width: 10.4rem;
+  height: 1.48rem;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.48rem;
+  border-radius: 0.74rem;
+  background-color: #f2f2f3;
+  font-size: 0.48rem;
+  color: #999999;
+}
+.recommend .story {
+  margin-bottom: 2.48rem;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 15rem;
+  background-color: #fff;
+  box-shadow: 0 -0.1rem 0.2rem #ccc;
+}
+.footer ul {
+  display: flex;
+  height: 2rem;
+  align-items: center;
+}
+.footer ul li {
+  width: 25%;
+}
+.footer ul li a {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer ul li a img {
+  width: 0.74rem;
+  margin: 0 2rem;
+}
+.footer ul li a p {
+  margin-top: 0.32rem;
+  font-size: 0.36rem;
+  text-align: center;
+}

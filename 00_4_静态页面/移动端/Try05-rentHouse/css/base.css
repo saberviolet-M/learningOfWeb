@@ -1,0 +1,190 @@
+@charset "utf-8";
+/* css reset:为什么? 为了重置默认样式, 并让各大浏览器的样式统一 */
+/* 初始化 */
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  /* 给我们能用到的盒子都加上了, box-sizing: border-box; */
+  box-sizing: border-box;
+}
+body {
+  font: 12px/1 'Microsoft YaHei', '宋体', Tahoma, Arial, sans-serif;
+  background-color: #fdfdfd;
+}
+/*去除边框*/
+fieldset,
+img,
+input,
+button,
+textarea {
+  border: none;
+  /*去除的蓝色小边框*/
+  outline-style: none;
+}
+/*禁止表单域缩放*/
+textarea {
+  resize: none;
+}
+a {
+  text-decoration: none;
+  color: #969696;
+  /* 取消链接高亮(移动端)  */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* 图片自适应 */
+img {
+  width: 100%;
+  /*解决图片底部对其问题, 底部对齐问题, 只对于行内块元素有 */
+  display: block;
+}
+ul,
+ol {
+  list-style: none;
+}
+/* 把所有的标题的样式全部重置了 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%;
+}
+/* 废物利用 */
+em,
+i {
+  font-style: normal;
+}
+/* 提供了一些公共类 */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*单行溢出*/
+.one-txt-cut {
+  overflow: hidden;
+  /* 文字在一行显示, 不换行 */
+  white-space: nowrap;
+  /* 文字溢出显示省略号 */
+  text-overflow: ellipsis;
+}
+/*多行溢出*/
+.txt-cut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+html {
+  font-size: 50px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 21.33px;
+  }
+}
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 25.6px;
+  }
+}
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 26.67px;
+  }
+}
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 27.6px;
+  }
+}
+@media screen and (min-width: 424px) {
+  html {
+    font-size: 28.27px;
+  }
+}
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 42.67px;
+  }
+}
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 50px;
+  }
+}
