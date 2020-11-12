@@ -2,35 +2,35 @@
 
 ## 常见class关键词：
 
-###布局类：
+### 布局类：
 
 - header、footer、container`n. 集装箱；容器`、mian、content、aside、page、section
 
-###包裹类：
+### 包裹类：
 
 - wrap`vt. 包；缠绕||vi. 包起来；缠绕||n. 外套`、inner`adj. 内部的；内心的||n. 内部`
 
-###区块类：
+### 区块类：
 
 - region、block、box
 
-###列表类：
+### 列表类：
 
 - list、item、field`n. 领域`
 
-###主次类：
+### 主次类：
 
 - primary`adj. 主要的；初级的；基本的`、secondary、sub、minor`vi. 副修`
 
-###大小类：
+### 大小类：
 
 - s、m、l、xl、large、small
 
-###状态类：
+### 状态类：
 
 - active、current、checked、hover、fail、success、warn、error、on、off
 
-###导航类：
+### 导航类：
 
 - nav、prev、next、breadcrumb、forward、back、indicator`n. 指标，标志，迹象； 指示器；`、paging、first、last
 1. 导航：nav
@@ -55,43 +55,43 @@
   
 11. 摘要：summary
 
-###交互类：
+### 交互类：
 
 - tips、alert、modal、pop、panel、tabs、accordion``adj. 可折叠的`、slide、scroll、overlay `n.覆盖图；覆盖物`
 
-###星级类：
+### 星级类：
 
 - rate、star
 
-###分割类：
+### 分割类：
 
 - group、seperate`seperate from--把…分开`、divider
 
-###等分类：
+### 等分类：
 
 - full、half、third、quarter
 
-###表格类：
+### 表格类：
 
 - table、tr、td、cell、row
 
-###图片类：
+### 图片类：
 
 - img、thumbnail`adj. 极小的，极短的`、original、album、gallery
 
-###语言类：
+### 语言类：
 
 - cn、en
 
-###论坛类：
+### 论坛类：
 
 - forum`n. 论坛，讨论会；法庭；公开讨论的广场`、bbs`abbr. 电子布告栏（bulletin board system）`、topic、post
 
-###方向类：
+### 方向类：
 
 - up、down、left、right
 
-###功能
+### 功能
 
 1. logo
 2. banner--广告
