@@ -94,3 +94,31 @@ A5：
  position: fixed;width: 100%;固定定位后盒子宽度和浏览器一致
 ```
 
+Q6:
+
+```
+图片层叠有问题
+```
+
+![图片层叠有问题](./image/图片层叠.png)
+
+A6:
+
+```
+定位元素之间会出现层叠问题，在没有书写z-index: ;属性时后写的定位元素会漂浮在之前的元素之上，通过z-index: ;可以（且只能）修改定位元素的层叠次序。ps：默认层叠值为auto（这也解释了为什么后写的可以漂浮在上）
+```
+
+Q7:
+
+```
+margin-top，margin-bottom不起作用
+```
+
+​      ![ul-margin](./image/ul-margin.png)
+
+A7:
+
+```
+ul没有高度，margin-top可以生效，是ul和其上img的间距，而margin-bottom则相当于给内部子元素li设置了margin-top，因此出现了塌陷现象（大概）
+```
+
