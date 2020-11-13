@@ -1,6 +1,6 @@
 # day18
 
-## 相应式布局
+## 响应式布局
 
 - #### 一套代码，同时适配pc端和移动端等屏幕宽度不一的场景
 
@@ -46,7 +46,7 @@
     </body>
     </html>
     ```
- 
+
 
   ![bs样式初始化](./media/bs样式初始化.jpg)
 
@@ -89,20 +89,21 @@
       - lg：大屏**及以上**生效
       - md：中屏幕**及以上**生效
     - sm：小屏及以上生效
-      - xs：超小屏**及以上**生效---所有屏幕都可生效
-
-    - 取值2：在12份中占据的份数（可以不占满，但份数必须为整数）
-
-      ![col](./media/col.jpg)
-
-  - **bootstrap全局样式(类)**
-
-    - 对齐：
-
-      - .text-left
-
-      - .text-center
-
+      
+  - xs：超小屏**及以上**生效---所有屏幕都可生效
+      
+  - 取值2：在12份中占据的份数（可以不占满，但份数必须为整数）
+  
+    ![col](./media/col.jpg)
+  
+- **bootstrap全局样式(类)**
+  
+  - 对齐：
+  
+    - .text-left
+  
+    - .text-center
+  
       - .text-right
   
         ```html
@@ -123,16 +124,17 @@
             <div class="text-center">中间</div>
             <div class="text-right">右边</div>
         </body>
-      </html>
-
-        
-
-      ![排列](./media/排列.jpg)
-
-    - 表格：语法：**.table +** 
-
-      - .table---普通表格
+    </html>
   
+      
+      ```
+  
+    ![排列](./media/排列.jpg)
+  
+  - 表格：语法：**.table +** 
+    
+    - .table---普通表格
+    
         ```html
         <html>
         <head>
@@ -164,75 +166,76 @@
                 </table>
             </div>
         </body>
-      </html>
+        </html>
+        ```
 
 
         ![table](./media/table.jpg)
-
+    
       - .table-striped---隔行变色
-  
+      
       ```html
       <table class="table table-striped">
       ```
-
+    
         ![变色](./media/变色.jpg)
-
+    
     - 按钮：语法：**.btn +** 
-  
+      
     ```html
     <button class="btn">按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-default"> default按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-primary">primary按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-success">success按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-info">info按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-warning">warning按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-danger">danger按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-link">link按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-lg">lg按钮</button>
       ```
-  
+      
       ```html
     <button class="btn">默认按钮为中等大小</button>
       ```
-  
+      
       ```html
     <button class="btn btn-sm">sm按钮</button>
       ```
-  
+      
       ```html
     <button class="btn btn-xs">xs按钮</button>
       ```
-
+    
       ![btn](./media/btn.jpg)
 
   - bootstrap响应式工具
 
     - 控制元素在不同屏幕宽度下的显示与隐藏
-  
+    
       - .hidden---元素隐藏（所有屏幕范围都隐藏）
       - .hidden-lg---**只有**大屏隐藏
       - .hidden-md---**只有**中屏隐藏
