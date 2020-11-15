@@ -209,9 +209,8 @@
 
   ![Bubble-sort](D:\1_2020Web\Note\04_ECMAScript\day_22\media\Bubble-sort.gif)
 
-- 冒泡排序法的铺垫
 
-  > 冒泡排序原理：两两比较，让大的数往后沉
+- 冒泡排序原理：两两比较，让大的数往后沉
 
   - 交换两个变量的值
 
