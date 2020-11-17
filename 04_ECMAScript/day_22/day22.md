@@ -16,7 +16,7 @@
   var arr = [数据, 数据, 数据……];---创建数组并赋值
   ```
 
-  ![数组创建](D:\1_2020Web\Note\04_ECMAScript\day_22\media\数组创建.jpg)
+  ![数组创建](./media/数组创建.jpg)
 
 - 构造函数的方法
 
@@ -28,7 +28,7 @@
   var arr = new Array(数字值);---表示数组中存储了`数字值`个`空`数据
   ```
   
-  ![数组创建_构造函数](D:\1_2020Web\Note\04_ECMAScript\day_22\media\数组创建_构造函数.jpg)
+  ![数组创建_构造函数](./media/数组创建_构造函数.jpg)
 
 ### 数组の数据
 
@@ -42,7 +42,7 @@
   console.log(arr.length);
   ```
 
-  ![数组长度](D:\1_2020Web\Note\04_ECMAScript\day_22\media\数组长度.jpg)
+  ![数组长度](./media/数组长度.jpg)
 
 - 索引（下标）
 
@@ -53,7 +53,7 @@
     - 最小值(min)---0;
     - 最大值(max)---length-1（数组长度-1）;
 
-    ![数组下标](D:\1_2020Web\Note\04_ECMAScript\day_22\media\数组下标.jpg)
+    ![数组下标](./media/数组下标.jpg)
 
   
 
@@ -69,7 +69,7 @@
     console.log(arr[5]);
     ```
 
-    ![数组索引](D:\1_2020Web\Note\04_ECMAScript\day_22\media\数组索引.jpg)
+    ![数组索引](./media/数组索引.jpg)
 
 - 存值
 
@@ -87,7 +87,7 @@
     console.log('存值之后' + arr[5]);
     ```
 
-    ![存值](D:\1_2020Web\Note\04_ECMAScript\day_22\media\存值.jpg)
+    ![存值](./media/存值.jpg)
 
   - ps：存储在数组**末尾**时候可以`数组名[数组名.length] = 值;`
 
@@ -100,7 +100,7 @@
     console.log(arr);
     ```
 
-    ![数组赋值](D:\1_2020Web\Note\04_ECMAScript\day_22\media\数组赋值.jpg)
+    ![数组赋值](./media/数组赋值.jpg)
 
   - 往数组最后添加数据的方法
 
@@ -114,7 +114,7 @@
         console.log(arr);
     ```
     
-    ![push](D:\1_2020Web\Note\04_ECMAScript\day_22\media\push.jpg)
+    ![push](./media/push.jpg)
 
 - 遍历
 
@@ -132,7 +132,7 @@
   }
   ```
 
-  ![正向](D:\1_2020Web\Note\04_ECMAScript\day_22\media\正向.jpg)
+  ![正向](./media/正向.jpg)
 
   ```js
   //倒序(反向)遍历
@@ -146,7 +146,7 @@
   }
   ```
 
-  ![反向](D:\1_2020Web\Note\04_ECMAScript\day_22\media\反向.jpg)
+  ![反向](./media/反向.jpg)
 
 - 数组取最大值
 
@@ -168,7 +168,7 @@
   console.log(max);
   ```
 
-  ![max](D:\1_2020Web\Note\04_ECMAScript\day_22\media\max.jpg)
+  ![max](./media/max.jpg)
 
 - 数组取最小值&位置
 
@@ -195,7 +195,7 @@
   console.log('数组中的下标' + min_index);
   ```
   
-  ![min-index](D:\1_2020Web\Note\04_ECMAScript\day_22\media\min-index.jpg)
+  ![min-index](./media/min-index.jpg)
 
 ### 冒泡排序
 
@@ -207,7 +207,7 @@
 
   > 思路：两两比较，让较大的放到后面，一趟下来可以求出一个最大值。
 
-  ![Bubble-sort](D:\1_2020Web\Note\04_ECMAScript\day_22\media\Bubble-sort.gif)
+  ![Bubble-sort](./media/Bubble-sort.gif)
 
 
 - 冒泡排序原理：两两比较，让大的数往后沉
@@ -226,7 +226,7 @@
     console.log('变化后' + num2);
     ```
 
-    ![交换数值](D:\1_2020Web\Note\04_ECMAScript\day_22\media\交换数值.jpg)
+    ![交换数值](./media/交换数值.jpg)
 
   - 让数组中的最大值排到最后
 

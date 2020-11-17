@@ -110,7 +110,7 @@
     console.log(typeof createObject());
     ```
 
-    ![工厂函数](D:\1_2020Web\Note\04_ECMAScript\day_24\media\工厂函数.jpg)
+    ![工厂函数](./media/工厂函数.jpg)
 
 - **构造函数**创建对象
 
@@ -134,7 +134,7 @@
     console.log(typeof student);
     ```
 
-    ![new_Student](D:\1_2020Web\Note\04_ECMAScript\day_24\media\new_Student.jpg)
+    ![new_Student](./media/new_Student.jpg)
 
   - **new**关键字的作用
 
@@ -180,7 +180,123 @@
 
 ### 值类型和引用类型の赋值特征
 
-> 值类型赋值是值；引用类型赋值是地址
+> 值类型赋值是**值**；引用类型赋值是**地址**
 
-- 
+### 值类型和引用类型の参数传递
 
+> 值类型传递的是**值**；引用类型传递的是**地址**
+
+## 内置对象
+
+> JS自带的一些对象，提供了一些常用的属性和方法
+
+### Math对象
+
+> 不用new Math()，可以直接用
+
+- Math.PI---圆周率
+
+  ```js
+  console.log(Math.PI);
+  ```
+
+  ![PI](./media/PI.jpg)
+
+- Math.max()---传参数，不传数组
+
+  ```js
+  console.log(Math.max(1, 2, 3, 4));
+  ```
+
+  ![max](./media/max.jpg)
+
+- Math.max()---传参数，不传数组
+
+  ```js
+  console.log(Math.min(1, 2, 3, 4));
+  ```
+
+  ![min](./media/min.jpg)
+
+- Math.ceil()---向上取整(负数取数值大的一侧)
+
+  ```js
+  console.log(Math.ceil(1.1));
+  console.log(Math.ceil(1.5));
+  console.log(Math.ceil(1.9));
+  console.log(Math.ceil(-1.9));
+  console.log(Math.ceil(-1.5));
+  console.log(Math.ceil(-1.1));
+  ```
+
+  ![ceil](./media/ceil.jpg)
+
+- Math.floor()---向下取整(负数取数值小的一侧)
+
+  ```js
+  console.log(Math.floor(1.1));
+  console.log(Math.floor(1.5));
+  console.log(Math.floor(1.9));
+  console.log(Math.floor(-1.9));
+  console.log(Math.floor(-1.5));
+  console.log(Math.floor(-1.1));
+  ```
+
+  ![floor](./media/floor.jpg)
+
+- Math.round()---四舍五入
+
+  > 参数部分**大于**0.5，入到相邻的**绝对值**更大的数；
+  >
+  > 参数部分**小于**0.5，舍到相邻的**绝对值**更小的数；
+  >
+  > 参数部分**等于**0.5，则舍入到相邻的在**正无穷方向**上的整数
+
+  ```js
+  console.log(Math.round(1.1));
+  console.log(Math.round(1.5));//2
+  console.log(Math.round(1.9));
+  console.log(Math.round(-1.9));
+  console.log(Math.round(-1.5));//-1(特殊情况)
+  console.log(Math.round(-1.1));
+  ```
+
+  ![round](./media/round.jpg)
+
+- Math.random()---随机数
+
+  > 随即取**[0,1)**（0取的到，1取不到）区间的小数
+
+  ```js
+  //随即取到min到max之间的数(包括min和max)
+  Math.floor(Math.random()*(max-min+1))+min
+  ```
+
+- Math.abs()---绝对值
+
+  ```js
+  console.log(Math.abs(1));  // 1
+  console.log(Math.abs(-1));  // 1
+  ```
+  
+  ![abs](./media/abs.jpg)
+
+- Math.pow(num, power)---次幂（次方）
+
+  ```js
+  console.log(Math.pow(3, 2));  // 3的平方  9
+  console.log(Math.pow(10, 3)); // 10的三次方 1000
+  console.log(Math.pow(100, 0.5));  // 100的开方  10
+  ```
+  
+  ![幂](./media/幂.jpg)
+
+- Math.sqrt(num)---开平方
+
+  ```js
+  console.log(Math.sqrt(9));  // 3
+  ```
+  
+  ![sqrt](./media/sqrt.jpg)
+
+ 
