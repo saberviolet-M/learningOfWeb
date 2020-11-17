@@ -122,3 +122,17 @@ A7:
 ul没有高度，margin-top可以生效，是ul和其上img的间距，而margin-bottom则相当于给内部子元素li设置了margin-top，因此出现了塌陷现象（大概）
 ```
 
+A8:
+
+```js
+给一个按钮注册事件，结果整个文档点击都能触发事件
+btn_f = addEventListener('click', dice_off);
+```
+
+Q8:
+
+```
+btn_f.addEventListener('click', dice_off);
+不是赋值是调用方法（一般不写原生，很少用事件监听器）
+```
+
