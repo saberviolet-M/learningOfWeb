@@ -89,7 +89,28 @@
 ### 批量创建对象
 
 - 使用**工厂函数**创建对象 --- 早期方法
-  - 创造的对象是Object类型的，不能直观体现**具体类型**
+
+  - 创建一个函数，函数内部手动创建对象，给对象添加属性方法，手动返回创建的对象
+
+    ```js
+    function createObject(name, age, sex){
+        var obj = {
+            u_name : name,
+            u_age : age,
+            u_sex : sex
+        };
+        return obj;
+    }
+    ```
+
+  - 创造的对象是Object类型的，不能直观体现**具体类型名**
+
+    ```js
+    console.log(createObject());
+    console.log(typeof createObject());
+    ```
+
+    ![工厂函数](D:\1_2020Web\Note\04_ECMAScript\day_24\media\工厂函数.jpg)
 
 - **构造函数**创建对象
 
@@ -98,13 +119,19 @@
   - 构造函数的函数名**首字母大写** --- 书写规范（不是硬性规定）
 
     ```js
-    function Student(){}
+    function Student(name, age, sex) {
+                this.name = name;
+                this.age = age;
+                this.sex = sex;
+            }
     ```
 
-  - 定义函数后配合**new**关键字使用
+  - 定义函数后配合**new**关键字使用---可展示具体的**类型名**，数据类型是object
 
     ```js
     var student = new Student();
+    console.log(student);
+    console.log(typeof student);
     ```
 
     ![new_Student](D:\1_2020Web\Note\04_ECMAScript\day_24\media\new_Student.jpg)
@@ -113,7 +140,7 @@
 
     > 1、创建出一个空对象，且用对应构**造函数名**作为类型
     >
-    > 2、把构造函数中的**this**指向了这个空对象
+    > 2、把**构造函数中**的**this**指向了这个空对象
     >
     > 3、执行构造函数中的代码
     >
@@ -123,5 +150,37 @@
 
     > 1、对象是**new**创建的
     >
-    > 2、构造函数的目的是给空对象添加属性---实例化对象
+    > 2、**构造函数**的目的是给空对象添加属性---**实例化对象**
+
+## 值类型和引用类型
+
+### 值类型
+
+> 1、数字：number
+>
+> 2、字符串：string
+>
+> 3、布尔：boolean
+>
+> 4、undefined
+>
+> 5、null
+
+- 在内存中以**值**方式存储---存在**栈**中
+
+### 引用类型
+
+> 1、数组：array
+>
+> 2、函数：function
+>
+> 3、对象：object
+
+- 在内存中以**地址**方式存储---存在**堆**中
+
+### 值类型和引用类型の赋值特征
+
+> 值类型赋值是值；引用类型赋值是地址
+
+- 
 
