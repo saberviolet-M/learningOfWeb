@@ -172,3 +172,24 @@
   ```
 
   ![splice](D:\1_2020Web\Note\04_ECMAScript\day_25\media\splice.jpg)
+
+#### 查找数组元素
+
+- indexOf(`数组元素`)---**第一次**出现的元素下标
+
+  - 找到返回下标
+  - 找不到返回-1
+
+  ![indexOf](D:\1_2020Web\Note\04_ECMAScript\day_25\media\indexOf.jpg)
+
+- lastIndexOf(`数组元素`)---**最后一次**出现的元素下标
+
+  - 找到返回下标
+  - 找不到返回-1
+
+  ![lastIndexOf](D:\1_2020Web\Note\04_ECMAScript\day_25\media\lastIndexOf.jpg)
+
+- PS：可以通过返回值判断数组中是否含有搜索元素
+
+## 包装类型
+
