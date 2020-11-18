@@ -191,5 +191,22 @@
 
 - PS：可以通过返回值判断数组中是否含有搜索元素
 
-## 包装类型
+## 基本包装类型
 
+> **简单数据类型本身是没有任何属性和方法的**
+
+### Number（）
+
+- toString（）---转换成字符串
+
+- toFixed（[位数]）---（四舍五入）保留小数
+
+  ![ntf](D:\1_2020Web\Note\04_ECMAScript\day_25\media\ntf.jpg)
+
+### Boolean（）
+
+- toString（）---转换成字符串
+
+  ![bts](D:\1_2020Web\Note\04_ECMAScript\day_25\media\bts.jpg)
+
+### String（）
