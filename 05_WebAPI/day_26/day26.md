@@ -26,8 +26,7 @@
 >
 > 因为HTML中标签的嵌套关系就类似于一个树形的结构，所有对应的对象之间也是树状结构。因此DOM又称为文档树模型
 
-![DOMtree](D:\1_2020Web\Note\05_WebAPI\day_26\media\DOMtree.png)
-
+![DOMtree](./media/DOMtree.png)
 
 
 #### DOM中常见的概念：
@@ -50,7 +49,7 @@ console.log(box);//以标签形式打印
 console.dir(box);//以对象形式打印
 ```
 
-![byId](D:\1_2020Web\Note\05_WebAPI\day_26\media\byId.jpg)
+![byId](./media/byId.jpg)
 
 - PS：部分浏览器，如果元素设置了id属性，可以直接通过id拿到元素使用（但是不是规范，不推荐）
 
@@ -64,7 +63,7 @@ var divs = document.getElementsByTagName('div');
 console.log(divs);
 ```
 
-![byTagName](D:\1_2020Web\Note\05_WebAPI\day_26\media\byTagName.jpg)
+![byTagName](./media/byTagName.jpg)
 
 ### 注册事件
 
@@ -72,7 +71,7 @@ console.log(divs);
 
 - 事件源： 触发事件的那个元素（比如：按钮、盒子）
 - 事件名： 事件的名称（比如：点击、移入......）
-- 事件处理程序**：**触发事件之后要执行的代码（一般就是一个函数）
+- 事件处理程序：触发事件之后要执行的代码（一般就是一个函数）
 
 #### 基本语法：
 
@@ -94,7 +93,7 @@ console.log(divs);
   //事件处理程序并不是立马执行，只有当事件被触发时，才会在会执行
   ```
 
-  ![注册事件](D:\1_2020Web\Note\05_WebAPI\day_26\media\注册事件.jpg)
+  ![注册事件](./media/注册事件.jpg)
 
 - PS：在直接改变class属性时，JS中需要通过**className**表示，因为**class**是关键字
 
@@ -145,7 +144,7 @@ console.log(divs);
   </script>
   ```
 
-  ![innerText-innerHTML](D:\1_2020Web\Note\05_WebAPI\day_26\media\innerText-innerHTML.jpg)
+  ![innerText-innerHTML](./media/innerText-innerHTML.jpg)
 
 - PS：需要确保innerHTML内容安全，因为innerHTML会解析标签
 
@@ -159,13 +158,13 @@ console.log(divs);
 
   - onfocus---**获得**焦点事件
 
-  - onblur---失去焦点事件
+  - onblur---**失去**焦点事件
 
 ### 布尔类型属性
 
 > 值只能是true或者false
 
-- disabled：true表示禁用
+- disabled：true表示**禁用**
 - checked：true表示**单选或多选**的选中
-- selected：true表示option被选中
+- selected：true表示**option**被选中
 
