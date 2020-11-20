@@ -110,26 +110,21 @@ console.log(divs);
 
 ### 阻止a标签跳转（操作の一）
 
-> 在事件处理函数中，最后写上`return false` ，可以**阻止a标签的跳转**功能
+> 在事件处理函数中，**最后**写上`return false` ，可以**阻止a标签的跳转**功能
 
 ### innerText与innerHTML
 
 > 表单标签修改value属性修改内容
 >
-> 而其他标签需要通过innerText与innerHTML修改内容
+> 其他标签通过innerText与innerHTML修改标签内的内容
 
-#### 区别：
-
-- innerText属性：
-
-  - 只能获取文本---如果有标签会忽略
-
-  - 只能设置文本---当设置的是标签时，标签不能被解析，标签不能生效
-
-- innerHTML属性：
-
-  - 可以获取文本和标签
-  - 可以设置文本和标签---当设置的是标签，标签可以被解析，标签可以生效
+- 区别：
+  - innerText属性：
+    - 只能获取文本---如果有标签会忽略
+    - 只能设置文本---当设置的是标签时，标签不能被解析，标签不能生效
+  - innerHTML属性：
+    - 可以获取文本和标签
+    - 可以设置文本和标签---当设置的是标签，标签可以被解析，标签可以生效
 
   ```html
   <div id="father">
@@ -150,7 +145,7 @@ console.log(divs);
   </script>
   ```
 
-  
+  ![innerText-innerHTML](D:\1_2020Web\Note\05_WebAPI\day_26\media\innerText-innerHTML.jpg)
 
 ### 表单属性操作
 
