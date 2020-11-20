@@ -114,9 +114,9 @@ console.log(divs);
 
 ### innerText与innerHTML
 
-> 表单标签修改value属性修改内容
+> 表单标签修改`value`属性修改内容
 >
-> 其他标签通过innerText与innerHTML修改标签内的内容
+> 其他标签通过`innerText`与`innerHTML`修改**标签内的**内容
 
 - 区别：
   - innerText属性：
@@ -146,6 +146,8 @@ console.log(divs);
   ```
 
   ![innerText-innerHTML](D:\1_2020Web\Note\05_WebAPI\day_26\media\innerText-innerHTML.jpg)
+
+- PS：需要确保innerHTML内容安全，因为innerHTML会解析标签
 
 ### 表单属性操作
 
