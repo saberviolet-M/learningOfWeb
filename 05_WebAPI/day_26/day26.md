@@ -151,7 +151,21 @@ console.log(divs);
 
 ### 表单属性操作
 
+- value---表单内容
+
+  - 通过value属性可以**获取/设置**textarea内容
+
+- PS:
+
+  - onfocus---**获得**焦点事件
+
+  - onblur---失去焦点事件
+
 ### 布尔类型属性
 
+> 值只能是true或者false
 
+- disabled：true表示禁用
+- checked：true表示**单选或多选**的选中
+- selected：true表示option被选中
 
