@@ -178,3 +178,4 @@ btn.addEventListener('click',function (event) {
     > 键盘上的的每一个键都有唯一的数字与之对应
 
 ![keyCode](./media/keyCode.jpg)
+
