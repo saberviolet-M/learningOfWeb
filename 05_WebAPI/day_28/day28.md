@@ -51,13 +51,67 @@
 
 ### on+事件名称
 
+> - 几乎所有浏览器都支持
+>
+> - 一个元素上**一种事件**只能注册**一次**，后注册的会**覆盖**之前注册的
+>   - ps：类似于赋值，后面赋值把前面赋值的覆盖了
+
+```js
+// 注册事件-------------------------
+box.onclick = function(){
+	// 事件处理程序	
+}
+```
+
 ### addEventListener('事件名称',fn)
+
+> 1、现代浏览器都支持（不过IE678不支持）
+>
+> 2、不会出现覆盖问题
+
+```js
+事件源.addEventListener(type,func,useCapture);
+// 第一个参数：事件的类型：click 、 mouseover……
+// 第二个参数：事件处理程序（函数）
+// 第三个参数：事件的阶段（是否捕获），默认为false表示冒泡阶段，true表示捕获阶段
+
+// 例子1：-------------------------------------
+function fn() {
+    alert("哈哈哈");
+}
+box.addEventListener("click", fn, false);
+//PS：如果想让注册的事件之后能移除，不能用匿名函数。
+// 例子2：-------------------------------------
+box.addEventListener("click", function (){alert("哈哈哈");}, false);
+// 例子3：-------------------------------------
+box.addEventListener("click", ()=>{alert("哈哈哈");}, false);
+```
 
 ### 移除事件的两种方式
 
 - on+事件名=null
+
+  ```js
+  btn.onclick = null;
+  ```
+
 - removeEventListener('事件名称'，函数名)
+
+  ```js
+  // 第一个参数：事件的类型
+  // 第二个参数：要移除的函数名
+  // 第三个参数：事件的阶段（是否捕获），默认为false表示冒泡阶段，true表示捕获阶段
+  事件源.removeEventListener(type, func, useCapture);
+  // 例子1：-------------------------------------
+  function fn() {
+      alert("哈哈哈");
+  }
+  box.addEventListener("click", fn, false);
+  box.removeEventListener("click", fn, false);
+  //PS：如果想让注册的事件之后能移除，不能用匿名函数。
+  ```
 
 ## 事件流
 
 ## 事件对象
+
