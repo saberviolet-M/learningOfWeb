@@ -139,3 +139,68 @@ console.log('lv3', lv3.offsetLeft, lv3.offsetTop);
 
 > window对象是浏览器的顶级对象，也是一个全局对象（可以直接使用）
 
+#### 页面加载事件：window.onload
+
+> window.onload事件会在网页加载完成后执行，通常我们称之为**入口函数**
+
+#### 延时器与定时器
+
+- 延时器
+
+  ```js
+  // 语法：setTimeOut(func, time);
+  // 	参数1：需要延时执行的代码函数
+  // 	参数2：延时多少时间（单位：毫秒）
+  // 	返回值：当前延时器的id（用于等会清除）
+  
+  var timeId = setTimeOut(function(){
+  	// 1秒后将执行的代码。
+  }, 1000);
+  ```
+
+- 定时器
+
+  ```js
+  // 语法：setInterval(func, time);
+  //  参数1：需要重复执行的代码函数
+  //  参数2：每次间隔的毫秒数
+  //  返回值：当前定时器的id（用于清除）
+  
+  var timeId = setInterval(function(){
+  	//重复执行的代码。
+  }, 1000);
+  ```
+
+#### location对象
+
+> location对象也是window对象上的一个属性，其实对应的就是浏览器中的地址栏。
+>
+> 通过location对象上的相关属性，可以实现如：跳转、刷新等效果
+
+- location.href——地址栏的地址 
+- location.reload()——重新加载（刷新）
+
+#### history对象
+
+> history对象表示页面的历史，可以通过history对象的属性完成：前进、后退等效果。
+
+```js
+// 页面前进
+history.forward();
+// 页面后退
+history.back();
+
+// ------------------------------------------
+history.go(1);// 前进一页，相当于：history.forward();
+history.go(0);// 刷新当前页，相当于：location.reload();
+history.go(-1);// 后退一页，相当于：history.back();
+```
+
+#### navigator对象
+
+> window.navigator的一些属性可以获取客户端的一些信息
+
+```js
+//navigator.userAgent：浏览器版本
+```
+
