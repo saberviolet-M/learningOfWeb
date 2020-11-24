@@ -131,5 +131,11 @@ console.log('lv3', lv3.offsetLeft, lv3.offsetTop);
 
   - `e.stopPropagation()`方法可以阻止事件的下一步传播，常用于阻止事件冒泡
 
+## BOM
 
+> BOM（Browser Object Model）：浏览器对象模型，提供了一套操作浏览器功能的工具。
+
+### window对象
+
+> window对象是浏览器的顶级对象，也是一个全局对象（可以直接使用）
 
