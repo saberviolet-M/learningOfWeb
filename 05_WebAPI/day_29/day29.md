@@ -20,7 +20,7 @@ div {
 }
 ```
 
-![offset盒子](D:\1_2020Web\Note\05_WebAPI\day_29\media\offset盒子.jpg)
+![offset盒子](./media/offset盒子.jpg)
 
 ```js
 let div = document.querySelector('div');
@@ -31,7 +31,7 @@ console.log('width',div.style.width);
 console.log('height',div.style.height);
 ```
 
-![offset盒子console](D:\1_2020Web\Note\05_WebAPI\day_29\media\offset盒子console.jpg)
+![offset盒子console](./media/offset盒子console.jpg)
 
 - **总结**
   - 1、`div.style.width`&`div.style.height`**只能**获取行**内样**式中的属性**不能**获取**css**样式中的属性
@@ -62,7 +62,7 @@ lv1.style.position = 'relative';//给lv1添加定位
 console.log('lv3',lv3.offsetParent);
 ```
 
-![offsetParent](D:\1_2020Web\Note\05_WebAPI\day_29\media\offsetParent.jpg)
+![offsetParent](./media/offsetParent.jpg)
 
 ### offsetLeft&offsetTop
 
@@ -99,9 +99,9 @@ console.log('lv3', lv3.offsetParent);
 console.log('lv3', lv3.offsetLeft, lv3.offsetTop);
 ```
 
-![offsetLT](D:\1_2020Web\Note\05_WebAPI\day_29\media\offsetLT.jpg)
+![offsetLT](./media/offsetLT.jpg)
 
-![offset](D:\1_2020Web\Note\05_WebAPI\day_29\media\offset.png)
+![offset](./media/offset.png)
 
 ## 鼠标事件（点击、移动、弹起）
 
