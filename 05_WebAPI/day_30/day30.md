@@ -27,4 +27,5 @@
 
 - **PS：**
   - offsetLeft获得的数值会**四舍五入**
+  - 禁止选择文字---`user-select: none;(CSS样式)`
 
