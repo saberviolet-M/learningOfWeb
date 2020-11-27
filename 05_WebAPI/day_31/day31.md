@@ -87,4 +87,50 @@ console.log(top);//Js中top是关键字特指window
 
 ![top](D:\1_2020Web\Note\05_WebAPI\day_31\media\top.jpg)
 
-## 移动端touch事件
+## 移动端事件
+
+> 通过移动端的touch事件，可以在移动端中完成触摸区域滚动等效果
+
+- 移动端中有4个专属的触摸相关的事件：
+  - `touchstart`：开始触摸事件
+  - `touchmove`：移动触摸事件（移动时多次触发）
+  - `touchend`：结束触摸事件
+  - `touchcancel`：取消触摸事件（系统层面取消触摸事件：比如来电话了）
+
+- 移动端事件对象：
+  - `e.touches`：当前屏幕上的总手指
+  - `e.targetTouches`：当前元素上的总手指
+  - `e.changedTouches`：状态改变的总手指（比如：从屏幕上离开）
+
+- 拿到每一个**touch对象**中每一个手指对象即可获取到相关的位置信息：
+  - `screenX`和`screenY`：触摸点相当于屏幕的位置
+  - `clientX`和`clientY`：触摸点相对于浏览器窗口的位置
+
+  - `pageX`和`pageY`：触摸点相对于页面的位置
+
+## iscroll实现区域滚动(插件---API)
+
+- 引入iscroll.js
+
+- 按照[文档配置](http://caibaojian.com/iscroll-5/)即可
+
+  ```js
+  // 第一个参数：设置父容器的css选择器
+  // 第二参数：是一个对象，设置相关的个性化配置
+  new IScroll('父容器的选择器',{
+      // 水平方向是否可以滚动
+      scrollX:true,
+      // 垂直方向是否可以滚动
+      scrollY: false
+  }) 
+  ```
+
+## 类名操作
+
+> classList是一个集合，会存储某个元素上所有的类名
+
+- classList.add()：往元素上**添加类名**，不会覆盖原有类名
+- classList.remove()：往元素上**移除类名**，不会影响其他
+- classList.contains()：判断元素的类名中是否**包含此类名**
+- classList.toggle()：**切换类名**，原本无就添加，原本有就删除
+
