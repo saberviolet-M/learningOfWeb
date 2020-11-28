@@ -1,6 +1,6 @@
 # day31
 
-## [swiper插件](https://www.swiper.com.cn/）
+## [swiper插件](https://www.swiper.com.cn/)
 
 ## DOM三大系列
 
