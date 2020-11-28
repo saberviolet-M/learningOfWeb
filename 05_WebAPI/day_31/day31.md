@@ -1,6 +1,6 @@
 # day31
 
-## [swiper插件](https://www.swiper.com.cn/)
+## [swiper插件](https://www.swiper.com.cn/）
 
 ## DOM三大系列
 
@@ -41,7 +41,7 @@
 
 - 给**整个网页**注册滚动事件
 
-  - 直接给document注册滚动事件——老版本ie**不兼容**fw
+  - 直接给document注册滚动事件——老版本ie**不兼容**
   - 给window注册滚动事件——现代和老版本ie**都兼容**
 
 - 获取页面滚动时**滚出去的距离**
