@@ -25,7 +25,7 @@
   fn.call(obj, 'fn.call:B', 'fn.call:D');
   ```
 
-  ![fn.call()](D:\1_2020Web\Note\06_JS高级\day_33\media\fn.call().jpg)
+  ![fn.call()](./media/fn.call().jpg)
 
 ### apply()--方法
 
@@ -95,7 +95,7 @@ console.log('saber.name', saber.name);
 console.log('saber.age', saber.age);
 ```
 
-![原型链继承-0](D:\1_2020Web\Note\06_JS高级\day_33\media\原型链继承-0.jpg)
+![原型链继承-0](./media/原型链继承-0.jpg)
 
 > 2、子构造函数的原型对象指向了父构造函数的实例，并且传递参数
 >
@@ -126,7 +126,7 @@ console.log('saber.name', saber.name);
 console.log('saber.age', saber.age);
 ```
 
-![原型链继承](D:\1_2020Web\Note\06_JS高级\day_33\media\原型链继承.jpg)
+![原型链继承](./media/原型链继承.jpg)
 
 ### 借用构造函数继承
 
@@ -156,7 +156,7 @@ console.log('saber', saber);
 saber.say();
 ```
 
-![构造函数继承](D:\1_2020Web\Note\06_JS高级\day_33\media\构造函数继承.jpg)
+![构造函数继承](./media/构造函数继承.jpg)
 
 ### 寄生组成继承
 
@@ -196,7 +196,7 @@ console.log('saber.age', saber.age);
 saber.talk();
 ```
 
-![寄生组成继承](D:\1_2020Web\Note\06_JS高级\day_33\media\寄生组成继承.jpg)
+![寄生组成继承](./media/寄生组成继承.jpg)
 
 ## constructor
 
