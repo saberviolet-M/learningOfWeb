@@ -192,7 +192,7 @@ saber.say();
 console.log('saber.grade', saber.grade);
 console.log('saber.name', saber.name);
 console.log('saber.age', saber.age);
-/* 组成继承完成后在子构造函数的原型中定义的方法不能调用 */
+/* 寄生组成继承完成后在子构造函数的原型中，之前定义的方法不能调用 */
 saber.talk();
 ```
 
@@ -200,4 +200,36 @@ saber.talk();
 
 ## constructor
 
-> 构造函数的原型对象的`constructor`属性指向当前的构造函数
+> 构造函数的原型对象（`.prototype`）的`constructor`属性指向当前的构造函数
+
+## 面向对象编程-类
+
+> ES6提出了类的概念
+>
+> - 类可以理解为构造函数的语法糖
+>
+> - 类的原型对象和实例的原型指向同一个对象
+>
+> - 类中方法指向`new`的实例
+>
+> - 类中定义的方法会挂载到原型上
+
+- 语法
+
+  ```js
+  class 类名 {
+      /* 一旦new，constructor中的代码就会自动执行 */
+      constructor(param1, param2) {
+          this.key1 = param1;
+          this.key2 = param2;
+      }
+      方法名(){
+        /* 代码块 */
+      }
+      方法名(){
+          /* 代码块 */
+      }
+  }
+  ```
+  
+
