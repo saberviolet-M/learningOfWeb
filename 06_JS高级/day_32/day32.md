@@ -63,7 +63,7 @@ console.log('prototype.sex：', perB.sex === perA.sex);
 console.log('prototype.sing：', perB.sing === perA.sing);
 ```
 
-![prototype](D:\1_2020Web\Note\06_JS高级\day_32\media\prototype.jpg)
+![prototype](./media/prototype.jpg)
 
 ### \_\_proto\_\_(对象的原型)
 
@@ -82,7 +82,7 @@ console.log(obj.__proto__.__proto__);
 console.log(obj.__proto__.__proto__.__proto__);
 ```
 
-![proto](D:\1_2020Web\Note\06_JS高级\day_32\media\proto.jpg)
+![proto](./media/proto.jpg)
 
 ### instanceof（检测数据类型）
 
@@ -104,7 +104,7 @@ console.log(obj.__proto__.__proto__.__proto__);
 console.log('全局this', this);
 ```
 
-![全局this](D:\1_2020Web\Note\06_JS高级\day_32\media\全局this.jpg)
+![全局this](./media/全局this.jpg)
 
 ### 事件处理函数中`this`指向事件源
 
@@ -118,7 +118,7 @@ document.querySelector('button').onclick = function() {
 }
 ```
 
-![事件函数this](D:\1_2020Web\Note\06_JS高级\day_32\media\事件函数this.jpg)
+![事件函数this](./media/事件函数this.jpg)
 
 ### 普通函数调用`this`指向window
 
@@ -129,7 +129,7 @@ function fn() {
 fn();
 ```
 
-![普通函数this](D:\1_2020Web\Note\06_JS高级\day_32\media\普通函数this.jpg)
+![普通函数this](./media/普通函数this.jpg)
 
 ### 定时任务中的`this`指向window
 
@@ -139,7 +139,7 @@ setTimeout(function() {
 }, 0);
 ```
 
-![定时器this](D:\1_2020Web\Note\06_JS高级\day_32\media\定时器this.jpg)
+![定时器this](./media/定时器this.jpg)
 
 ### 对象中的`this`指向对象本身
 
@@ -153,7 +153,7 @@ var obj = {
 obj.fn();
 ```
 
-![对象this](D:\1_2020Web\Note\06_JS高级\day_32\media\对象this.jpg)
+![对象this](./media/对象this.jpg)
 
 ### 构造函数中的`this`指向实例化对象
 
@@ -164,5 +164,5 @@ function Person() {
 new Person();
 ```
 
-![构造函数this](D:\1_2020Web\Note\06_JS高级\day_32\media\构造函数this.jpg)
+![构造函数this](./media/构造函数this.jpg)
 
