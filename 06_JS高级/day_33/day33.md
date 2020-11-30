@@ -237,3 +237,11 @@ class 类名 {
 - `static`修饰的属性或方法不允许实例调用，只能被`class`使用
 - 实例成员写在`constructor`内部，允许被实例调用
 
+### 类的继承
+
+- 语法`class 子类 extends 父类`
+
+- 子类没有定义`constructor`时全盘继承父类的属性方法
+- 子类定义了`constructor`时，需要手动调用`super()`方法并传入参数，才能获取父类属性和方法
+- PS：`super()`必须放在`constructor`中的第一行，并传入对应参数
+
