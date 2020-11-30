@@ -30,11 +30,11 @@ Object.method()//方法的调用
 >
 > 4、返回一个实例化の对象
 
-### prototype---原型属性
+### prototype（原型对象）
 
 > 任何**构造函数**都有`prototype`属性，**指向**当前构造函数的原型（原型对象）
 >
-> 在构造函数的原型对象上添加**共享**的属性和方法，以节省内存
+> 在构造函数的原型对象上添加**共享**的方法，以节省内存
 
 ```js
 function Person(name) {
@@ -65,7 +65,7 @@ console.log('prototype.sing：', perB.sing === perA.sing);
 
 ![prototype](D:\1_2020Web\Note\06_JS高级\day_32\media\prototype.jpg)
 
-### \_\_proto\_\_(隐式原型)
+### \_\_proto\_\_(对象的原型)
 
 > 实例对象的`__proto__`属性值是一个对象，和构造函数的`.prototype`的值是一样的
 >
