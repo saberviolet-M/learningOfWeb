@@ -1,6 +1,6 @@
 # day33
 
-## this（硬绑定--更改this）
+## this（硬绑定--更改this指向）
 
 ### call()--方法
 
