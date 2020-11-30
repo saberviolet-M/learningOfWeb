@@ -214,22 +214,26 @@ saber.talk();
 >
 > - 类中定义的方法会挂载到原型上
 
-- 语法
+### 语法
 
-  ```js
-  class 类名 {
-      /* 一旦new，constructor中的代码就会自动执行 */
-      constructor(param1, param2) {
-          this.key1 = param1;
-          this.key2 = param2;
-      }
-      方法名(){
+```js
+class 类名 {
+    /* 一旦new，constructor中的代码就会自动执行 */
+    constructor(param1, param2) {
+        this.key1 = param1;
+        this.key2 = param2;
+    }
+    方法名1(){
         /* 代码块 */
-      }
-      方法名(){
-          /* 代码块 */
-      }
-  }
-  ```
-  
+    }
+    方法名2(){
+        /* 代码块 */
+    }
+}
+```
+
+### 静态成员和实例成员
+
+- `static`修饰的属性或方法不允许实例调用，只能被`class`使用
+- 实例成员写在`constructor`内部，允许被实例调用
 
