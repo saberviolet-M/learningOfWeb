@@ -26,11 +26,12 @@ _.cloneDeep({对象})//_表示lodash暴露的变量名
 JSON.parse(JSON.stringfy({对象}));//实现深拷贝(慎用!!!)
 
 /*3、自己封装方法*/
-let obj = {对象};
+let refObj = {对象};
 let newObj = {空对象};
 function cloneDeep(newObj, refObj){
     for(let k in refObj){
        let item = refObj[k];
+        /* typeof在检测Array和Object时都会显示Object，所以此处用instanceof*/
         if(item instanceof Array){//判断是否是数组类型
             newObj[k] = [];
             cloneDeep(newObj[k], item);
@@ -42,5 +43,10 @@ function cloneDeep(newObj, refObj){
         }
     }
 }
+cloneDeep(newObj, refObj);
 ```
+
+## 正则表达式
+
+> **`RegExp`** 构造函数创建了一个正则表达式对象，用于将文本与一个模式匹配
 
