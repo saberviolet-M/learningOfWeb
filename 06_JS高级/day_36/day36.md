@@ -174,10 +174,87 @@ let fn = () => {
 
 > `...`---不在函数中表示展开
 >
-> 将集合中的每一项展开，可用于**深**拷贝对象/数组
+> 将集合中的每一项展开，可用于**浅**拷贝对象/数组
 
 ```js
 let arr = [5, 1, 7, 3];
 console.log(...arr);//The expected output: 5 1 7 3
 ```
+
+## ES6新增数据类型
+
+### Set容器
+
+> 无序**不重复**的多个value的集合体
+>
+> 数组是有序可重复的,   Set是无序不重复的
+
+```js
+let set = new Set([1, 3, 3, 2, 3, 4, 1, 5]);
+```
+
+- set.add(value)---添加
+
+- set.delete(value)---删除
+
+- set.has(value)---查找(返回true, 代表存在)
+
+- set.size---容器的长度
+
+- for...of---遍历
+
+  ```js
+  for(let value of set){}
+  ```
+
+- set.clear()---清空
+
+### Map容器
+
+> 无序**不重复**（指key不重复）的多个key-value的集合体
+>
+> Object对象的key只能是字符串, 而Map的key可以是任意类型
+
+```js
+let map = new Map([['bbcc', 12],[25, 'age'],[document.body,100]]);
+```
+
+- map.set(key, value)---添加
+
+- map.get(key)---获取key的值
+
+- map.delete(key)---删除
+
+- map.has(key)---查找(存在为true)
+
+- map.size---容器的长度
+
+- for...of---遍历
+
+  ```js
+  for(let key of map){}
+  for(let [key,value] of map){}
+  ```
+
+- map.clear()---清空
+
+## 键值对简化写法
+
+- 省略同名的属性值
+
+- 省略方法的 "  : function " 可以省略
+
+  ```js
+  let x = 10;
+  let y = 20;
+  let obj = {
+      x,
+      y,
+      getPosition(){
+          return obj.x
+      }
+  }
+  ```
+
+  
 
