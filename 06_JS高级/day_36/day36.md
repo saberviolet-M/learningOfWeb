@@ -74,5 +74,99 @@ console.log(username);//ReferenceError: username is not defined
 
 ## 箭头函数
 
-## ES6新增数据类型
+### 基础语法
+
+```js
+let fn = () => {
+    //代码段
+}
+```
+
+#### 使用场景
+
+- 1、无参, 无返回 
+
+  ```js
+  /* 无参, 无返  */
+  let fn1 = () => {
+      console.log('无参, 无返');
+  }
+  ```
+
+- 2、 无参, 有返回 
+
+  ```js
+  /* 无参, 有返  */
+  let fn2 = () => {
+      let str = '无参, 有返'
+      return str;
+  }
+  ```
+
+- 3、 有参, 无返回 
+
+  ```js
+  /* 有参, 无返  */
+  let fn3 = (param) => {
+      console.log(param);
+  }
+  ```
+
+- 4、 有参, 有返回 
+
+  ```js
+  /* 有参, 有返  */
+  let fn4 = (param) => {
+      let ret = param;
+      return ret;
+  }
+  ```
+
+#### 简化写法
+
+- 2、参数只有1个, 可以省略小括号
+
+  ```js
+  let fn = param =>{
+      //代码段
+  }
+  ```
+
+- 3、方法体只有一行代码, 可以省略大括号, 省略大括号后, 默认返回此结果
+
+  ```js
+  let fn = param => param;
+  
+  /* 例如数组中选取大于50的数字 */
+  let arr = [1, 22, 333, 41, 5, 54]
+  const res = arr.filter(item => item>50);
+  console.log(res);//The expected output: [333, 54]
+  ```
+
+#### 箭头函数局限
+
+- 不能使用arguments
+
+  > **arguments**---实参列表的集合
+  >
+  > - 伪数组
+  >- 不用考虑实参与形参的一一对应关系
+  
+- 不能用作构造函数，不能被`new`
+  
+  - 因为没有`prototype`属性（没有原型）
+
+#### 箭头函数this指向
+
+* 1、`function`函数： this指向的是函数的调用者
+* 2、箭头函数：没有明确的`this`指向，`this`指向的是上一层作用域中的`this`
+
+### 剩余参数运算符`...`(reset)
+
+> `...变量名`表示剩余参数（变量名自定义）
+>
+> 接收**个数不确定**的参数值, 形成一个**数组**使用
+
+- 一般配合箭头函数, 因为箭头函数内不能用`arguments`
+- 必须出现在形参的最后面
 
