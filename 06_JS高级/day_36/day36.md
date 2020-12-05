@@ -66,6 +66,12 @@ console.log(username);//ReferenceError: username is not defined
 
 ## 模板字符串
 
+- 1、模板字符串必须用`` （反引号）
+
+- 2、可以换行
+- 3、可以嵌入标签
+- 4、变量部分可用`${xxx}`
+
 ## 箭头函数
 
 ## ES6新增数据类型
