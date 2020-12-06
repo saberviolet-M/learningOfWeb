@@ -38,7 +38,7 @@ $(function () {});
   | 指定后代 | $("css选择器").find("选择器")      | 查找后代目标元素                                             |
   | 兄弟元素 | $("css选择器").siblings()          | 查找目标的**同辈**兄弟元素的集合，siblings()内写入选择器可指定兄弟 |
 
-### 原生与JQ对象的相互转换
+### 原生与JQuery对象的相互转换
 
 > JQ对象(包括获取的标签集合对象) 都**不能调用**原生的**属性**或**方法**, 反之亦然
 
@@ -96,11 +96,54 @@ $("父元素").on("事件类型", "需要代理的元素", function(){})
 - 操作类名
 
   ```js
-  .addClass("类名")// 添加
-  .removeClass("类名")// 移除
-  .toggleClass("类名")// 切换
-  .hasClass("类名")// 查找---有就返回true
+  /* 多个类名通过空格隔开 */
+  .addClass("类名 类名")// 添加
+  .removeClass("类名 类名")// 移除
+  .toggleClass("类名 类名")// 切换
+  .hasClass("类名 类名")// 查找---有就返回true
   ```
 
-  
+###  链式编程_及其原理
 
+* JQuery方法的**返回值**是当前操作的JQuery对象**(里面包含你正在操作的标签)**，那么那意味可以继续使用JQuery对象上各种方法
+* 链式编程是为了节省代码量
+
+### $-效果
+
+#### 显示隐藏
+
+```js
+.show([speed,[easing],[fn]])// 显示
+.hide([speed,[easing],[fn]])// 隐藏
+.toggle([speed,[easing],[fn]])// 切换
+```
+
+#### 滑动
+
+```js
+.slideDown([speed,[easing],[fn]])// 向下拉出
+.slideUp([speed,[easing],[fn]])// 向上收起
+.slideToggle([speed,[easing],[fn]])// 切换
+```
+
+#### 淡入淡出
+
+```js
+.fadeIn([speed],[easing],[fn])// 淡入
+.fadeOut([speed],[easing],[fn])// 淡出
+.fadeToggle([speed],[easing],[fn])// 切换
+```
+
+#### 参数含义
+
+- **speed：**
+  - 三种预定速度之一的字符串
+    - "slow"---600毫秒
+    - "normal"---400毫秒
+    - "fast"---200毫秒
+  - 表示动画时长的**毫秒数值**(如：1000)
+- **easing：**用来指定切换效果
+  - 默认是"swing"
+  - 可用参数"linear"
+- **fn：**在动画完成时执行的函数，每个元素执行一次
+- **原理总结：** 使用了JS代码（控制，宽`width`、高`height`、透明度`opacity`）来控制动画出现, 使用`display`控制标签出现/隐藏
