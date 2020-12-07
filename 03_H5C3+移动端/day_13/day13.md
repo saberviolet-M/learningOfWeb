@@ -83,7 +83,7 @@
     - controls：是否显示播放控件
     - autoplay：自动播放（**有兼容性问题**）
     - loop：循环播放（**有兼容性问题**）
-  - vedio
+  - video
     - src：视频的路径
     - controls：是否显示播放控件 
 
