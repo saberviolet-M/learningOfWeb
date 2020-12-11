@@ -10,15 +10,15 @@
 
 ### 卷曲（滚动条滚动）
 
-> - 滚动条产生有2种方式:
->   -  文档滚动条: 标签高度超出屏幕
->   - 盒子滚动条: `overflow-y: auto; `(前提是有固定高 度, 内容超出盒子容器高度)
+> - 滚动条产生有2种方式
+>   - 文档滚动条：标签高度超出屏幕
+>   - 盒子滚动条：`overflow-y: auto; `(前提是有固定高度, 内容超出盒子容器高度)
 
 ```js
 // 滚动事件scroll(监听谁在滚动)
 /* 注册给给有滚动条元素 */
 $(window).scroll();
-$(document).scroll();
+$(document).scroll();//document是顶级对象不能调用animate()
 /* 监测容器(元素)滚动 */
 $('selector').scroll();
 
@@ -26,5 +26,7 @@ $('selector').scroll();
 $("html,body").scrollTop([数值]);
 ```
 
+## $-元素操作
 
+##$-插件使用
 
