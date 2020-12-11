@@ -33,12 +33,13 @@ $("html,body").scrollTop([数值]);
 ```js
 let result1 = $("<p>我是p标签</p>");
 let result2 = $(`<p><span>我是p里的span</span></p>`); // 模板字符串可以任意嵌套标签使用
-/*
+
 result1.appendTo('父selector'); // 创建元素追加到父元素内前置
 result2.preappendTo('父selector'); // 创建元素追加到父元素内后置
-*/
+
 $("selector").append(result1); // 内部末尾追加
 $("selector").prepend(result2); // 内部头部追加
+
 result1.after($("<p>我是after插入的p标签</p>")); // 在目标后面兄弟位置插入标签
 result2.before($("<p>我是before插入的p标签</p>")); // 在目标前面兄弟位置插入标签
 ```
@@ -46,14 +47,14 @@ result2.before($("<p>我是before插入的p标签</p>")); // 在目标前面兄�
 ### 删除标签
 
 ```js
-$("selector").remove();
+$("selector").remove(); //连带自己以子代都删除
+$("selector").html('');	//删除selector内容
+$("selector").empty();	//删除selector内容
 ```
 
 ### 克隆
 
 ```js
-$("selector").clone();
+$("selector").clone();//其中子代标签内容也会被clone
+$("selector").clone(true);//添加参数true会clone(包括事件)
 ```
-
-##$-插件使用
-
