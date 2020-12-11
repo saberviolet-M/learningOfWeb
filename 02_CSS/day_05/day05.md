@@ -119,80 +119,83 @@
        <div></div>
    </body>
    </html>
-```
+   ```
    
-![repeat](./media/repeat.jpg)
-   
-   ```html
-   <html>
-   <head>
-       <style>
-           div {
-               width: 400px;
-               height: 400px;
-               background-color: violet;
-               background-image: url(./media/冥王星_Pluto.jpg);
-               /* background-repeat: repeat; */
-               background-repeat: no-repeat;
-               /* background-repeat: repeat-x;
-               background-repeat: repeat-y; */
-           }
-       </style>
-   </head>
-   <body>
-       <div></div>
-   </body>
-   </html>
-```
-   
+   ![repeat](./media/repeat.jpg)
+
+
+  ```html
+<html>
+    <head>
+        <style>
+            div {
+                width: 400px;
+                height: 400px;
+                background-color: violet;
+                background-image: url(./media/冥王星_Pluto.jpg);
+                /* background-repeat: repeat; */
+                background-repeat: no-repeat;
+                /* background-repeat: repeat-x;
+                background-repeat: repeat-y; */
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
+  ```
+
+  
+
 ![no-repeat](./media/no-repeat.jpg)
-   
+
    ```html
-   <html>
-   <head>
-       <style>
-           div {
-               width: 400px;
-               height: 400px;
-               background-color: violet;
-               background-image: url(./media/冥王星_Pluto.jpg);
-               /* background-repeat: repeat; */
-               /* background-repeat: no-repeat; */
-               background-repeat: repeat-x;
-               /* background-repeat: repeat-y; */
-           }
-       </style>
-   </head>
-   <body>
-       <div></div>
-   </body>
-   </html>
-```
-   
+<html>
+    <head>
+        <style>
+            div {
+                width: 400px;
+                height: 400px;
+                background-color: violet;
+                background-image: url(./media/冥王星_Pluto.jpg);
+                /* background-repeat: repeat; */
+                /* background-repeat: no-repeat; */
+                background-repeat: repeat-x;
+                /* background-repeat: repeat-y; */
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
+   ```
+
 ![repeat-x](./media/repeat-x.jpg)	
-   
+
    ```html
-   <html>
-   <head>
-       <style>
-           div {
-               width: 400px;
-               height: 400px;
-               background-color: violet;
-               background-image: url(./media/冥王星_Pluto.jpg);
-               /* background-repeat: repeat; */
-               /* background-repeat: no-repeat; */
-               /* background-repeat: repeat-x; */
-               background-repeat: repeat-y;
-           }
-       </style>
-   </head>
-   <body>
-       <div></div>
-   </body>
-   </html>
-```
-   
+<html>
+    <head>
+        <style>
+            div {
+                width: 400px;
+                height: 400px;
+                background-color: violet;
+                background-image: url(./media/冥王星_Pluto.jpg);
+                /* background-repeat: repeat; */
+                /* background-repeat: no-repeat; */
+                /* background-repeat: repeat-x; */
+                background-repeat: repeat-y;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
+   ```
+
    ![repeat-y](./media/repeat-y.jpg)
 
 4. background-position
@@ -276,6 +279,7 @@
 ## 链接伪类
 
 1. a：link---a标签未点击过的状态
+  
    - 网页点击后会有浏览记录，删除浏览记录才能恢复为未点击状态
 2. a：visited---a标签点击之后的状态
 3. a：hover---鼠标悬停的状态

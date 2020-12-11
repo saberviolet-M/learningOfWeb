@@ -20,7 +20,7 @@
           <body>
               性别：
               <input type="radio" name="sexual">男
-              <input type="radi" name="sexual">女
+              <input type="radio" name="sexual">女
           </body>
           ```
 
