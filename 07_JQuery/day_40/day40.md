@@ -28,16 +28,15 @@ $("html,body").scrollTop([数值]);
 
 ## $-元素操作
 
-### 创建标签
+### 创建标签&添加标签
 
 ```js
 let result1 = $("<p>我是p标签</p>");
 let result2 = $(`<p><span>我是p里的span</span></p>`); // 模板字符串可以任意嵌套标签使用
-```
-
-### 添加标签
-
-```js
+/*
+result1.appendTo('父selector'); // 创建元素追加到父元素内前置
+result2.preappendTo('父selector'); // 创建元素追加到父元素内后置
+*/
 $("selector").append(result1); // 内部末尾追加
 $("selector").prepend(result2); // 内部头部追加
 result1.after($("<p>我是after插入的p标签</p>")); // 在目标后面兄弟位置插入标签
