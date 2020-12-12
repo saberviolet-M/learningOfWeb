@@ -1,5 +1,5 @@
 $(function() {
-    localStorage.setItem('toDoList', [{
+    let arr = [{
         title: 'toDoList本地存储',
         done: false
     }, {
@@ -8,7 +8,8 @@ $(function() {
     }, {
         title: '圆点计数',
         done: false
-    }])
+    }]
+    localStorage.setItem('toDoList', JSON.stringify(arr));
     load();
     //读取本地读取
     function getLocalStorage() {
