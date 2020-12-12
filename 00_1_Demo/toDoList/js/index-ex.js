@@ -1,4 +1,14 @@
 $(function() {
+    localStorage.setItem('toDoList', [{
+        title: 'toDoList本地存储',
+        done: false
+    }, {
+        title: '左框完成，右点删除',
+        done: false
+    }, {
+        title: '圆点计数',
+        done: false
+    }])
     load();
     //读取本地读取
     function getLocalStorage() {
