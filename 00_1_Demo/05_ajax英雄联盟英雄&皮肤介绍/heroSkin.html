@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heroSkin</title>
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <style>
+        .container {
+            width: 1240px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .search input {
+            padding-left: 10px;
+            margin-bottom: 10px;
+            width: 415px;
+            height: 62px;
+            outline-style: none;
+            border-radius: 20px;
+            font-size: 36px;
+        }
+        
+        .show {
+            margin: 0 auto;
+            width: 1024px;
+            height: 500px;
+        }
+        
+        .size {
+            width: 80px;
+            height: 80px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search">
+            <input type="text" placeholder="输入英雄按下回车键查询">
+        </div>
+        <div class="icon"></div>
+        <div class="show"></div>
+    </div>
+    <script>
+        //heroSkin
+        function heroSkin(name) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('get', `https://autumnfish.cn/api/hero/detail?name=${name}`);
+            xhr.send();
+            xhr.onload = function() {
+                const obj = JSON.parse(xhr.responseText);
+                $('.icon').empty();
+                $(obj.icons).each((index, item) => {
+                    $('.icon').append(`<img src="${item}" class="size" index="${index}">`)
+                })
+                $('.show').css({
+                    background: `url(${obj.bgs[0]})`,
+                    backgroundSize: 'cover'
+                })
+                $('.icon').on('click', 'img', function() {
+                    const index = $(this).attr('index');
+                    $('.show').css({
+                        background: `url(${obj.bgs[index]})`,
+                        backgroundSize: 'cover'
+                    })
+                })
+            }
+        }
+        heroSkin(sessionStorage.getItem('name'));
+        // 切换
+        $('.search input').on('focus', function() {
+            $(document).on('keyup', (e) => {
+                if (e.keyCode == 13) {
+                    if ($('.search input').val() !== '') {
+                        heroSkin(`${$('.search input').val()}`);
+                    } else {
+                        alert('输入为空')
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
