@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <div class="box padd10">
+    <div class="left">
+      <!-- 输入盒子 -->
+      <div class="intBox padd10">
+        <div class="item">
+          <span class="info">姓名</span>
+          <input type="text" id="name">
+        </div>
+        <div class="item">
+          <span class="info">评分</span>
+          <input type="number" id="score">
+        </div>
+        <div class="item">
+          <span class="info">薪资</span>
+          <input type="number" id="money">
+        </div>
+        <div class="btn" id="add">新增</div>
+      </div>
+
+
+      <!-- 列表 -->
+      <div class="list">
+        <div class="title">
+          <span class="item">姓名</span>
+          <span class="item">评分</span>
+          <span class="item">薪资（单位:万）</span>
+          <span class="item">操作</span>
+        </div>
+        <div class="listBox" id="list">
+          <!-- <div class="one editMode">
+            <span class="item">
+              <span class="info">xxx</span>
+            <input type="text" class="ipt">
+            </span>
+            <span class="item">
+              <span class="info">xxx</span>
+            <input type="number" class="ipt">
+            </span>
+            <span class="item">
+              <span class="info">xxx</span>
+            <input type="number" class="ipt">
+            </span>
+            <span class="item">
+              <i class="upd"></i>
+              <i class="del"></i>
+              <i class="yes"></i>
+              <i class="no"></i>
+            </span>
+          </div> -->
+        </div>
+      </div>
+
+
+    </div>
+    <div class="right">
+      <div class="item" id="up"></div>
+      <div class="item" id="down"></div>
+    </div>
+  </div>
+</body>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/index.js"></script>
+
+</html>

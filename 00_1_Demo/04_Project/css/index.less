@@ -1,0 +1,239 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    color: #000;
+    min-width: 1280px;
+    background: url('../imgs/bg.jpg') no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    color: #fff;
+}
+
+
+
+.padd10 {
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+input {
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px #fff;
+        border-radius: 10px;
+        margin-right: 8px;
+        background-color: rgba(0, 0, 0, 0.65);
+
+        // 输入框盒子
+        .intBox {
+            height: 50px;
+            display: flex;
+            border-bottom: 1px solid #000;
+
+            .item {
+                flex: 2;
+                display: flex;
+                box-sizing: border-box;
+                padding-right: 10px;
+
+                .info {
+                    flex: 100px;
+                    line-height: 34px;
+                    text-align: center;
+                    font-weight: 800;
+                }
+
+                input {
+                    flex: 1;
+
+                }
+            }
+
+            .btn {
+                flex: 1;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                cursor: pointer;
+                line-height: 34px;
+                text-align: center;
+            }
+        }
+
+        // 列表
+        .list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                height: 30px;
+                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+                background-color: #1E90FF;
+                display: flex;
+                color: #fff;
+                line-height: 30px;
+                text-align: center;
+                font-weight: 800;
+
+                .item {
+                    flex: 1;
+                    border-right: 1px solid #000;
+                }
+
+                .item:last-child {
+                    border-right: 0px solid #000;
+                }
+            }
+
+            .listBox {
+                flex: 1;
+                overflow-y: auto;
+
+                .one {
+                    height: 26px;
+                    line-height: 26px;
+                    display: flex;
+                    border-bottom: 1px solid#808080;
+                    transition: all 0.3s;
+
+                    .item {
+                        flex: 1;
+                        border-right: 1px solid#808080;
+                        text-align: center;
+
+                        .info {}
+
+                        .ipt {
+                            display: none;
+                        }
+                    }
+
+                    .item:last-child {
+                        border-right: 0px solid #000;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        i {
+                            width: 20px;
+                            height: 20px;
+                            cursor: pointer;
+                            background: url('../imgs/upd.png') no-repeat;
+                            background-position: center center;
+                            background-size: 20px;
+                        }
+
+                        .upd {
+                            display: block;
+                            background-image: url('../imgs/upd.png');
+                        }
+
+                        .del {
+                            display: block;
+                            background-image: url('../imgs/del.png');
+                        }
+
+                        .yes {
+                            display: none;
+                            background-image: url('../imgs/yes.png');
+                        }
+
+                        .no {
+                            display: none;
+                            background-image: url('../imgs/no.png');
+                        }
+
+                    }
+                }
+
+                // 编辑模式
+                .editMode {
+                    height: 40px;
+                    line-height: 40px;
+                    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.5);
+                    background-color: rgba(0, 0, 0, 0.65);
+
+                    .item {
+                        .info {
+                            display: none;
+                        }
+
+                        .ipt {
+                            display: inline-block;
+                            width: 60px;
+                            text-align: center;
+                            padding: 0;
+                        }
+                    }
+
+                    .item:last-child {
+                        .upd {
+                            display: none;
+                        }
+
+                        .del {
+                            display: none;
+                        }
+
+                        .yes {
+                            display: block;
+                        }
+
+                        .no {
+                            display: block;
+                        }
+
+                    }
+                }
+
+                .one:hover {
+                    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.5);
+                    background-color: rgba(0, 0, 0, 0.65);
+                }
+            }
+        }
+    }
+
+    .right {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+
+        .item {
+            flex: 1;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #fff;
+            background-color: rgba(0, 0, 0, 0.65);
+        }
+
+        .item:first-child {
+            margin-bottom: 4px;
+        }
+
+        .item:last-child {
+            margin-top: 4px;
+        }
+    }
+}

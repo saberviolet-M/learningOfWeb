@@ -1,0 +1,225 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    color: #000;
+    min-width: 1280px;
+    background: url('../imgs/bg.jpg') no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    color: #fff;
+}
+
+.padd10 {
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+input {
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.box .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px #fff;
+    border-radius: 10px;
+    margin-right: 8px;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.box .left .intBox {
+    height: 50px;
+    display: flex;
+    border-bottom: 1px solid #000;
+}
+
+.box .left .intBox .item {
+    flex: 2;
+    display: flex;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+
+.box .left .intBox .item .info {
+    flex: 100px;
+    line-height: 34px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.box .left .intBox .item input {
+    flex: 1;
+}
+
+.box .left .intBox .btn {
+    flex: 1;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 34px;
+    text-align: center;
+}
+
+.box .left .list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.box .left .list .title {
+    height: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    background-color: #1E90FF;
+    display: flex;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.box .left .list .title .item {
+    flex: 1;
+    border-right: 1px solid #000;
+}
+
+.box .left .list .title .item:last-child {
+    border-right: 0px solid #000;
+}
+
+.box .left .list .listBox {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.box .left .list .listBox .one {
+    height: 26px;
+    line-height: 26px;
+    display: flex;
+    border-bottom: 1px solid #808080;
+    transition: all 0.3s;
+}
+
+.box .left .list .listBox .one .item {
+    flex: 1;
+    border-right: 1px solid #808080;
+    text-align: center;
+}
+
+.box .left .list .listBox .one .item .ipt {
+    display: none;
+}
+
+.box .left .list .listBox .one .item:last-child {
+    border-right: 0px solid #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box .left .list .listBox .one .item:last-child i {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url('../imgs/upd.png') no-repeat;
+    background-position: center center;
+    background-size: 20px;
+}
+
+.box .left .list .listBox .one .item:last-child .upd {
+    display: block;
+    background-image: url('../imgs/upd.png');
+}
+
+.box .left .list .listBox .one .item:last-child .del {
+    display: block;
+    background-image: url('../imgs/del.png');
+}
+
+.box .left .list .listBox .one .item:last-child .yes {
+    display: none;
+    background-image: url('../imgs/yes.png');
+}
+
+.box .left .list .listBox .one .item:last-child .no {
+    display: none;
+    background-image: url('../imgs/no.png');
+}
+
+.box .left .list .listBox .editMode {
+    height: 40px;
+    line-height: 40px;
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.box .left .list .listBox .editMode .item .info {
+    display: none;
+}
+
+.box .left .list .listBox .editMode .item .ipt {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    padding: 0;
+}
+
+.box .left .list .listBox .editMode .item:last-child .upd {
+    display: none;
+}
+
+.box .left .list .listBox .editMode .item:last-child .del {
+    display: none;
+}
+
+.box .left .list .listBox .editMode .item:last-child .yes {
+    display: block;
+}
+
+.box .left .list .listBox .editMode .item:last-child .no {
+    display: block;
+}
+
+.box .left .list .listBox .one:hover {
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.box .right {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box .right .item {
+    flex: 1;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.box .right .item:first-child {
+    margin-bottom: 4px;
+}
+
+.box .right .item:last-child {
+    margin-top: 4px;
+}
