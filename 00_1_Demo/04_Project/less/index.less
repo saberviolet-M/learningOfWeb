@@ -4,21 +4,15 @@ body {
     height: 100%;
 }
 
+
 body {
     font-size: 14px;
     color: #000;
     min-width: 1280px;
-    background: url('../imgs/bg.jpg') no-repeat;
+    background: url(../images/bg.jpg) no-repeat;
     background-position: center center;
     background-size: 100% 100%;
     color: #fff;
-}
-
-
-
-.padd10 {
-    box-sizing: border-box;
-    padding: 8px;
 }
 
 input {
@@ -29,7 +23,12 @@ input {
     border: none;
 }
 
-.box {
+.pad {
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -44,8 +43,7 @@ input {
         margin-right: 8px;
         background-color: rgba(0, 0, 0, 0.65);
 
-        // 输入框盒子
-        .intBox {
+        .iptBox {
             height: 50px;
             display: flex;
             border-bottom: 1px solid #000;
@@ -65,7 +63,6 @@ input {
 
                 input {
                     flex: 1;
-
                 }
             }
 
@@ -80,7 +77,6 @@ input {
             }
         }
 
-        // 列表
         .list {
             flex: 1;
             display: flex;
@@ -100,10 +96,6 @@ input {
                     flex: 1;
                     border-right: 1px solid #000;
                 }
-
-                .item:last-child {
-                    border-right: 0px solid #000;
-                }
             }
 
             .listBox {
@@ -122,7 +114,7 @@ input {
                         border-right: 1px solid#808080;
                         text-align: center;
 
-                        .info {}
+                        // .info {}
 
                         .ipt {
                             display: none;
@@ -139,29 +131,29 @@ input {
                             width: 20px;
                             height: 20px;
                             cursor: pointer;
-                            background: url('../imgs/upd.png') no-repeat;
+                            background: url('../images/upd.png') no-repeat;
                             background-position: center center;
                             background-size: 20px;
                         }
 
                         .upd {
                             display: block;
-                            background-image: url('../imgs/upd.png');
+                            background-image: url('../images/upd.png');
                         }
 
                         .del {
                             display: block;
-                            background-image: url('../imgs/del.png');
+                            background-image: url('../images/del.png');
                         }
 
                         .yes {
                             display: none;
-                            background-image: url('../imgs/yes.png');
+                            background-image: url('../images/yes.png');
                         }
 
                         .no {
                             display: none;
-                            background-image: url('../imgs/no.png');
+                            background-image: url('../images/no.png');
                         }
 
                     }
@@ -226,14 +218,6 @@ input {
             border-radius: 10px;
             box-shadow: 0 0 10px #fff;
             background-color: rgba(0, 0, 0, 0.65);
-        }
-
-        .item:first-child {
-            margin-bottom: 4px;
-        }
-
-        .item:last-child {
-            margin-top: 4px;
         }
     }
 }
