@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <!-- 1、引入js -->
+    <script src="./libs/template-web.js"></script>
+</head>
+
+<body>
+    <!-- 写模版 -->
+    <script id="weather" type="text/html">
+        {{ each data.forecast }}
+        <li>
+            <span>{{ $value.date }}</span>--
+            <span>{{ $value.high }}</span>--
+            <span>{{ $value.low }}</span>--
+            <span>{{ $value.type }}</span>
+        </li>
+        {{ /each }}
+    </script>
+    <h2>查天气</h2>
+    <input id="city" type="text" placeholder="输入城市，回车查询">
+    <p class="suggest"></p>
+    <ul class="weather"></ul>
+    <script>
+        $('#city').on('keyup', (e) => {
+            if (e.keyCode == 13) {
+                $.ajax({
+                    url: 'http://wthrcdn.etouch.cn/weather_mini',
+                    type: 'get',
+                    dataType: 'json',
+                    data: {
+                        city: $('#city').val()
+                    },
+                    success: function(backData) {
+                        $('.suggest').text(backData.data.ganmao);
+                        // id  +  JS对象
+                        const str = template('weather', backData);
+                        // 渲染
+                        $('.weather').html(str);
+                    }
+                });
+            }
+        })
+    </script>
+</body>
+
+</html>
