@@ -46,7 +46,8 @@ xhr.onload = function(){
 
 #### get请求参数
 
-- 格式（在url后拼接）：url?key（后台定死）=value（前端请求）
+- 格式（在url后拼接）：
+  - url?key（后台定死）=value（前端请求）
   - 格式中不出现空格
 
 #### post请求参数
@@ -61,18 +62,18 @@ xhr.onload = function(){
 
   - `send(key=value)`
 
-### JSON（跨平台）
+## JSON（跨平台）
 
-#### 产生原因
+### 产生原因
 
 - 不同的编程语言的数据类型不同，后台使用的可能是不同的语言（PHP、C++、C#、JavaScript……）
 
-#### JSON本质和作用
+### JSON本质和作用
 
 - `JSON`是一种数据交换**格式**，本质是**字符串**
 - `JSON`的作用是为了解决跨平台问题
 
-#### JSON格式
+### JSON格式
 
 - 对象`{ }`---**大括号**
 
@@ -80,7 +81,7 @@ xhr.onload = function(){
 
 - 文本`" "`---**双引号**
 
-#### JSON与js的互换
+### JSON与js的互换
 
 - `JSON.parse()`---解析`JSON`字符串**到JS对象**
 
