@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <!-- 导包 -->
+    <script src="./libs/template-web.js"></script>
+    <style>
+        h3 {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: royalblue;
+        }
+        
+        .container {
+            text-align: center;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .search {
+            width: 300px;
+            height: 50px;
+            box-sizing: border-box;
+            outline-style: none;
+            padding: 0 20px;
+            cursor: pointer;
+            border: 5px solid #ccc;
+            border-radius: 25px;
+            background-color: skyblue;
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .joke {
+            overflow: hidden;
+            padding: 20px 30px;
+            border: 3px solid #000;
+            border-radius: 10px;
+        }
+        
+        .box {
+            overflow: auto;
+            width: 300px;
+            height: 250px;
+            float: left;
+            margin-left: 50px;
+            margin-bottom: 20px;
+            border: 5px solid skyblue;
+            border-radius: 10px;
+        }
+        
+        .box h3 {
+            height: 30px;
+            line-height: 30px;
+            color: #ffffff;
+        }
+        
+        .box p {
+            height: 100%;
+            margin: 0;
+            text-align: left;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 模版 -->
+    <script id="joke" type="text/html">
+        {{each jokes}}
+        <div class="box">
+            <h3>^_^</h3>
+            <p>{{$value}}</p>
+        </div>
+        {{/each}}
+    </script>
+    <div class="container">
+        <input class="search" type="text" placeholder="要看多少条笑话">
+        <div class="joke">
+            <div class="box">
+                <h3>^_^</h3>
+                <p>哥们问我：娶老婆最重要看什么？ 我：看她爸藏了多少私房钱！ 哥们：多又如何，少又如何？ 我：很少或者没有，意味着她妈找私房钱有绝技，肯定会传给女儿。所以不能娶！ 哥们：有道理！</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.search').on('keyup', function(e) {
+            if (e.keyCode == 13) {
+                if ($('.search').val() !== '') {
+                    if (!isNaN($('.search').val())) {
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('get', `https://autumnfish.cn/api/joke/list?num=${$('.search').val()}`);
+                        xhr.send();
+                        xhr.onload = function() {
+                            $('.joke').html(template('joke', JSON.parse(xhr.responseText)));
+                        };
+                    } else {
+                        alert('请输入阿拉伯数字!!!');
+                    }
+                } else {
+                    alert('未填入数字');
+                }
+                $('.search').val('');
+            }
+        })
+    </script>
+</body>
+
+</html>
