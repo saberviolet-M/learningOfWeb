@@ -31,13 +31,15 @@
 - **callback：**发送成功时回调函数
 - **type：**返回内容格式，xml, html, script, json, text, _default
 
-### $.ajax({})---常用
+### $.ajax({})---最常用
 
 - **以对象传值**
 
 ```js
 $.ajax({
     url:'',
+    /* 限制服务器返回为json格式 */
+    dataType:'json',
     /* method也可以写做type */
     method:'get/post',
     /* 可以对象传入多个键值对 */
@@ -49,19 +51,12 @@ $.ajax({
 })
 ```
 
+### 使用的注意点
 
-
-
-
-
-
-
-
-
-
-
-
-
+- JQ会将`json`格式的数据转换成js对象，底层JSON.parse()
+- 如果后台发送不是`json`格式则JQ不会处理
+- 几乎所有接口的返回都是`json`格式
+- `dataType:'json',`---限制服务器返回为json格式（一种规范，要求后台必须返回json）
 
 ## 模版引擎art-template
 
