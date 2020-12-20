@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN>
+
+<head>
+    <meta charset=" UTF-8 " />
+    <meta name="viewport " content="width=device-width, initial-scale=1.0 " />
+    <meta http-equiv="X-UA-Compatible " content="ie=edge " />
+    <title>天知道</title>
+    <link rel="stylesheet " href="css/reset.css " />
+    <link rel="stylesheet " href="css/iconfont.css " />
+    <link rel="stylesheet " href="css/main2.css " />
+    <script type="text/javascript " src="js/jquery-1.12.4.min.js "></script>
+    <style>
+        .tem .iconfont {
+        font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrap ">
+<div class="search_form ">
+    <div class="logo "><img src="img/logo.png " alt="logo " /></div>
+    <div class="form_group ">
+    <input type="text " class="input_txt " placeholder="请输入查询的天气 " />
+    <button class="input_sub ">搜 索</button>
+    </div>
+    <div class="hotkey ">
+    <a href="javascript:; ">北京</a><a href="javascript:; ">上海</a><a href="javascript:; ">广州</a><a
+        href="javascript:; ">深圳</a>
+    </div>
+</div>
+<ul class="weather_list "></ul>
+</div>
+
+<!-- 天气列表模板 -->
+<script id="weather_list " type="text/html ">
+{{ each data.forecast v }}
+    <li>
+    <div class="info_type ">
+        <!-- 小雨 -->
+        {{ if v.type.indexOf('小雨') != -1 }}
+        <span class="iconfont ">&#xe932;</span>
+        <!-- 雨 -->
+        {{ else if v.type.indexOf('雨') != -1 }}
+        <span class="iconfont ">&#xe931;</span>
+        <!-- 晴 -->
+        {{ else if v.type.indexOf('晴') != -1 }}
+        <span class="iconfont ">&#xe933;</span>
+        <!-- 雨夹雪 -->
+        {{ else if v.type.indexOf('雨夹雪') != -1 }}
+        <span class="iconfont ">&#xe934;</span>
+        <!-- 阴 -->
+        {{ else if v.type.indexOf('阴') != -1 }}
+        <span class="iconfont ">&#xe92d;</span>
+        <!-- 风 -->
+        {{ else if v.type.indexOf('风') != -1 }}
+        <span class="iconfont ">&#xeb8c;</span>
+        <!-- 雪 -->
+        {{ else if v.type.indexOf('雪') != -1 }}
+        <span class="iconfont ">&#xeb87;</span>
+        <!-- 多云 -->
+        {{ else if v.type.indexOf('多云') != -1 }}
+        <span class="iconfont ">&#xeb79;</span>
+        <!-- 雷 -->
+        {{ else if v.type.indexOf('雷') != -1 }}
+        <span class="iconfont ">&#xeb77;</span>
+        <!-- 冰雹 -->
+        {{ else if v.type.indexOf('冰雹') != -1 }}
+        <span class="iconfont ">&#xeb76;</span>
+        <!-- 雾霾 -->
+        {{ else }}
+        <span class="iconfont ">&#xeb75;</span>
+        {{ /if }}
+    </div>
+    <div class="info_temp ">高<b>{{ v.high.split(' ')[1] }}</b><br>低 {{ v.low.split(' ')[1] }}</div>
+    <div class="info_date "><b>{{ data.city }}</b><span>{{ v.date }}</span></div>
+    </li>
+{{ /each }}
+
+</script>
+
+<!-- 导入jQ -->
+<script src="./js/jquery-1.12.4.min.js "></script>
+
+<!-- 导入模板引擎 -->
+<script src="./js/template-web.js "></script>
+<script>
+/* 
+请求地址：http://wthrcdn.etouch.cn/weather_mini
+示例：http://wthrcdn.etouch.cn/weather_mini?city=深圳
+请求方法：get
+请求参数：city
+
+
+思路分析：
+    1.搜索框点击事件
+    注册事件
+    获取输入框文本
+    ajax发送请求
+    模板引擎渲染
+
+    2.热门城市点击事件
+    2.1 取出当前点击的城市 赋值给 搜索框
+    2.2 ajax发送请求
+    2.3 响应之后模板引擎渲染
+
+    3.页面一加载：默认请求第一个热门城市列表
+
+    4.loading加载动画效果
+    * 核心原理：  gif动图
+    * 加载时机
+        显示loading : ajax发送之前
+        移除loading : 服务器响应之后
+    */
+
+/* 1.搜索框点击事件 */
+$('.input_sub').click(function () {
+    //1.2 获取输入框文本
+    let city = $('.input_txt').val();
+    //1.3 ajax发送请求
+    /* 显示loading */
+    $('.input_sub').addClass('loading');
+
+    $.ajax({
+    url: 'http://wthrcdn.etouch.cn/weather_mini',
+    type: 'get',
+    dataType: 'json',
+    data: { city: city },
+    success: function (backData) {
+        console.log(backData);
+        //4.模板引擎渲染页面
+
+        /* 移除loading 
+        有时候网速比较快的时候，可能用户看不到loading
+        解决方案：加一个定时器让用户多看一会儿酷炫的动画效果
+        */
+        setTimeout(function () {
+        $('.weather_list').html(template('weather_list', backData));
+        $('.input_sub').removeClass('loading');
+        }, 500);
+
+    }
+    });
+});
+
+/*2.热门城市点击事件 
+2.1 取出当前点击的城市 赋值给 搜索框
+2.2 ajax发送请求
+2.3 响应之后模板引擎渲染
+    */
+$('.hotkey>a').click(function () {
+    //2.1 取出当前点击的城市 赋值给 搜索框
+    $('.input_txt').val($(this).text());
+
+    //2.2 主动触发查询天气按钮事件
+    $('.input_sub').click();
+});
+
+/* 3.页面一加载：主动请求第一个热门城市列表 */
+$('.hotkey>a:eq(0)').click();
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- 小雨 -->
+<span class="iconfont ">&#xe932;</span>
+<!-- 雨 -->
+<span class="iconfont ">&#xe931;</span>
+<!-- 晴 -->
+<span class="iconfont ">&#xe933;</span>
+<!-- 雨夹雪 -->
+<span class="iconfont ">&#xe934;</span>
+<!-- 阴 -->
+<span class="iconfont ">&#xe92d;</span>
+<!-- 风 -->
+<span class="iconfont ">&#xeb8c;</span>
+<!-- 雪 -->
+<span class="iconfont ">&#xeb87;</span>
+<!-- 多云 -->
+<span class="iconfont ">&#xeb79;</span>
+<!-- 雷 -->
+<span class="iconfont ">&#xeb77;</span>
+<!-- 冰雹 -->
+<span class="iconfont ">&#xeb76;</span>
+<!-- 雾霾 -->
+<span class="iconfont ">&#xeb75;</span>
