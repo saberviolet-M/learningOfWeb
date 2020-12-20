@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>克鲁赛德战记英雄查询</title>
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <script src="./libs/template-web.js"></script>
+    <script src="./libs/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./libs/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            background: linear-gradient(to right, red, orange, yellow, cyan, blue, purple);
+        }
+        
+        .row {
+            margin: 0 20%;
+        }
+        
+        .row>div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <script id="hero" type="text/html">
+        {{each list}}
+        <div class="col-lg-3">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <a href="#">
+                        <img class="media-object" src="{{$value.icon}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{$value.name}}</h4>
+                    {{$value.skill}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">克鲁塞德战纪</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入英雄名称">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="row"></div>
+    <script>
+        $('.btn').on('click', function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: 'https://autumnfish.cn/api/cq',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    query: $('.form-control').val()
+                },
+                success: function(backData) {
+                    console.log(backData);
+                    $('.row').html(template('hero', backData));
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
