@@ -78,11 +78,11 @@ $.ajax({
     <script id="模版名" type="text/html"></script>
     ```
 
-  - `<script></script>`中写语法
+  - 上述`<script></script>`中写语法
 
 - **3、调用核心方法**
 
-  - 书写位置`<script></script>`里
+  - 书写位置普通`<script></script>`里
 
   - ```js
     template('模版名'，要渲染的js对象)
@@ -111,7 +111,7 @@ $.ajax({
 ```
 
 ```html
-<!-- 原始语法（标准格式）） -->
+<!-- 原始语法（标准格式） -->
 <标签><%= value %></标签>
 <标签><%= data.key %></标签>
 <标签><%= data['key'] %></标签>
@@ -140,14 +140,15 @@ $.ajax({
   {{/if}}
   ```
 
-- **循环语法**
 
-  ```html
-  {{each 目标(target)}}
-  	<标签>下标：{{$index}}</标签>
-  	<标签>元素：{{$value}}</标签>
-  {{/each}}
-  ```
+#### 循环语法
+
+```html
+{{each 目标(target)}}
+	<标签>下标：{{$index}}</标签>
+	<标签>元素：{{$value}}</标签>
+{{/each}}
+```
 
 ### 易错总结
 
