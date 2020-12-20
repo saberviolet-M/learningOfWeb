@@ -18,6 +18,30 @@
 </head>
 
 <body>
+    <script id="weatherList" type="text/html">
+        <!-- 小雨 -->
+        <span class="iconfont">&#xe932;</span>
+        <!-- 雨 -->
+        <span class="iconfont">&#xe931;</span>
+        <!-- 晴 -->
+        <span class="iconfont">&#xe933;</span>
+        <!-- 雨夹雪 -->
+        <span class="iconfont">&#xe934;</span>
+        <!-- 阴 -->
+        <span class="iconfont">&#xe92d;</span>
+        <!-- 风 -->
+        <span class="iconfont">&#xeb8c;</span>
+        <!-- 雪 -->
+        <span class="iconfont">&#xeb87;</span>
+        <!-- 多云 -->
+        <span class="iconfont">&#xeb79;</span>
+        <!-- 雷 -->
+        <span class="iconfont">&#xeb77;</span>
+        <!-- 冰雹 -->
+        <span class="iconfont">&#xeb76;</span>
+        <!-- 雾霾 -->
+        <span class="iconfont">&#xeb75;</span>
+    </script>
     <div class="wrap">
         <div class="search_form">
             <div class="logo"><img src="img/logo.png" alt="logo" /></div>
@@ -38,35 +62,20 @@
     <!-- 导入模板引擎 -->
     <script src="./js/template-web.js"></script>
     <script>
+        $('.input_sub').click(function() {
+            $.ajax({
+                url: 'http://wthrcdn.etouch.cn/weather_mini',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    city: $('.input_txt').val()
+                },
+                success: function(backData) {
+                    $('.weather_list').html(template('weatherList', backData));
+                }
+            });
+        })
     </script>
 </body>
 
 </html>
-
-
-
-
-
-
-<!-- 小雨 -->
-<span class="iconfont">&#xe932;</span>
-<!-- 雨 -->
-<span class="iconfont">&#xe931;</span>
-<!-- 晴 -->
-<span class="iconfont">&#xe933;</span>
-<!-- 雨夹雪 -->
-<span class="iconfont">&#xe934;</span>
-<!-- 阴 -->
-<span class="iconfont">&#xe92d;</span>
-<!-- 风 -->
-<span class="iconfont">&#xeb8c;</span>
-<!-- 雪 -->
-<span class="iconfont">&#xeb87;</span>
-<!-- 多云 -->
-<span class="iconfont">&#xeb79;</span>
-<!-- 雷 -->
-<span class="iconfont">&#xeb77;</span>
-<!-- 冰雹 -->
-<span class="iconfont">&#xeb76;</span>
-<!-- 雾霾 -->
-<span class="iconfont">&#xeb75;</span>
