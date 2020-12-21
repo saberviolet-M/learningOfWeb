@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <img src="./img/header.png" alt="" class="header" />
+  <div class="cq-wrap">
+    <!-- 导航 -->
+    <div class="nav">
+      <ul>
+        <li><img src="./img/sword.png" alt="" /><span>剑士</span></li>
+        <li><img src="./img/knight.png" alt="" /> <span>骑士</span></li>
+        <li><img src="./img/Archer.png" alt="" /> <span>弓手</span></li>
+        <li><img src="./img/hunter.png" alt="" /> <span>猎人</span></li>
+        <li><img src="./img/magic.png" alt="" /> <span>法师</span></li>
+        <li><img src="./img/flamen.png" alt="" /> <span>祭司</span></li>
+      </ul>
+    </div>
+    <!-- table -->
+    <table class="cq-list">
+      <thead>
+        <th>勇士</th>
+        <th>技能</th>
+        <th>武器</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <img class="icon" src="http://p6.qhimg.com/dr/72__/t01b8063ea608652431.png" alt="" />
+            <span>
+              涅斯军长官尤莉娅
+            </span>
+          </td>
+          <td>
+            <img class="skill" src="http://p9.qhimg.com/dr/52__/t01087d8e61575ab25d.png" alt="" />
+            注射!
+          </td>
+          <td>
+            <img class="weapon" src="http://p6.qhimg.com/dr/45__/t0178ac936dcb72650f.png" alt="" />
+            疫苗-G
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 遮罩层 -->
+  <div class="cover" style="display: none">
+    <img class="loading" src="./img/loading01.gif" alt="" />
+  </div>
+
+
+  <!-- 英雄列表模板 -->
+  <script id="hero_list" type="text/html">
+
+    {{ each data.heros v }}
+    <tr>
+      <td>
+        <img class="icon" src="{{ v.heroIcon }}" alt="">
+        <span>
+          {{ v.heroName }}
+        </span>
+      </td>
+      <td>
+        <img class="skill" src="{{ v.skillIcon }}" alt="">
+        {{ v.skillName }}
+      </td>
+      <td>
+        <img class="weapon" src="{{ v.weaponIcon }}" alt="">
+        {{ v.weaponName }}
+      </td>
+    </tr>
+    {{ /each }}
+  
+  </script>
+
+
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <!-- 模板引擎 -->
+  <script src="./js/template-web.js"></script>
+
+  <script>
+    /*
+    请求地址：https://autumnfish.cn/api/cq/category
+    请求方法：get
+    请求参数：type
+
+    请求地址：https://autumnfish.cn/api/cq/gif
+    请求方法：get
+    请求参数：name
+    
+    
+    需求分析 
+    1.点击tab栏
+      1.1 排他思想修改按钮样式
+      1.2 获取当前点击的tab栏的英雄名称
+      1.3 ajax发送请求
+      1.4 服务器响应，模板引擎渲染页面
+
+    2.页面一加载，默认请求第一个tab栏思路
+
+    3.点击图像
+      3.1 加载遮罩层.cover
+      3.2 ajax请求英雄技能图片
+      3.3 服务器响应之后，将服务器返回的gif 替换 默认loading.gif
+
+    4.点击遮罩盒子 ： 隐藏自己
+     */
+
+    //1.点击tab栏
+    $('.nav li').click(function () {
+      //1.1 排他思想修改按钮样式
+      $(this).addClass('active').siblings().removeClass('active');
+      //1.2 获取当前点击的tab栏的英雄名称
+      let name = $(this).children('span').text();
+      console.log(name);
+      //1.3 ajax发送请求
+      $.ajax({
+        url: 'https://autumnfish.cn/api/cq/category',
+        type: 'get',
+        dataType: 'json',
+        data: { type: name },
+        success: function (backData) {
+          console.log(backData);
+          //1.4 服务器响应，模板引擎渲染页面
+          $('table>tbody').html(template('hero_list', backData));
+        }
+      });
+    });
+
+    //2.页面一加载，默认请求第一个tab栏思路
+
+    $('.nav li:eq(0)').click();
+
+    //3.点击图像
+    /*注意点 
+    *****1. tr是ajax动态生成的，需要注册委托事件。（这种现象在ajax中非常常见）
+    ***  2. url是不支持空格的，如果url有空格，需要去除空格
+    */
+    $('table>tbody').on('click', '.icon', function () {
+      let name = $(this).next().text().trim();
+      console.log(name);
+      //3.1 加载遮罩层.cover
+      $('.cover').fadeIn();
+      //3.2 ajax请求英雄技能图片
+      $.ajax({
+        url: 'https://autumnfish.cn/api/cq/gif',
+        type: 'get',
+        dataType: 'json',
+        data: { name: name },
+        success: function (backData) {
+          console.log(backData);
+          //3.3 服务器响应之后，将服务器返回的gif 替换 默认loading.gif
+          $('.cover>img').attr('src', backData.data.skillGif);
+
+        }
+      });
+
+    });
+
+    //4.点击遮罩盒子 ： 隐藏自己
+    $('.cover').click(function () {
+      $(this).fadeOut(function () {
+        /* 动画完成回调 */
+        //消失之后，显示默认loading方便下一次加载
+        $(this).children('img').attr('src', './img/loading01.gif');
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>
