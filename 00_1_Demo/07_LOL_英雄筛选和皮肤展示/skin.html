@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>皮肤展示</title>
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <script src="./libs/template-web.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .loading {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(22, 27, 31);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        ul {
+            overflow: hidden;
+            margin: 0;
+            padding: 0 50px;
+            list-style: none;
+        }
+        
+        .icon li {
+            float: left;
+            width: 80px;
+            height: 80px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        
+        .icon li img {
+            width: 100%;
+        }
+        
+        .active {
+            width: 84px;
+            height: 84px;
+            margin: 18px 20px !important;
+            border: 2px solid crimson;
+        }
+        
+        .show {
+            width: 1000px;
+            margin: 0 auto;
+            margin-bottom: 100px;
+        }
+        
+        .show img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading">
+        <img src="./loading.gif" alt="">
+    </div>
+    <div class="container">
+        <ul class="icon"></ul>
+        <div class="show">
+            <img src=" " alt=" ">
+        </div>
+    </div>
+    <!-- 模版 -->
+    <script id="heroIcon" type="text/html">
+        {{ each icons v}}
+        <li index="{{ $index }}"><img src="{{ v }}" alt=""></li>
+        {{ /each }}
+    </script>
+
+    <script>
+        // 接收数据ajax发数据渲染页面
+        function load() {
+            let name = sessionStorage.getItem('heroName');
+            $.ajax({
+                url: 'https://autumnfish.cn/api/hero/detail',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    name: name
+                },
+                success: function(backData) {
+                    setTimeout(() => {
+                        $('.loading').css({
+                            display: 'none'
+                        });
+                        let str = template('heroIcon', backData);
+                        $('.icon').html(str);
+                        $('.show img').prop('src', backData.bgs[0]);
+                        $('.icon li').eq(0).addClass('active');
+                    }, 500);
+                    // 点击换图
+                    $('.icon').on('click', 'li', function() {
+                        $(this).addClass('active').siblings().removeClass('active');
+                        $('.show img').prop('src', backData.bgs[$(this).attr('index')]);
+                    })
+                }
+            });
+        }
+        load();
+    </script>
+</body>
+
+</html>

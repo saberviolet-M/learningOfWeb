@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英雄筛选</title>
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <script src="./libs/template-web.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f1f3f7;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .container {
+            margin: 50px auto;
+            padding: 50px;
+            width: 1200px;
+            border: 1px solid #ccc;
+        }
+        
+        .nav {
+            overflow: hidden;
+            width: 100%;
+            height: 50px;
+        }
+        
+        .title {
+            float: left;
+            width: 80px;
+            height: 50px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            line-height: 50px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #2C88E2;
+        }
+        
+        .chose li {
+            float: left;
+            line-height: 50px;
+            color: rgb(129, 131, 129);
+            cursor: pointer;
+        }
+        
+        .chose li label {
+            width: 100%;
+            padding: 0 25px;
+            cursor: pointer;
+        }
+        
+        .search {
+            float: right;
+            height: 48px;
+            border: 1px solid #ccc;
+            font-size: 20px;
+            color: #ccc;
+        }
+        
+        .search .txt {
+            margin: 0;
+            padding: 0;
+            padding-left: 10px;
+            height: 48px;
+            outline-style: none;
+            border: none;
+            background-color: #f1f3f7;
+            color: rgb(129, 131, 129);
+            font-size: 20px;
+        }
+        
+        .search .btn {
+            width: 48px;
+            height: 48px;
+            outline-style: none;
+            border: none;
+            background: url(http://game.gtimg.cn/images/yxzj/web201605/page/vl_search_icon.png) no-repeat center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        
+        .heros {
+            margin-top: 50px;
+        }
+        
+        .hero_pic {
+            overflow: hidden;
+        }
+        
+        .hero_pic li {
+            float: left;
+            width: 87px;
+            height: 87px;
+            border: 2px solid #258DF2;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-bottom: 50px;
+            margin-right: 18px;
+        }
+        
+        .hero_pic li img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .hero_name {
+            text-align: center;
+        }
+        
+        .cover {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #258cf238;
+        }
+        
+        .cover img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cover">
+        <img src="./loading.gif" alt="">
+    </div>
+    <div class="container">
+        <div class="nav">
+            <div class="title">定位</div>
+            <ul class="chose">
+                <li>
+                    <label><input type="radio" name="heroType" heroType="all" checked><span>全部</span></label>
+                </li>
+                <li>
+                    <label><input type="radio" name="heroType" heroType="fighter"><span>战士</span></label>
+                </li>
+                <li>
+                    <label><input type="radio" name="heroType" heroType="mage"><span>法师</span></label>
+                </li>
+                <li>
+                    <label><input type="radio" name="heroType" heroType="assassin"><span>刺客</span></label>
+                </li>
+                <li>
+                    <label><input type="radio" name="heroType" heroType="tank"><span>坦克</span></label>
+                </li>
+                <li>
+                    <label><input type="radio" name="heroType" heroType="marksman"><span>射手</span></label>
+                </li>
+                <li>
+                    <label><input type="radio" name="heroType" heroType="support"><span>辅助</span></label>
+                </li>
+            </ul>
+            <div class="search">
+                <input class="txt" type="text" placeholder="请输入你要搜索的英雄">|
+                <button class="btn"></button>
+            </div>
+        </div>
+        <div class="heros">
+            <ul class="hero_pic">
+                <li>
+                    <img src="http://game.gtimg.cn/images/lol/act/img/champion/Annie.png" alt="">
+                    <div class="hero_name">安妮</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 模版 -->
+    <script id="heroLol" type="text/html">
+        {{ each data v}}
+        <li>
+            <img src="{{ v.icon }}" alt="">
+            <div class="hero_name">{{ v.title }}</div>
+        </li>
+        {{ /each }}
+    </script>
+
+    <script>
+        // 页面渲染
+        function load(data, heroType = 'all') {
+            $('.cover').show();
+            $.ajax({
+                url: 'https://autumnfish.cn/api/lol/search',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    q: data
+                },
+                success: function(backData) {
+                    console.log(backData);
+                    setTimeout(() => {
+                        $('.cover').hide();
+                        if (heroType !== 'all') {
+                            backData = backData.data.filter((item, index) => {
+                                if (item.roles.indexOf(heroType) !== -1) {
+                                    return item;
+                                }
+                            })
+                        } else {
+                            backData = backData.data
+                        }
+                        let str = template('heroLol', {
+                            data: backData
+                        });
+                        $('.hero_pic').html(str)
+                    }, 500);
+                }
+            });
+        }
+        // 开局渲染
+        load();
+
+        // 按钮查询
+        $('.btn').click(function() {
+            let name = $('.txt').val();
+            load(name);
+            $('.chose li').eq(0).find('input').prop('checked', 'checked');
+        })
+
+        //enter 键查询（同按钮查询）
+        $('.txt').keyup(function(e) {
+            if (e.keyCode == 13) {
+                $('.btn').click();
+            }
+        })
+
+        //选择类型
+        $('.chose input').click(function(e) {
+            $('.txt').val('');
+            let heroType = $(this).attr('heroType');
+            load('', heroType);
+        })
+
+        // 网页跳转
+        $('.hero_pic').on('click', 'li', function() {
+            sessionStorage.setItem('heroName', $(this).change('.hero_name').text().trim());
+            location.href = './skin.html';
+        })
+    </script>
+</body>
+
+</html>
