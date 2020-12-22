@@ -20,7 +20,7 @@
 > - `onload`兼容性不好（部分老版本浏览器不支持）
 > - `onreadystatechange`兼容性好（几乎兼容所有浏览器）
 >   - 会触发多次，触发时机是`ajax`状态变化时
->     - 解决方案就是判断`xhr.readyState == 4`再获取数据
+>   - 解决方案就是判断`xhr.readyState == 4`再获取数据
 > - `onload`底层就是`onreadystatechange`的第四个状态
 
 ### HTTP工作原理
