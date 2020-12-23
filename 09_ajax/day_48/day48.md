@@ -32,6 +32,34 @@ $.ajax({
 
 ## 函数防抖与函数节流
 
+### 函数防抖（性能优化）
+
+- 抖动：鼠标轻微晃动（误操作），快速划过一个元素，就会触发这个元素的事件
+- 函数防抖：鼠标停留在元素上面事件过短，则认为是用户误操作，不触发事件
+- 解决方案：
+  - 1、声明全局变量存储定时器**id**
+  - 2、每一次触发事件的时候先清除上一次的定时器，以最后一次触发为准
+  - 3、触发事件时开启定时器，等待（500ms）才会触发
+    - 定时器中`this`默认为`window`需要动态处理`this`指向
+
+### 万能防抖函数封装
+
+```js
+//fn:事件处理函数  time:防抖时间
+function debounce(fn,time){
+    /* 使用静态成员存储定时器id */
+   	clearTimeout(debounce.timeID);
+    debounce.timeID = setTimeout(function(){
+        fn();
+    },time)
+    /*等同
+    debounce.timeID = setTimeout(fn,time)
+    */
+}
+```
+
+### 函数节流
+
 ## axios（初）
 
 > 发送ajax请求
