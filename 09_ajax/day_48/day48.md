@@ -81,7 +81,7 @@ axios.post('url', {
 });
 ```
 
-####  axios---()
+####  axios---(最常用)
 
 ```js
 // POST
@@ -94,20 +94,20 @@ axios({
 }) 
 //成功回调
 .then(function (response) {
-    //响应数据
+    //响应数据response
 });
 
 // GET
 axios({
   method: 'get',
   url: '路径',
-  data: {
+  params: {
     key: value
   }
 }) 
 //成功回调
 .then(function (response) {
-    //响应数据
+    //响应数据response
 });
 ```
 
