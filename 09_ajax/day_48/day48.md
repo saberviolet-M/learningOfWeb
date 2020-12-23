@@ -32,5 +32,84 @@ $.ajax({
 
 ## 函数防抖与函数节流
 
-## axios---仅用于发ajax请求（初）
+## axios（初）
+
+> 发送ajax请求
+
+### axios与jq的对比
+
+- `axios`体积小（节省性能）
+- `axios`只有发送`ajax`的功能
+- 技术新（高效），`axios`底层使用了**ES6**的新技术
+- **唯一缺点**：兼容性不好
+
+### 语法
+
+####  axios.get
+
+```js
+//url路径
+axios.get('url', {
+    //params参数
+    params: {
+      key: value
+    }
+  })
+	//成功请求回调
+    .then(function (response) {
+})
+	//错误捕获
+    .catch(function (error) {
+}) 
+```
+
+####  axios.post
+
+```js
+//url路径参数
+axios.post('url', {
+    //data参数
+    data: {
+      key: value
+    }
+})
+	//成功请求回调
+    .then(function (response) {
+})
+	//错误捕获
+    .catch(function (error) {
+});
+```
+
+####  axios---()
+
+```js
+// POST
+axios({
+  method: 'post',
+  url: '路径',
+  data: {
+    key: value
+  }
+}) 
+//成功回调
+.then(function (response) {
+    //响应数据
+});
+
+// GET
+axios({
+  method: 'get',
+  url: '路径',
+  data: {
+    key: value
+  }
+}) 
+//成功回调
+.then(function (response) {
+    //响应数据
+});
+```
+
+
 
