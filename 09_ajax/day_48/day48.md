@@ -117,37 +117,13 @@ function throrrle(fn,time){
 ####  axios.get
 
 ```js
-//url路径
-axios.get('url', {
-    //params参数
-    params: {
-      key: value
-    }
-  })
-	//成功请求回调
-    .then(function (response) {
-})
-	//错误捕获
-    .catch(function (error) {
-}) 
+axios.get(地址?key=value&key2=value2).then(function(response){},function(err){})
 ```
 
 ####  axios.post
 
 ```js
-//url路径参数
-axios.post('url', {
-    //data参数
-    data: {
-      key: value
-    }
-})
-	//成功请求回调
-    .then(function (response) {
-})
-	//错误捕获
-    .catch(function (error) {
-});
+axios.post(地址,{key:value,key2=value2}).then(function(response){},function(err){})
 ```
 
 ####  axios---(最常用)
