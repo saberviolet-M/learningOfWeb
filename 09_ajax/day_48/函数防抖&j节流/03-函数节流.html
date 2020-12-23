@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn">我是按钮</button>
+    <script>
+        // id唯一，通过id可以直接找到DOM元素(但是不属于编码规范)
+        // 未节流
+        let i = 0;
+        btn.onclick = function() {
+            console.log(`点击${++i}次`);
+        }
+
+        // 节流
+        /* let j = 0;
+        let lastTime = new Date().getTime();
+        btn.onclick = function() {
+            let currentTime = new Date().getTime();
+            if (currentTime - lastTime > 1000) {
+                lastTime = currentTime;
+                console.log(`点击${++j}次`);
+            }
+        } */
+
+        // 节流函数封装版
+        /* function throttle(fn, time) {
+            if (!throttle.lastTime) {
+                throttle.lastTime = new Date().getTime();
+            }
+            let currentTime = new Date().getTime();
+            if (currentTime - throttle.lastTime > time) {
+                throttle.lastTime = currentTime;
+                fn();
+            }
+        }
+
+        let n = 0;
+        btn.onclick = function() {
+            throttle(function() {
+                console.log(`点击${++n}次`);
+            }, 500);
+        } */
+    </script>
+</body>
+
+</html>
