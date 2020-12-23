@@ -118,12 +118,16 @@ function throrrle(fn,time){
 
 ```js
 axios.get(地址?key=value&key2=value2).then(function(response){},function(err){})
+
+axios.get(地址?key=value&key2=value2).then(function(response){}).catch(function(err){})
 ```
 
 ####  axios.post
 
 ```js
 axios.post(地址,{key:value,key2=value2}).then(function(response){},function(err){})
+
+axios.post(地址,{key:value,key2=value2}).then(function(response){}).catch(function(err){})
 ```
 
 ####  axios---(最常用)
