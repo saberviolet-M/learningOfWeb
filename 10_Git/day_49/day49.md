@@ -102,8 +102,13 @@
       * 这个命令不会拉取所有代码，只是拉取远程上面新增的代码（把别人写的代码合并到你的本地）
     - git clone:克隆，将整个远程仓库克隆到本地
       * 这个命名相当于拉取所有的代码(将整个远程仓库文件夹copy到你的本地)
-  - 如何将本地文件夹关联远程仓库
-    * 1.在github创建空仓库
-      * 不要勾选那个readme
-    * 2.在本地文件夹中执行命名：git remote add origin 仓库地址
-    * 3.最后执行：git push -u origin master
+
+### 如何将本地文件夹关联远程仓库
+
+* 1.在github创建空仓库
+  * 不要勾选那个readme
+* 2.在本地文件夹中执行命名：git remote add origin 仓库地址
+* 3.最后执行：git push -u origin master
+
+## Git分支使用流程
+
