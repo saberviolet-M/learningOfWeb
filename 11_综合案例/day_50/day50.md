@@ -4,6 +4,18 @@
 - 核心：接口驱动业务
 - 重点：Ajax请求
 - 名称：后台数据管理系统
+- 项目预览地址:  http://www.liulongbin.top:8086/login.html 
+
+- 接口文档: https://www.showdoc.com.cn/escook?page_id=3707158761215217
+- 接口根域名: http://123.57.109.30:3007/ 或者 http://ajax.frontend.itheima.net 
+- axios文档: http://www.axios-js.com/
+- layui文档: https://www.layui.com/doc/
+- cropperjs(图片裁剪插件):
+  * github文档:  https://github.com/fengyuanchen/cropperjs/blob/master/README.md
+
+  * example: https://fengyuanchen.github.io/cropperjs/
+
+- tinymce(富文本插件): http://tinymce.ax-z.cn/
 
 ## 使用技术栈
 
