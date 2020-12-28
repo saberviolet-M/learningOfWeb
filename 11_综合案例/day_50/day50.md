@@ -1,9 +1,11 @@
 # day50
 
 ## 说明
+
+- 名称：后台数据管理系统
+
 - 核心：接口驱动业务
 - 重点：Ajax请求
-- 名称：后台数据管理系统
 - 项目预览地址:  http://www.liulongbin.top:8086/login.html 
 
 - 接口文档: https://www.showdoc.com.cn/escook?page_id=3707158761215217
@@ -212,6 +214,8 @@
 ### 注册与登录---表单校验
 
 - layui.js
+
+- login.js
 
   ```js
   const { form } = window.layui
