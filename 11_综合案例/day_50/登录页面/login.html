@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -55,21 +55,21 @@
             <!-- 第一行：用户名 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-username"></i>
-                <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                <input type="text" name="username" required lay-verify="required|username" placeholder="请输入用户名"
                     autocomplete="off" class="layui-input">
             </div>
 
             <!-- 第二行：密码 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
-                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                <input type="password" name="password" required lay-verify="required|password" placeholder="请输入密码"
                     autocomplete="off" class="layui-input pwd">
             </div>
 
             <!-- 第三行：重复密码 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
-                <input type="password" required lay-verify="required" placeholder="请再次输入密码" autocomplete="off"
+                <input type="password" required lay-verify="required|confirm" placeholder="请再次输入密码" autocomplete="off"
                     class="layui-input">
             </div>
 
@@ -83,6 +83,11 @@
             </div>
         </form>
     </div>
+    <script src="../../assets/lib/jquery.js"></script>
+    <script src="../../assets/lib/axios.js"></script>
+    <script src="../../assets/lib/layui/layui.all.js"></script>
+    <script src="../../common/utils.js"></script>
+    <script src="./login.js"></script>
 </body>
 
 </html>
