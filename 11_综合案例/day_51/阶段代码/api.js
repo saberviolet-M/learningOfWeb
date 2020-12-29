@@ -18,11 +18,10 @@ axios.interceptors.request.use(function (config) {
 
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {
-    console.log(response);
+    // console.log(response);
     const { status, message, token } = response.data
     layer.msg(message);
     if (status === 0) {
-        localStorage.setItem('token', token);
         // console.log('token没失效 正确的可用res');
     }
     if (status === 1) {
@@ -57,6 +56,9 @@ const postRegUser = (dataStr, cb) => {
 const postLogin = (dataStr, cb) => {
     axios.post("api/login", dataStr)
         .then(res => {
+            console.log(res);
+            const { token } = res.data;
+            localStorage.setItem('token', token);
             cb(res)
         });
 }
@@ -72,7 +74,7 @@ const postLogin = (dataStr, cb) => {
 const getInfoUser = cb => {
     axios.get("my/userinfo")
         .then(res => {
-            console.log(res);
+            // console.log(res);
             cb(res)
         })
 }
