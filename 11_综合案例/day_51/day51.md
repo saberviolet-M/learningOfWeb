@@ -338,7 +338,6 @@ if(!window.localStorage.getItem('token')){
 > axios全局设置请求时发送`Authorization` 身份认证字段
 
 ```js
-const { layer } = window.layui
 // 添加请求拦截器
 axios.interceptors.request.use(
   function (config) {
@@ -362,7 +361,6 @@ axios.interceptors.request.use(
 // 获取登录用户的数据
 getInfoUser((res) => {
   let {nickname, user_pic, username } = res.data.data
-  // nickname  user_pic (null) username(')
   if (nickname === '') {
     nickname = username
   }
@@ -375,7 +373,6 @@ getInfoUser((res) => {
     $('.avatar').text(firstLetter)
   } else {
     // 如果,直接img的src
-    // TODO===========上传图片完毕后===测试!!!
     $('.layui-nav-img').attr('src', user_pic)
   }
 })
@@ -407,9 +404,6 @@ axios.interceptors.request.use(function (config) {
 // .then之前
 axios.interceptors.response.use(
   function (response) {
-    // response=>res
-    // console.log('res的拦截器进来了-----------',response)
-    // ?? 处理所有请求对应的res结果=>  if status  弹窗
     const { status, message } = response.data
     layer.msg(message)
     if (status === 0) {
