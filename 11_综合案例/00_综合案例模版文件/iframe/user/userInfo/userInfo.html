@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../assets/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="./userInfo.css">
+</head>
+
+<body>
+
+  <div class="layui-card">
+    <div class="layui-card-header">修改用户信息</div>
+    <div class="layui-card-body">
+      <form class="layui-form" action="" lay-filter="user">
+        <!-- 第一行：登录账号 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">登录账号</label>
+          <div class="layui-input-block">
+            <input type="text" name="username" disabled required lay-verify="required" placeholder="请输入原账号"
+              autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <!-- 第二行：用户昵称 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">用户昵称</label>
+          <div class="layui-input-block">
+            <input type="text" name="nickname" required lay-verify="required|nickn" placeholder="请输入昵称"
+              autocomplete="off" class="layui-input">
+          </div>
+        </div>
+
+        <!-- 第三行：用户邮箱 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">用户邮箱</label>
+          <div class="layui-input-block">
+            <input type="text" name="email" required lay-verify="required|email" placeholder="请输入邮箱" autocomplete="off"
+              class="layui-input">
+          </div>
+        </div>
+
+        <!-- 第四行: 按钮 -->
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <!-- 为了保存它的id, 这叫隐藏域, 方便修改时, 获取id的值 -->
+            <input type="hidden" name="id">
+            <button class="layui-btn" lay-submit>确认修改</button>
+            <button type="reset" class="layui-btn layui-btn-primary my-reset">重置</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../../assets/lib/jquery.js"></script>
+  <script src="../../../assets/lib/layui/layui.all.js"></script>
+  <script src="../../../assets/lib/axios.js"></script>
+  <script src="../../../api/api.js"></script>
+  <script src="../../../common/verify.js"></script>
+  <script src="../../../common/utils.js"></script>
+
+  <script src="./userInfo.js"></script>
+</body>
+
+</html>

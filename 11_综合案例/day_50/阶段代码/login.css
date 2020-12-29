@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-    background: url('../../assets/images/login_bg.jpg') no-repeat;
+    background: url('../../00_综合案例模版文件/assets/images/login_bg.jpg') no-repeat;
     background-size: cover;
     overflow: hidden;
     /* 去掉滚动条 */
@@ -36,7 +36,7 @@ body {
     /* ../../   ./  相对当前文件找路径*/
     /* /   绝对路径，找根路径 */
     height: 60px;
-    background: url('../../assets/images/login_title.png') no-repeat center;
+    background: url('../../00_综合案例模版文件/assets/images/login_title.png') no-repeat center;
 }
 
 

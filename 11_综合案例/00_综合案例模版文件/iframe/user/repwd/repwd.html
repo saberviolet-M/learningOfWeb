@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../assets/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="./repwd.css">
+</head>
+
+<body>
+
+  <div class="layui-card">
+    <div class="layui-card-header">重置密码</div>
+    <div class="layui-card-body">
+      <form class="layui-form" action="">
+        <!-- 第一行：原密码 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">原密码</label>
+          <div class="layui-input-block">
+            <input type="password" name="oldPwd" required lay-verify="required|pwd" placeholder="请输入原密码" autocomplete="off" class="layui-input oldPwd">
+          </div>
+        </div>
+
+        <!-- 第二行：新密码 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">新密码</label>
+          <div class="layui-input-block">
+            <input  type="password" name="newPwd" required lay-verify="required|pwd|diff" placeholder="请输入新密码" autocomplete="off" class="layui-input newPwd">
+          </div>
+        </div>
+
+        <!-- 第三行：重复密码 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">确认密码</label>
+          <div class="layui-input-block">
+            <input type="password" required lay-verify="required|same" placeholder="请输入确认密码" autocomplete="off" class="layui-input rePwd">
+          </div>
+        </div>
+
+        <!-- 第四行: 按钮 -->
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+<script src="../../../assets/lib/jquery.js"></script>
+<script src="../../../assets/lib/layui/layui.all.js"></script>
+<script src="../../../assets/lib/axios.js"></script>
+<script src="../../../assets/lib/md5.js"></script>
+
+<script src="../../../api/api.js"></script>
+<script src="../../../common/verify.js"></script>
+<script src="../../../common/utils.js"></script>
+<script src="./repwd.js"></script>
+
+</html>
