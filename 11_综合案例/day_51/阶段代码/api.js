@@ -9,7 +9,7 @@ axios.defaults.baseURL = 'http://ajax.frontend.itheima.net/';
 axios.interceptors.request.use(function (config) {
     // console.log("请求拦截器", config);
     const AUTH_TOKEN = localStorage.getItem('token');
-    axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+    config.headers['Authorization'] = AUTH_TOKEN;
     return config;
 }, function (error) {
     // 对请求错误做些什么
@@ -39,7 +39,7 @@ const postRegUser = (dataStr, cb) => {
     axios.post("api/reguser", dataStr)
         .then(res => {
             cb(res)
-        })
+        });
 }
 
 /*
@@ -52,7 +52,7 @@ const postLogin = (dataStr, cb) => {
     axios.post("api/login", dataStr)
         .then(res => {
             cb(res)
-        })
+        });
 }
 
 
@@ -64,5 +64,8 @@ const postLogin = (dataStr, cb) => {
 *返回值：
 */
 const getInfoOfUser = () => {
-
+    axios.get("my/userinfo")
+        .then(res => {
+            console.log(res);
+        })
 }

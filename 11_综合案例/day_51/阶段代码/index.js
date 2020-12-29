@@ -4,3 +4,4 @@ if (!localStorage.getItem('token')) {
 }
 
 // 个人信息数据请求
+getInfoOfUser();
