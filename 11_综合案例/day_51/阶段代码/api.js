@@ -3,20 +3,22 @@
 // 配置baseURL = 基地址
 axios.defaults.baseURL = 'http://ajax.frontend.itheima.net/';
 
+
+
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
-    console.log("请求拦截器", config);
+    // console.log("请求拦截器", config);
+    const AUTH_TOKEN = localStorage.getItem('token');
+    axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
     return config;
 }, function (error) {
     // 对请求错误做些什么
     return Promise.reject(error);
 });
 
-
-
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {
-    console.log("响应拦截", response);
+    // console.log("响应拦截", response);
     // 弹层组件文档 - layui.layer
     layer.msg(response.data.message);
     const { token } = response.data;
@@ -54,3 +56,13 @@ const postLogin = (dataStr, cb) => {
 }
 
 
+// 个人信息数据请求api
+/*
+*函数名：getInfoOfUser
+*函数作用：发送get请求用户信息
+*函数形参：
+*返回值：
+*/
+const getInfoOfUser = () => {
+
+}

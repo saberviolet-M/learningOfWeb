@@ -331,7 +331,11 @@ if(!window.localStorage.getItem('token')){
 }
 ```
 
-### ‘个人中心’-数据请求-api和headers
+### ‘个人中心’-数据请求
+
+> 以 `/my` 开头的请求路径，需要在请求头中携带 `Authorization` 身份认证字段，才能正常访问成功
+>
+> axios全局设置请求时发送`Authorization` 身份认证字段
 
 ```js
 const { layer } = window.layui
@@ -339,14 +343,10 @@ const { layer } = window.layui
 axios.interceptors.request.use(
   function (config) {
     // 在发送请求之前做些什么
-    //console.log('请求拦截器------', config) // headers
-    // config.url
-    // TODO====================================
     //  if(如果拦截到的请求不是登录和注册){
     const AUTH_TOKEN = window.localStorage.getItem('token')
     config.headers['Authorization'] = AUTH_TOKEN
     //  }
-    // config.headers.Authorization = AUTH_TOKEN;
     return config
   },
   function (error) {
