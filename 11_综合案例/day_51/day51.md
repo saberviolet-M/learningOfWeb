@@ -142,11 +142,35 @@ if(!window.localStorage.getItem('token')){
 ```js
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
-    // 在发送请求之前做些什么
+    // （本案例）设置请求头
+    const AUTH_TOKEN = window.localStorage.getItem('token');
+    config.headers['Authorization']= AUTH_TOKEN;
     return config;
-  }, function (error) {
+}, function (error) {
     // 对请求错误做些什么
     return Promise.reject(error);
-  });
+});
+```
+
+### JWT-token使用（JSON Web Token）
+
+> 是一种代替密码的鉴权字符串技术（服务器只负责办法**jwt**字符串，不负责存储）
+
+### axios配置-token失效处理
+
+```js
+
+```
+
+### 退出
+
+> 1、确认框（确认不是误操作）
+>
+> 2、删除token
+>
+> 3、页面跳转（回到登录页面）
+
+```js
+
 ```
 
