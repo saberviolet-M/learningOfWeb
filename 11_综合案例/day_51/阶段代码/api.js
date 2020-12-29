@@ -18,11 +18,17 @@ axios.interceptors.request.use(function (config) {
 
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {
-    // console.log("响应拦截", response);
-    // 弹层组件文档 - layui.layer
-    layer.msg(response.data.message);
-    const { token } = response.data;
-    localStorage.setItem('token', token);
+    console.log(response);
+    const { status, message, token } = response.data
+    layer.msg(message);
+    if (status === 0) {
+        localStorage.setItem('token', token);
+        // console.log('token没失效 正确的可用res');
+    }
+    if (status === 1) {
+        localStorage.removeItem('token');
+        location.href = './login.html';
+    }
     return response;
 }, function (error) {
     // 对响应错误做点什么
@@ -63,9 +69,10 @@ const postLogin = (dataStr, cb) => {
 *函数形参：
 *返回值：
 */
-const getInfoOfUser = () => {
+const getInfoUser = cb => {
     axios.get("my/userinfo")
         .then(res => {
             console.log(res);
+            cb(res)
         })
 }
