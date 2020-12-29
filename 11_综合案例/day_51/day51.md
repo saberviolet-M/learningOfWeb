@@ -107,3 +107,46 @@ window.localStorage.setItem('key名',value-要保存的数据)
 
 - index.js
 
+### iframe---双标签
+
+> 在当前网页（html）内部嵌套网页（html）
+
+- **src**---嵌套的网页的**pathname**（路径）
+- **name**---为**a链接**跳转找到**位置**显示html页面而进行命名
+- **frameborder**---iframe容器的边框
+
+###  登录---安全验证---token
+
+> 判断token，是否显示**index**页面
+
+```js
+if(!window.localStorage.getItem('token')){
+    window.location.href = '登录页面的pathname（路径名）'
+}
+```
+
+### ‘个人中心’-数据请求-api和headers
+
+```js
+
+```
+
+### 用户信息渲染
+
+```js
+
+```
+
+### axios配置---统一设置请求头
+
+```js
+// 添加请求拦截器
+axios.interceptors.request.use(function (config) {
+    // 在发送请求之前做些什么
+    return config;
+  }, function (error) {
+    // 对请求错误做些什么
+    return Promise.reject(error);
+  });
+```
+
