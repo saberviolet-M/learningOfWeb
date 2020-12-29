@@ -3,8 +3,8 @@
 /*
 *函数名：postRegUser
 *函数作用：发送post请求注册用户
-*函数形参：
-*返回值：
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
 */
 const postRegUser = (dataStr, cb) => {
     axios.post("http://ajax.frontend.itheima.net/api/reguser", dataStr)
@@ -16,12 +16,11 @@ const postRegUser = (dataStr, cb) => {
         })
 }
 
-
 /*
 *函数名：postLogin
-*函数作用：
-*函数形参：
-*返回值：
+*函数作用：发送post请求用户登录
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
 */
 const postLogin = (dataStr, cb) => {
     axios.post("http://ajax.frontend.itheima.net/api/login", dataStr)
