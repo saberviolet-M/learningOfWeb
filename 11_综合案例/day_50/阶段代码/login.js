@@ -60,13 +60,9 @@ $(function () {
             .then(res => {
                 // console.log(res);
                 // 状态status===0为成功，status===1为失败
-                if (res.data.status === 0) {
-                    // 弹层组件文档 - layui.layer
-                    layer.msg(res.data.message);
-                    $('#register').stop().hide();
-                } else {
-                    layer.msg(res.data.message);
-                }
+                // 弹层组件文档 - layui.layer
+                layer.msg(res.data.message);
+                $('#register').stop().hide();
             })
     });
 
