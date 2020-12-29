@@ -20,9 +20,10 @@
 >
 > **异步操作**：
 >
-> - （定时器/ajax/事件）
+> - 定时器/ajax/事件
 
 - **api.js**---项目请求方法的文件（约定俗成的名称）
+
   - 当遇到 异步操作（定时器/ajax/事件时），在结果出现的位置调用**形参**函数，可将结果传递到外部
 
     ```js
@@ -39,4 +40,10 @@
     ```
 
     ![callback](D:\1_2020Web\Note\11_综合案例\day_51\media\callback.jpg)
+
+### axios封装---baseURL
+
+```js
+axios.defaults.baseURLl = '基地址'//axios方法，自动添加在请求的url之前
+```
 
