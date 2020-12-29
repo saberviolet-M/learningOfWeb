@@ -1,6 +1,6 @@
 # day51
 
-## 封装
+## 封装模块
 
 - 业务文件和数据请求分离
 
@@ -41,9 +41,69 @@
 
     ![callback](D:\1_2020Web\Note\11_综合案例\day_51\media\callback.jpg)
 
-### axios封装---baseURL
+### axios配置---baseURL
 
 ```js
-axios.defaults.baseURLl = '基地址'//axios方法，自动添加在请求的url之前
+axios.defaults.baseURLl = '基地址';//axios方法，自动添加在请求的url之前
 ```
+
+### axios配置---响应拦截器
+
+> 在请求或响应被 `then` 或 `catch` 处理前拦截它们。
+
+```js
+// 添加响应拦截器
+axios.interceptors.response.use(function (response) {
+    // （本案例）处理res响应结果=>if status || 弹窗
+    return response;
+}, function (error) {
+    // 对响应错误做点什么
+    return Promise.reject(error);
+});
+```
+
+##  登录---安全验证---token存储
+
+> token和正确用户是唯一绑定的
+>
+> localStorage
+>
+> - 永久保存数据（数据持久化处理）
+>
+> 存储位置（查看）
+>
+> - F12=>Application=>localStorage
+
+```js
+window.localStorage.setItem('key名',value-要保存的数据)
+//window.localStorage.setItem('token',token)
+```
+
+## 主页（index）
+
+### 标签&样式
+
+- html
+
+  ```html
+  
+  ```
+
+- layui.css
+
+- index.css
+
+  ```css
+  
+  ```
+
+### 行为
+
+- layui.js---配合layui.css的交互效果
+- jquery.js
+- utils.js
+- axios.js
+- api.js
+
+- index.js
 
