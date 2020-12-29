@@ -19,6 +19,8 @@ axios.interceptors.response.use(function (response) {
     console.log("响应拦截", response);
     // 弹层组件文档 - layui.layer
     layer.msg(response.data.message);
+    const { token } = response.data;
+    localStorage.setItem('token', token);
     return response;
 }, function (error) {
     // 对响应错误做点什么
