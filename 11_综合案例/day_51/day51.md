@@ -307,9 +307,9 @@ window.localStorage.setItem('key名',value-要保存的数据)
 
 - layui.js---配合layui.css的交互效果
 - jquery.js
-- utils.js
-- axios.js
-- api.js
+- utils.js---辅助函数封装
+- axios.js---请求发送
+- api.js---功能函数封装
 
 - index.js
 
