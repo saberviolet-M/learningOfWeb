@@ -68,13 +68,27 @@ const postLogin = (dataStr, cb) => {
 /*
 *函数名：getInfoOfUser
 *函数作用：发送get请求用户信息
-*函数形参：
-*返回值：
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
 */
 const getInfoUser = cb => {
     axios.get("my/userinfo")
         .then(res => {
-            // console.log(res);
+            cb(res)
+        })
+}
+
+
+// 昵称修改，邮箱修改
+/*
+*函数名：getInfoOfUser
+*函数作用：发送get请求用户信息
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const postUserInfo = (dataStr, cb) => {
+    axios.post("/my/userinfo", dataStr)
+        .then(res => {
             cb(res)
         })
 }

@@ -39,7 +39,7 @@
     })
     ```
 
-    ![callback](D:\1_2020Web\Note\11_综合案例\day_51\media\callback.jpg)
+    ![callback](./media/callback.jpg)
 
 ### 注册&登录请求封装
 

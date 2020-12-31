@@ -4,15 +4,89 @@
 
 ### 渲染信息
 
+```js
+// 显示帐号、昵称、邮箱的初始化
+getInfoUser((res) => {
+    //ES6解构赋值
+    const { username, nickname, email, id } = res.data.data
+	//发送请求时接口文档要求id数据，于是用隐藏表单域提前接收数据
+    $('.layui-form input[name=id]').val(id)
+    //找到各自的DOM元素赋值，其中email和nickname没有时服务器返回为''---空字符串
+    $('.layui-form input[name=username]').val(username)
+    $('.layui-form input[name=email]').val(email)
+    $('.layui-form input[name=nickname]').val(nickname)
+})
+```
+
+![用户信息的初始化](./media/用户信息的初始化.jpg)
+
+- 隐藏表单域
+
+  > 我们无需显示给用户让用户输入, 
+  >
+  > 但是提交的时候, 还想要这个值, 所以我们可以在js代码里把值赋予进去, 然后等提交时候, 收集一下即可了
+
+  ```html
+   <!-- 为了保存它的id, 这叫隐藏域, 方便修改时, 获取id的值 -->
+  <input type="hidden" name="id" value="">
+  ```
+
 ### 验证和获取表单数据
 
-### 确认修改
+- 表单验证
 
-### 自动刷新页面
+  ```js
+  //common文件夹下的verify.js（专门处理验证的js文件）中添加
+  // 昵称
+  nickname: [
+      /^[\u4E00-\u9FA5]+$/,
+      '昵称只能是中文'
+  ],
+  email: [
+      /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
+      '请输入正确邮箱'
+  ]
+  ```
+
+- 收集表单值
+
+  > jQ给我们提供了一个 serialize()方法, 可以收集form里所有name属性的值和value属性的值形成参数名=表单域值&参数名=表单域值的字符串
+
+  ```js
+  const data = $(".layui-form").serialize()
+  ```
+
+### 确认修改&自动刷新页面
+
+- 提交表单值
+
+  ```js
+  $(".layui-form").on("submit", e => {
+      // 阻止默认提交事件
+      e.preventDefault()
+      // 数据获取，修改发送格式
+      const data = $(".layui-form").serialize()
+      getObjectToString(data)
+    	//调用index.js中挂载到window上的方法重新渲染信息页面
+      postUserInfo(data, res => {
+          window.parent.getUserInfo()
+      })
+  })
+  ```
+
+  ![渲染页面](/media/渲染页面.jpg)
 
 ### 重置按钮
 
-### 更新信息
+```js
+// 重置按钮
+// 把上面用户的信息, 重新铺设一遍
+$(".my-reset").on("click", (ev) => {
+    ev.preventDefault()
+    $(".layui-form input[name=nickname]").val(nickname)
+    $(".layui-form input[name=email]").val(email)
+})
+```
 
 ## 密码重置页面（repwd）
 
