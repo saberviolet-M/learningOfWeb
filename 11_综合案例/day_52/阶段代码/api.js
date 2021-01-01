@@ -22,15 +22,22 @@ axios.interceptors.response.use(function (response) {
     const { status, message, token } = response.data
     layer.msg(message);
     if (status === 0) {
+        return response;
         // console.log('token没失效 正确的可用res');
     }
     if (status === 1) {
-        localStorage.removeItem('token');
-        location.href = './login.html';
+        return Promise.reject(message);
     }
     return response;
 }, function (error) {
-    // 对响应错误做点什么
+    let { response: { data: { message } } } = error;
+    layer.msg(message, { // 1.5s自动关闭弹窗
+        time: 1500,
+        end: function () {
+            sessionStorage.removeItem("token");
+            window.parent.location.href = "./login.html"
+        }
+    });
     return Promise.reject(error);
 });
 
@@ -81,13 +88,28 @@ const getInfoUser = cb => {
 
 // 昵称修改，邮箱修改
 /*
-*函数名：getInfoOfUser
-*函数作用：发送get请求用户信息
+*函数名：postUserInfo
+*函数作用：发送post请求修改用户昵称邮箱
 *函数形参：参数1：发送数据;参数2：回调函数
 *返回值：无
 */
 const postUserInfo = (dataStr, cb) => {
     axios.post("/my/userinfo", dataStr)
+        .then(res => {
+            cb(res)
+        })
+}
+
+
+// 修改密码
+/*
+*函数名：postChangePassword
+*函数作用：发送post请求修改密码
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const postChangePassword = (dataStr, cb) => {
+    axios.post("/my/updatepwd", dataStr)
         .then(res => {
             cb(res)
         })
