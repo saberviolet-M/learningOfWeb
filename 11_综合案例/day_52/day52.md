@@ -74,7 +74,7 @@ getInfoUser((res) => {
   })
   ```
 
-  ![渲染页面](/media/渲染页面.jpg)
+  ![渲染页面](./media/渲染页面.jpg)
 
 ### 重置按钮
 
@@ -109,12 +109,37 @@ same: function(value) {
 
 ### 表单提交&返回登陆页面
 
+```js
+// 提交表单
+$('.layui-form').on('submit', (e) => {
+    //组织表单默认跳转事件
+    e.preventDefault();
+    //获取表单数据
+    const data = $(".layui-form").serialize()
+    //发送请求
+    postChangePassword(data, res => {
+        //解构响应数据
+        const { status } = res.data
+        //如果状态码正确执行跳转操作
+        if (status === 0) {
+            setTimeout(() => {
+                localStorage.removeItem('token')
+                window.parent.location.href = '../../../../day_52/阶段代码/login.html'
+            }, 500);
+        }
+    })
+})
+```
+
 ### 重置按钮
 
 - 清空表单
 
   ```js
-  
+  // 重置按钮
+  $('.layui-form .layui-input-block .layui-btn-primary').click(() => {
+      $('.layui-form input').val('')
+  })
   ```
 
 ## 更换头像页面（ avatar）
@@ -138,9 +163,59 @@ var cropper = new Cropper($("#image")[0], {
 
 ### 上传按钮处理
 
+```js
+// 2. 点击按钮 -让别的按钮触发点击事件
+$(".select").on("click", e => {
+    $("#file").click()
+})
+```
+
 ### 图片预览（回显图片）
 
-### 确认按钮-发送请求
+```js
+// 3. 选择文件窗口出现 - 选中文件点击打开, 会触发change事件
+$("#file").on("change", function (e) {
+    let url = URL.createObjectURL(this.files[0])
+    cropper.replace(url)
+})
+```
 
-### 确认按钮-更新页面
+### 确认按钮-发送请求&确认按钮-更新页面
+
+```js
+// 4. 提交修改&渲染页面
+$(".sure").on("click", e => {
+    let canvas = cropper.getCroppedCanvas({
+        width: 100,
+        height: 100
+    })
+    let base64Str = canvas.toDataURL('../../../assets/images/sample.jpg')
+
+    base64Str = encodeURIComponent(base64Str)
+    let argStr = "avatar=" + base64Str
+    upHeadImgAPI(argStr, res => {
+        window.parent.getUserInfo()
+    })
+})
+```
+
+### 设置默认头像
+
+> 将上述几步用函数包裹，在设定默认头像之后在进行调用，否则只会显示**html**结构中显示地址的图片
+
+```js
+// 更换头像
+getInfoUser(res => {
+    let { user_pic } = res.data.data
+    debugger
+    if (user_pic) $("#image").attr("src", user_pic)
+    handleCropper()
+})
+const handleCropper = () => {
+    // 1. 初始化裁剪插件
+    // 2. 点击按钮 -让别的按钮触发点击事件
+    // 3. 选择文件窗口出现 - 选中文件点击打开, 会触发change事件
+    // 4. 提交修改&渲染页面
+}
+```
 

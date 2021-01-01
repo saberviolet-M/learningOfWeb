@@ -7,9 +7,10 @@ axios.defaults.baseURL = 'http://ajax.frontend.itheima.net/';
 
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
-    // console.log("请求拦截器", config);
-    const AUTH_TOKEN = localStorage.getItem('token');
-    config.headers['Authorization'] = AUTH_TOKEN;
+    if (!config.url.startsWith("/api")) {
+        const AUTH_TOKEN = localStorage.getItem('token');
+        config.headers['Authorization'] = AUTH_TOKEN;
+    }
     return config;
 }, function (error) {
     // 对请求错误做些什么
@@ -110,6 +111,20 @@ const postUserInfo = (dataStr, cb) => {
 */
 const postChangePassword = (dataStr, cb) => {
     axios.post("/my/updatepwd", dataStr)
+        .then(res => {
+            cb(res)
+        })
+}
+
+// 修改头像
+/*
+*函数名：upHeadImgAPI
+*函数作用：发送post请求修改密码
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const upHeadImgAPI = (dataStr, cb) => {
+    axios.post("/my/update/avatar", dataStr)
         .then(res => {
             cb(res)
         })

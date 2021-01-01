@@ -3,7 +3,7 @@ if (!localStorage.getItem('token')) {
     location.href = './login.html'
 }
 
-// 获取登录用户的数据
+// 获取&绘制登录用户的数据
 const getUserInfo = () => {
     getInfoUser((res) => {
         let { nickname, user_pic, username } = res.data.data
@@ -20,6 +20,8 @@ const getUserInfo = () => {
             const firstLetter = nickname[0].toUpperCase()
             $('.avatar').text(firstLetter)
         } else {
+            $('.userinfo img').show()
+            $('.userinfo  .avatar').hide()
             $('.layui-nav-img').attr('src', user_pic)
         }
     })
