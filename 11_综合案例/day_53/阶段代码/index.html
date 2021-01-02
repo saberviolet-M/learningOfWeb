@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="../../00_综合案例模版文件/assets/lib/bootstrap.css">
+    <link rel="stylesheet" href="../../00_综合案例模版文件/assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <!-- 头部区域 -->
+        <div class="layui-header">
+            <!-- 左侧：图片 -->
+            <div class="layui-logo">
+                <img src="../../00_综合案例模版文件/assets/images/logo.png" alt="">
+            </div>
+            <!-- 右侧：个人菜单 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="userinfo">
+                        <span class="avatar">L</span>
+                        <img src="../../00_综合案例模版文件/assets/images/sample.jpg" class="layui-nav-img"> 个人中心
+                    </a>
+
+                    <dl class="layui-nav-child">
+                        <dd><a href="../../00_综合案例模版文件/iframe/user/userInfo/userInfo.html" target='fm'>基本资料</a></dd>
+                        <dd><a target='fm' href="../../00_综合案例模版文件/iframe/user/avatar/avatar.html">更换头像</a></dd>
+                        <dd><a target="fm" href="../../00_综合案例模版文件/iframe/user/repwd/repwd.html">重置密码</a></dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;" id="logout">
+                        <i class="layui-icon layui-icon-logout"></i>退出
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧：顶部欢迎词 -->
+                <div class="userinfo">
+                    <span class="avatar">L</span>
+                    <img src="../../00_综合案例模版文件/assets/images/sample.jpg" class="layui-nav-img"> 欢迎你
+                    <span class="username"></span>
+                </div>
+
+                <!-- 左侧：导航区-->
+                <!-- lay-shrink: 控制兄弟菜单, all就是所有兄弟都合上, 同一个时间只有一个下拉菜单才能下拉 -->
+                <ul class="left-nav layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
+                    <!-- **********************首页***************************** -->
+                    <!-- layui-this 默认上来高亮的样式 -->
+                    <li class="layui-nav-item layui-this">
+                        <a href="../../00_综合案例模版文件/iframe/home/home.html" target="fm">
+                            <i class="layui-icon layui-icon-home"></i>可视数据
+                        </a>
+                    </li>
+
+                    <!-- *******文章管理******* -->
+                    <li class="layui-nav-item">
+
+                        <a class="" href="javascript:;">
+                            <i class="layui-icon layui-icon-form"></i>文章管理
+                        </a>
+
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="../../00_综合案例模版文件/iframe/article/category/category.html" target="fm">
+                                    <i class="layui-icon layui-icon-app"></i>类别管理
+                                </a>
+                            </dd>
+
+
+                            <dd id="wzlist">
+                                <a href="../../00_综合案例模版文件/iframe/article/list/list.html" target="fm">
+                                    <i class="layui-icon layui-icon-app"></i>文章列表
+                                </a>
+                            </dd>
+
+
+                            <dd>
+                                <a href="../../00_综合案例模版文件/iframe/article/publisher/publisher.html" target="fm">
+                                    <i class="layui-icon layui-icon-app"></i>发表文章
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <!-- **************个人中心************** -->
+                    <li class="layui-nav-item">
+
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-user"></i>个人中心
+                        </a>
+
+                        <dl class="layui-nav-child">
+
+                            <dd>
+                                <a href="../../00_综合案例模版文件/iframe/user/userInfo/userInfo.html" target="fm">
+                                    <i class="layui-icon layui-icon-app"></i>基本资料
+                                </a>
+                            </dd>
+
+                            <dd>
+                                <a href="../../00_综合案例模版文件/iframe/user/repwd/repwd.html" target="fm">
+                                    <i class="layui-icon layui-icon-app"></i>重置密码
+                                </a>
+                            </dd>
+
+                            <dd>
+                                <a href="../../00_综合案例模版文件/iframe/user/avatar/avatar.html" target="fm">
+                                    <i class="layui-icon layui-icon-app"></i>更换头像
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <!-- <div style="padding: 15px;">内容主体区域</div> -->
+            <iframe src="../../00_综合案例模版文件/iframe/home/home.html" name="fm" frameborder="0"></iframe>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            © layui.com - 底部固定区域
+        </div>
+    </div>
+    <script src="../../00_综合案例模版文件/assets/lib/layui/layui.all.js"></script>
+    <script src="../../00_综合案例模版文件/assets/lib/jquery.js"></script>
+    <script src="../../00_综合案例模版文件/common/utils.js"></script>
+    <script src="../../00_综合案例模版文件/assets/lib/axios.js"></script>
+    <script src="./api.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
