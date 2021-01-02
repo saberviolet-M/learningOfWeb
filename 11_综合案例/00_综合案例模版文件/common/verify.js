@@ -44,7 +44,6 @@ form.verify({
         '请输入正确邮箱'
     ],
 
-    // 修改密码验证 - 刚加的验证
 
     // 修改密码页面使用 - 新旧密码不能一样
     diff: function (value) {
@@ -53,6 +52,19 @@ form.verify({
     // 修改密码页 - 使用
     same: function (value) {
         return ($(".newPwd").val() !== value) && '两次密码不相同'
-    }
+    },
+
+
+    // 文章分类
+    // 分类名称
+    ctname: [
+        /^[\u4E00-\u9FA5]+$/,
+        "分类名只能是中文"
+    ],
+    // 别名
+    aliname: [
+        /^[a-z0-9]+$/,
+        "小写英文和数字组成"
+    ],
 });
 

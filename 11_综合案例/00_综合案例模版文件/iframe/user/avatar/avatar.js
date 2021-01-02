@@ -1,7 +1,6 @@
 // 更换头像
 getInfoUser(res => {
     let { user_pic } = res.data.data
-    debugger
     if (user_pic) $("#image").attr("src", user_pic)
     handleCropper()
 })
