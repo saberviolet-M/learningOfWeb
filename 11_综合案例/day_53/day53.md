@@ -203,7 +203,7 @@ $('.layui-table tbody').on('click', '.edit', e => {
         content: edit_str,
         //layer.open可以添加成功回调
         success(){
-            //form.val---可以给表单中输入框赋值
+            //form.val---可以给表单赋值或者取值(layui)
             form.val('edit', {
                 //变量名同对象名
                 name: name,
