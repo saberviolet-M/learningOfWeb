@@ -183,3 +183,85 @@ const editCategory = (dataStr, cb) => {
             cb(res)
         })
 }
+
+/*
+*函数名：addNewArticle
+*函数作用：发送post请求发布新文章
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const addNewArticle = (dataStr, cb) => {
+    axios.post("/my/article/add", dataStr)
+        .then(res => {
+            cb(res)
+        })
+}
+
+
+// 文章的列表页
+/*
+*函数名：getArticleDetailInfo
+*函数作用：发送get请求获取文章的列表数据
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const getArticleDetailInfo = (data, cb) => {
+    axios.get("/my/article/list", {
+        params: data,
+    })
+        .then(res => {
+            cb(res)
+        })
+}
+
+/*
+*函数名：getCateList
+*函数作用：发送get请求获取文章分类列表
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const getCateList = (cb) => {
+    axios.get("/my/article/cates")
+        .then((res) => {
+            cb(res)
+        })
+}
+
+
+/*
+*函数名：getArticleDelById
+*函数作用：发送get请求删除文章
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const getArticleDelById = (Id, cb) => {
+    axios.get(`/my/article/delete/${Id}`)
+        .then((res) => {
+            cb(res)
+        })
+}
+
+/*
+*函数名：postArticleEditById
+*函数作用：发送post请求更改文章
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const postArticleEditById = (data, cb) => {
+    axios.post("/my/article/edit", data).then((res) => {
+        cb(res)
+    })
+}
+
+
+/*
+*函数名：getArticleDetailById
+*函数作用：发送post请求获取文章细节
+*函数形参：参数1：发送数据;参数2：回调函数
+*返回值：无
+*/
+const getArticleDetailById = (Id, cb) => {
+    axios.get(`/my/article/${Id}`).then((res) => {
+        cb(res)
+    })
+}

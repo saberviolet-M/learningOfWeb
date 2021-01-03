@@ -39,7 +39,7 @@ $('#logout').on('click', () => {
             //    移除token
             window.localStorage.removeItem('token')
             //  去login
-            window.location.href = '/login.html'
+            window.location.href = './login.html'
 
         }
     )

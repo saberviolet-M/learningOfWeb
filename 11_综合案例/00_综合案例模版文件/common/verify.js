@@ -66,5 +66,16 @@ form.verify({
         /^[a-z0-9]+$/,
         "小写英文和数字组成"
     ],
+
+    // 发布文章
+    // publisher页面 - 文章标题
+    articleTitle: [
+        /^[\u4E00-\u9FA5a-zA-Z0-9_-]+$/,
+        "标题只能是中英文, 数字下划线中划线组成"
+    ],
+    // 分类判断
+    cate: function () {
+        return $("select[name=cate_id]").val().length == 0 && "请选择分类"
+    }
 });
 
