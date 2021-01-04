@@ -1,7 +1,7 @@
 // 整个项目的请求方法所在的文件
 
 // 配置baseURL = 基地址
-axios.defaults.baseURL = 'http://ajax.frontend.itheima.net/';
+axios.defaults.baseURL = 'http://api-breakingnews-web.itheima.net';
 
 
 
