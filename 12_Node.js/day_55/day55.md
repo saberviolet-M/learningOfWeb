@@ -133,3 +133,42 @@ fs.readdir(path[, options], callback)
   - 回调函数参数
   - 参数1---err：错误信息
   - 参数2---data：读取到的数据
+
+### path 路径模块
+
+> path 模块是 Node.js 官方提供的、用来处理路径的模块。它提供了一系列的方法和属性，用来满足用户对路径的处理 需求。
+
+#### path.join()
+
+> 使用 path.join() 方法，可以把多个路径片段拼接为完整的路径字符串
+
+```js
+path.join([...paths])
+```
+
+-  ...paths---路径片段的序列
+-  返回值: **string**
+
+#### path.basename()
+
+> 使用 path.basename() 方法，可以获取路径中的最后一部分，经常通过这个方法获取路径中的文件名
+
+```js
+path.basename(path[,ext])
+```
+
+- path---必选参数，表示一个路径的字符串
+- ext ---可选参数，表示可选的文件扩展名
+- 返回: **string** 表示路径中的最后一部分
+
+#### path.extname()
+
+> 使用 path.extname() 方法，可以获取路径中的扩展名部分
+
+```js
+path.extname(path)
+```
+
+-  path ---必选参数，表示一个路径的字符串
+
+- 返回: **string** 返回得到的扩展名字符串
