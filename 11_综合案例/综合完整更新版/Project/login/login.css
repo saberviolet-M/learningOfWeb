@@ -1,0 +1,67 @@
+html,
+body {
+  height: 100%;
+  background: url('../assets/images/login_bg.jpg') no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  /* 去掉滚动条 */
+}
+
+
+/* logo */
+#logo {
+  margin: 20px 0 0 130px;
+}
+
+
+/* 登录和注册的盒子 */
+#login,
+#register {
+  height: 310px;
+  width: 400px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* 先让注册的盒子隐藏 */
+#register {
+  display: none;
+}
+
+.title {
+  /* ../   ./  相对当前文件找路径*/
+  /* /   绝对路径，找根路径 */
+  height: 60px;
+  background: url('../assets/images/login_title.png') no-repeat center;
+}
+
+
+/* 表单 */
+.layui-form {
+  margin: 0 30px;
+}
+
+#goto-register,
+#goto-login {
+  float: right;
+}
+
+
+/* 字体图标 */
+.layui-form-item {
+  position: relative;
+}
+
+.layui-icon {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+.layui-input {
+  padding-left: 25px;
+}

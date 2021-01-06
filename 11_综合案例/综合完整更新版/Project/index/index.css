@@ -1,0 +1,45 @@
+.layui-icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .layui-icon-app {
+    margin-left: 20px;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  /* 给iframe的父元素加 overlow: hidden，目的是去掉一个滚动条 */
+  .layui-body {
+    overflow: hidden;
+  }
+  
+  
+  /* 侧边栏头像 */
+  div.userinfo {
+    line-height: 60px;
+    text-align: center;
+  }
+  
+  
+  /* 字体头像 */
+  .avatar {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: #419488;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  
+  
+  /*开始让两个头像都隐藏*/
+  .userinfo img,
+  .userinfo .avatar {
+    display: none;
+  }
