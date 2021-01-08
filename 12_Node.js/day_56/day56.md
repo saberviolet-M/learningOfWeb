@@ -29,7 +29,7 @@ const server = http.createServer()
 
 ```js
 server.listen(3000【端口号】,【回调函数】() => {
-    console.log('my server start work');
+    console.log('my server start work')
 })
 ```
 
@@ -37,8 +37,8 @@ server.listen(3000【端口号】,【回调函数】() => {
 
 ```js
 server.on('request'【请求事件】,【回调函数】() => {
-    console.log('There is a request');
-});
+    console.log('There is a request')
+})
 ```
 
 ### 访问本地服务器
@@ -99,7 +99,7 @@ server.on('request'【请求事件】,【回调函数】() => {
 - Response.setHeader()---配置响应头
 - Response.statusCode()---配置响码
 
-### 解决中文乱码问题9
+### 解决中文乱码问题
 
 > 当调用 res.end() 方法，向客户端发送中文内容的时候，会出现乱码问题，此时，需要手动设置内容的编码格式
 
@@ -177,9 +177,9 @@ npm init
 
 ### 全局模块
 
-- 全局安装的模块，不能通过 `require()` 加载使用。
+- 全局安装的模块，不能通过 `require()` 加载使用
 
-- 全局安装的模块，一般都是命令或者工具。
+- 全局安装的模块，一般都是命令或者工具
 
 - 安装方法，在安装模块的命令后面，加 `-g`
 
@@ -215,7 +215,7 @@ npm init
 
 - nodemon的作用：
 
-- 代替node命令，启动服务的，当更改代码之后，nodemon会自动帮我们重启服务。
+  - 代替node命令，启动服务的，当更改代码之后，nodemon会自动帮我们重启服务
 
 - 运行nodemon，如果报错如下：
 

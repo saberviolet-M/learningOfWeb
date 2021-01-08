@@ -313,7 +313,7 @@ window.localStorage.setItem('key名',value-要保存的数据)
 
 - index.js
 
-### iframe---双标签
+### iframe---标签
 
 > 在当前网页（html）内部嵌套网页（html）
 
