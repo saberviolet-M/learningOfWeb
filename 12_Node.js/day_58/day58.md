@@ -275,12 +275,162 @@ app.get('/api/delbook', (req, res) => {
 使用方法：
 
 - 下载安装cors   `npm i cors`
-
 - `const cors = require('cors')`  --- 加载模块
-
 - `app.use(cors())`  --  使用use方法即可
+
+> 客户端使用时先启动服务器
 
 ## 路由
 
+> 广义上来讲，路由就是**映射关系**
+
+### Express中的路由
+
+> 在 Express 中，路由指的是客户端的请求与服务器处理函数之间的映射关系
+>
+> Express 中的路由分 3 部分组成，分别是请求的类型、请求的 URL 地址、处理函数
+>
+> 每当一个请求到达服务器之后，需要先经过路由的匹配，只有匹配成功之后，才会调用对应的处理函数
+>
+> 在匹配时，会按照路由的顺序进行匹配，如果请求类型和请求的 URL 同时匹配成功，则 Express 会将这次请求，转 交给对应的 function 函数进行处理
+
+### 模块化路由
+
+> 为了方便对路由进行模块化的管理，Express **不建议**将路由直接挂载到 app 上，而是推荐将路由抽离为单独的模块
+
+1. 创建路由模块对应的 .js 文件
+
+   1. 【例如】创建router/login.js  存放 登录、注册、验证码三个路由
+   2. 【例如】创建router/heroes.js 存放 和英雄相关的所有路由
+
+2. 调用 express.Router() 函数创建路由对象
+
+   ```js
+   const express = require('express')
+   const router = express.Router()
+   ```
+
+3. 向路由对象上挂载具体的路由
+
+   ```js
+   // 把app换成router，比如
+   router.get('/xxx/xxx', (req, res) => {})
+   router.post('/xxx/xxx', (req, res) => {})
+   ```
+
+4. 使用 module.exports 向外共享路由对象
+
+   ```js
+   module.exports = router
+   ```
+
+5. 使用 app.use() 函数注册路由模块 -- app.js
+
+   ```js
+   // app.js 中，将路由导入，注册路由
+   const login = require('./router/logon.js')
+   app.use(login)
+   
+   // app.use(require('./router/heroes.js'))
+   app.use( require(path.join(__dirname, 'router', 'heores.js')) )
+   ```
+
+### 为路由模块添加前缀
+
+我们可以省略路由模块中的 `/api` 前缀，而是在注册路由的时候，统一设置。
+
+```js
+app.use('/api', router)
+```
+
+```js
+// 导入路由模块，并注册路由
+app.use('/api',  require(path.join(__dirname, 'router', 'login.js'))  )
+app.use('/my',  require(path.join(__dirname, 'router', 'heroes.js'))  )
+```
+
+路由文件中，把前缀 /api 和 /my 去掉
+
+### 使用路由模块的好处
+
+- 分模块管理路径，提高了代码的可读性
+- 可维护性更强
+- 减少路由的匹配次数
+- 权限管理更方便
+- etc...
+
 ## MySQL
 
+> **数据库 (database) 是用来组织、存储和管理数据的仓库**
+
+### 常见的数据库及分类
+
+市面上的数据库有很多种，最常见的数据库有如下几个
+
+- MySQL 数据库(目前使用最广泛、流行度最高的的开源免费数据库;) 
+- Oracle 数据库(收费)
+- SQL Server 数据库(收费)
+- Mongodb 数据库(Community + Enterprise)
+
+其中，MySQL、Oracle、SQL Server 属于**传统型数据库**(又叫做:关系型数据库 或 SQL 数据库)，这三者的 设计理念相同，用法比较类似
+
+而 Mongodb 属于**新型数据库**(又叫做:非关系型数据库 或 NoSQL 数据库)，它在一定程度上弥补了传统型 数据库的缺陷
+
+### 操作MySQL的图形化工具（Navicat）
+
+#### 连接到MySQL服务器
+
+![连接到MySQL服务器](./media/连接到MySQL服务器.jpg)
+
+![新建连接](./media/新建连接.jpg)
+
+#### 创建数据库
+
+![新数据库建立](D:\1_2020Web\Note\12_Node.js\day_58\media\新数据库建立.jpg)
+
+![数据库建立](D:\1_2020Web\Note\12_Node.js\day_58\media\数据库建立.jpg)
+
+#### 创建数据表
+
+比如创建一个学生信息表：
+
+| id（不允许重复） | name   | age  | sex  | tel         |
+| ---------------- | ------ | ---- | ---- | ----------- |
+| 1                | 王宇   | 23   | 男   | 13200008888 |
+| 2                | 王宇   | 24   | 男   | 13300008888 |
+| 3                | 裴志博 | 25   | 男   | 18866669999 |
+| ...              | ...    | ...  | ...  | ...         |
+
+> 对于一张表，最重要的是表头的设计
+>
+> 对于数据库中的数据表，最重要的设计也是表头，只不过在数据库中`把表头叫做字段`。
+
+| 名（表头） | 类型    | 长度 | 不是null | 键   | 其他         |
+| ---------- | ------- | ---- | -------- | ---- | ------------ |
+| id         | int     |      | √        | 🗝    | 勾选自动递增 |
+| name       | varchar | 10   | √        |      |              |
+| age        | int     |      |          |      |              |
+| sex        | char    | 1    |          |      |              |
+
+- id  --  自动递增  --  √
+
+- 最后保存，填表名 `student` 。
+
+- 其他补充点
+  - 数据库中的数字类型
+    - tinyint  -128~127
+    - smallint -65535 ~ 65535
+    - int -21亿 ~ 21亿
+    - bigint 更大
+  - 数据库中的字符串类型
+    - varchar - 变长字符串类型 
+    - char     - 定长字符串类型
+
+#### 导入导出数据表
+
+- 导出
+  - 在数据表名字上，比如 `student` 上，右键 --> 转储SQL文件 --> 结构和数据，选择保存位置保存即可。
+
+- 导入
+  - 在数据库名上面 --> 右键 --> 运行SQL文件 --> 选择SQL文件，运行即可完成导入。
+  - 导入注意事项，表名不能重复。
