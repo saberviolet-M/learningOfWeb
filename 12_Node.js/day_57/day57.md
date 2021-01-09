@@ -39,20 +39,20 @@
 
 ```js
 // 加载核心模块
-const fs = require('fs【模块名】');
+const fs = require('fs【模块名】')
 
 // 加载第三方模块
-const express = require('express【模块名】');
+const express = require('express【模块名】')
 
 // 加载自定义模块
-const custom = require('./custom【路径+名】');
+const custom = require('./custom【路径+名】')
 ```
 
-使用 `require()` 加载模块后，会缓存起来，下次再调用 `require()`加载相同模块的时候，直接使用缓存，而不是从新加载，从而大大提高了性能。
+使用 `require()` 加载模块后，会缓存起来，下次再调用 `require()`加载相同模块的时候，直接使用缓存，而不是从新加载，从而大大提高了性能
 
 **注意事项**：
 
-- 无论是什么模块，我们都要使用 `require()` 去加载，然后才能使用。
+- 无论是什么模块，我们都要使用 `require()` 去加载，然后才能使用
 - 加载自定义的模块，需要加 `./` ，而且可以省略后缀 `.js`
 
 ### Node.js中的模块作用域
@@ -67,7 +67,7 @@ const custom = require('./custom【路径+名】');
 
 ### 导出导入模块
 
-为了能正常使用加载的模块中的成员，CommonJS给出了标准，即
+> 为了能正常使用加载的模块中的成员，CommonJS给出了标准
 
 - 一个模块需要使用 `module.exports` 导出需要共享的内容
 - 使用模块的JS文件需要使用 `require()` 导入模块
@@ -76,20 +76,19 @@ const custom = require('./custom【路径+名】');
 
 ### CommonJS规范
 
-模块化规范的种类：
+模块化规范的种类
 
 - AMD
 - CMD
 - CommonJS ---  Node.js 遵循CommonJS
+  - Node.js 遵循了 CommonJS 模块化规范，CommonJS 规定了模块的特性和各模块之间如何相互依赖
 - ES6 --- (import&export)
 
-Node.js 遵循了 CommonJS 模块化规范，CommonJS 规定了模块的特性和各模块之间如何相互依赖。
+CommonJS 规定
 
-CommonJS 规定:
-
-1. 每个模块内部，module 变量代表当前模块。
-2. module 变量是一个对象，它的 exports 属性(即 module.exports)是对外的接口。
-3. 加载某个模块，其实是加载该模块的 module.exports 属性。require() 方法用于加载模块。
+1. 每个模块内部，module 变量代表当前模块
+2. module 变量是一个对象，它的 exports 属性(即 module.exports)是对外的接口
+3. 加载某个模块，其实是加载该模块的 module.exports 属性。require() 方法用于加载模块
 
 ### 加载自定义模块
 
@@ -111,14 +110,14 @@ CommonJS 规定:
 4. 加载模块的时候，如果是 `require('haha')`
    1. 优先加载核心模块
    2. 去查找并加载第三方模块，查找第三方模块的路径可以通过 `module.paths` 查看
-   3. 加载第三方模块会从当前目录开始寻找node_modules文件夹， 如果找到进入node_modules文件夹寻找对应的模块。如果没找到，进入上一级目录继续寻找node_modules，一直到根目录。如果一直没有找到，提示未找到模块
+   3. 加载第三方模块会从当前目录开始寻找node_modules文件夹， 如果找到进入node_modules文件夹寻找对应的模块；如果没找到，进入上一级目录继续寻找node_modules，一直到根目录；如果一直没有找到，提示未找到模块
 
 ## Express
 
 ### express 介绍
 
 - Express 是一个第三方模块，用于快速搭建服务器
-- Express 是一个基于 Node.js 平台，快速、开放、极简的 **web 开发框架**。
+- Express 是一个基于 Node.js 平台，快速、开放、极简的 **web 开发框架**
 - express保留了http模块的基本API，使用express的时候，也能使用http的API
 - express还额外封装了一些新方法，能让我们更方便的搭建服务器
 - [Express 官网](http://expressjs.com/)
@@ -126,8 +125,6 @@ CommonJS 规定:
 - [Express GitHub仓库](https://github.com/expressjs/express)
 
 ### 使用Express构造Web服务器
-
-使用Express构建Web服务器步骤：
 
   1) 加载 express 模块
 
@@ -140,52 +137,50 @@ CommonJS 规定:
 ```js
 // 使用express 搭建web服务器
 // 1) 加载 express 模块
-const express = require('express');
+const express = require('express')
 
 // 2) 创建 express 服务器
-const app = express();
+const app = express()
 
 // 3) 开启服务器
-app.listen(3006, () => console.log('express服务器开始工作了'));
+app.listen(3006, () => console.log('express服务器开始工作了'))
 
 // 4) 监听浏览器请求并进行处理
 
-app.get('GET请求的地址', 处理函数);
+app.get('GET请求的地址', 处理函数)
 
-app.post('POST请求的地址', 处理函数);
+app.post('POST请求的地址', 处理函数)
 ```
 
 ### express封装的新方法
 
-express之所以能够实现web服务器的搭建，是因为其内部对核心模块http进行了封装。
+express对核心模块http进行了封装，封装之后，express提供了非常方便好用的方法
 
-封装之后，express提供了非常方便好用的方法。
+> 在express中，仍然可以使用http模块中的方法
 
-- express
-  - express.static() -- 开放静态资源
-  - express.urlencoded()  -- 获取POST请求体
+- **express**
+  - `express.static()` -- 开放静态资源
+  - `express.urlencoded()`  -- 获取POST请求体
   - 其他...
-- app
+- **app**
   - `app.get()`  --  处理客户端的GET请求
   - `app.post()` -- 处理客户端的POST请求
-  - app.use() -- 设置应用级别的配置
+  - `app.use()` -- 设置应用级别的配置
   - 其他...
 
-- req
-  - req.body -- 获取POST请求体
-  - req.params -- 获取GET请求动态参数
-  - req.query -- 获取GET请求参数(获取查询字符串参数)
+- **req**
+  - `req.body()` -- 获取POST请求体
+  - `req.params()` -- 获取GET请求动态参数
+  - `req.query()` -- 获取GET请求参数(获取查询字符串参数)
   - 其他...
-- res
+- **res**
   - `res.sendFile(文件的绝对路径)` -- 读取文件，并将结果响应
   - `res.set({name, value})` -- 设置响应头
   - `res.status(200)` -- 设置响应状态码
   - `res.send(字符串或对象)` -- 响应结果
   - `res.json(对象)` -- 以JSON格式响应结果
-  - res.jsonp() -- 以JSONP格式响应结果
+  - `res.jsonp()` -- 以JSONP格式响应结果
   - 其他...
-
-> 在express中，仍然可以使用http模块中的方法
 
 ```js
 const express = require('express')
@@ -266,7 +261,7 @@ app.get('*', (req, res) => {
   app.get('/test2/:id/:name/:age', (req, res) => {
       console.log(req.params); // 可以获取所有的动态参数
       res.send('全部收到')
-  });
+  })
   ```
 
 ### POST接口
@@ -275,7 +270,7 @@ app.get('*', (req, res) => {
 // app.post('请求的URL', callback);
 app.post('/api/addbook', (req, res) => {
     // 处理POST方式的/api/addbook接口
-});
+})
 
 app.post('*', (req, res) => {
     // 处理所有的POST请求
@@ -284,11 +279,11 @@ app.post('*', (req, res) => {
 
 #### 获取POST请求体
 
-- GET方式没有请求体，POST方式才有请求体。
-- 请求体，即客户端提交的数据。
-- 我们仍然可以使用http模块中的语法，获取请求体。
+- GET方式没有请求体，POST方式才有请求体
+- 请求体，即客户端提交的数据
+- 仍然可以使用http模块中的语法，获取请求体
 
-- POST请求体，有哪些格式
+- POST请求体格式
   - 查询字符串 -- 对应的`Content-Type: application/x-www-form-urlencoded`
   - FormData对象 -- 对应的`Content-Type: multipart/form-data; --XXADFsdfssf`
 
