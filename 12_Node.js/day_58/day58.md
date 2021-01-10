@@ -270,15 +270,13 @@ app.get('/api/delbook', (req, res) => {
 
 ### 使用第三方模块实现跨域资源共享
 
-实现跨域资源共享，可以使用一个叫做  cors 的第三方模块。推荐使用它来实现跨域资源共享。
+实现跨域资源共享，可以使用一个叫做  cors 的第三方模块
 
 使用方法：
 
 - 下载安装cors   `npm i cors`
 - `const cors = require('cors')`  --- 加载模块
 - `app.use(cors())`  --  使用use方法即可
-
-> 客户端使用时先启动服务器
 
 ## 路由
 
@@ -324,7 +322,7 @@ app.get('/api/delbook', (req, res) => {
    module.exports = router
    ```
 
-5. 使用 app.use() 函数注册路由模块 -- app.js
+5. 使用 app.use() 函数注册路由模块
 
    ```js
    // app.js 中，将路由导入，注册路由
@@ -337,7 +335,7 @@ app.get('/api/delbook', (req, res) => {
 
 ### 为路由模块添加前缀
 
-我们可以省略路由模块中的 `/api` 前缀，而是在注册路由的时候，统一设置。
+>  可以省略路由模块中的 `/api` 前缀，而是在注册路由的时候，统一设置
 
 ```js
 app.use('/api', router)
@@ -359,7 +357,7 @@ app.use('/my',  require(path.join(__dirname, 'router', 'heroes.js'))  )
 - 权限管理更方便
 - etc...
 
-## MySQL
+## MySQL(初)
 
 > **数据库 (database) 是用来组织、存储和管理数据的仓库**
 
@@ -367,7 +365,7 @@ app.use('/my',  require(path.join(__dirname, 'router', 'heroes.js'))  )
 
 市面上的数据库有很多种，最常见的数据库有如下几个
 
-- MySQL 数据库(目前使用最广泛、流行度最高的的开源免费数据库;) 
+- MySQL 数据库(目前使用最广泛、流行度最高的的开源免费数据库) 
 - Oracle 数据库(收费)
 - SQL Server 数据库(收费)
 - Mongodb 数据库(Community + Enterprise)
