@@ -292,10 +292,10 @@ app.post('/api/login', (req, res) => {
         // res.cookie('key', 'value', '选项')
         // res.cookie('isLogin', 1) // 没有填选项，默认cookie有效期是会话结束
         res.cookie('isLogin', 1);
-        res.send('<script>alert("登录成功") location.href="/index.html"</script>')
+        res.send('<script>alert("登录成功"); location.href="/index.html"</script>')
     } else {
         // 登录失败
-        res.send('<script>alert("登录失败")location.href = "/login.html"</script>')
+        res.send('<script>alert("登录失败"); location.href = "/login.html"</script>')
     }
 })
 
@@ -307,7 +307,7 @@ app.get('/index.html', (req, res) => {
         res.sendFile(path.join(__dirname, 'public', 'index.html'))
     } else {
         // 没有登录
-        res.send('<script>alert("请先登录") location.href="/login.html"</script>')
+        res.send('<script>alert("请先登录"); location.href="/login.html"</script>')
     }
 })
 ```
@@ -470,7 +470,7 @@ app.post('/api/login', (req, res) => {
         req.session.isLogin = 1
         req.session.username = req.body.username
         // 做出响应
-        res.send('<script>alert("登录成功") location.href="/index.html"</script>')
+        res.send('<script>alert("登录成功"); location.href="/index.html"</script>')
     }
 })
 
@@ -486,7 +486,7 @@ app.get('/index.html', (req, res) => {
             res.send(data)
         })
     } else {
-        res.send('<script>alert("请登录") location.href="/login.html"</script>')
+        res.send('<script>alert("请登录"); location.href="/login.html"</script>')
     }
     
 })
