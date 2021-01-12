@@ -6,7 +6,8 @@
 
 - SQL 是一门数据库编程语言
 - 使用 SQL 语言编写出来的代码，叫做 SQL 语句
-- SQL 语言只能在关系型数据库(例如 MySQL、Oracle、SQL Server)中使用。非关系型数据库(例如 Mongodb) 不支持 SQL 语言
+- SQL 语言只能在关系型数据库(例如 MySQL、Oracle、SQL Server)中使用
+- 非关系型数据库(例如 Mongodb) 不支持 SQL 语言
 
 ### 数据查询
 
@@ -70,7 +71,7 @@
 #### 统计查询
 
 - max  查询最大值 `select max(age) from heroes`
-- Min  查询最小值 `select min(age) from heroes`
+- min  查询最小值 `select min(age) from heroes`
 - avg  查询平均值 `select avg(age) from heroes`
 - sum 查询总和（查询所有英雄的年龄之和） `select sum(age) from heroes`
 - count 查询总记录数（查询共计有多少个英雄） `select count(*) cc【count(*)列表别名】 from heroes`
@@ -119,7 +120,7 @@
 - start: 起始点
 
   - 查询结果的索引，从0开始
-  - 0代表第一条数据。如果省略start，则默认表示从0
+  - 0代表第一条数据， 如果省略start，则默认表示从0
 
 - length: 长度
 
@@ -216,7 +217,9 @@ delete from heroes
 
 ## node中的MySQL模块
 
-> mysql模块是一个第三方模块，专门用来操作MySQL数据库。 可以执行增删改查操作
+> mysql模块是一个第三方模块，专门用来操作MySQL数据库
+>
+> 可以执行增删改查操作
 
 ```shell
 # 如果前面没有安装过其他模块，需要先初始化
