@@ -152,7 +152,7 @@ app.get('GET请求的地址', 处理函数)
 app.post('POST请求的地址', 处理函数)
 ```
 
-### express封装的新方法
+### Express封装的新方法
 
 express对核心模块http进行了封装，封装之后，express提供了非常方便好用的方法
 
