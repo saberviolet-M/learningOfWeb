@@ -138,16 +138,11 @@
 ### Promise静态方法（all、race）
 
 - **all：**`Promise.all([ promise1, promise2, ... ]).then( ... )`
-
-  - Promise.all() 方法会发起并行的 Promise 异步操作，**等所有**的异步操作全部结束后
-
-    才会执行下一步的 .then操作（**等待机制**）
-
+- Promise.all() 方法会发起并行的 Promise 异步操作，**等所有**的异步操作全部结束后才会执行下一步的 .then操作（**等待机制**）
+  
 - **race：**`Promise.race([ promise1, promise2, ... ]).then( .... )`
-
-  - Promise.race() 方法会发起并行的 Promise 异步操作，**只要任何一个异步操作完成**，
-
-    就立即执行下一步的 .then 操作（**赛跑机制**）
+- Promise.race() 方法会发起并行的 Promise 异步操作，**只要任何一个异步操作完成**，就立即执行下一步的 .then 操作（**赛跑机制**）
+  
 
 ### async&await
 
