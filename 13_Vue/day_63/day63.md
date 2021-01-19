@@ -195,4 +195,6 @@
    ]
    ```
 
-   
+### 以上操作都是在`js入口文件`引入之后运行`build`的结果
+
+![import](./media/import.png)
