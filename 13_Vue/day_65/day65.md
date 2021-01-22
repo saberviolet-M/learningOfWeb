@@ -1,303 +1,204 @@
-# day64
+# day65
 
-## webpack
+## vue的插值表达式（mastache语法）
 
-### webpack 中处理 less 文件
+### 作用  
 
-1. 下载依赖包
+- 使用 data 中的数据渲染视图
 
-   注意: 解析less文件需要识别 less 语法, 所以除了 `less-loader`  需要额外下载 `less` 包  
+### 基本语法（支持三元运算符）
 
-   less-loader: 将less转换成 css
+ ```js
+{{ msg }}
+{{ obj.name }}
+{{ msg.toUpperCase() }}
+{{ obj.age > 18 ? '成年' : '未成年' }}
+ ```
 
-   ```
-   yarn add less  less-loader  -D
-   ```
+### vue中插值表达式的注意点
 
-2. 配置
+- 使用的数据在 data 中要存在
 
-   ```js
-   // 配置 less 文件的解析
-   {
-     test: /\.less$/,
-     use: [
-       // 分离出 css 内容
-       {
-         loader: MiniCssExtractPlugin.loader,
-         options: {
-             publicPath:'../',
-         },
-       }, 
-       'css-loader',
-       'less-loader' 
-     ]
-   }
-   ```
-
-### webpack 中处理图片 - url-loader
-
-**注意: `url-loader` 中的部分功能要用到 `file-loader`,  要下载两个模块**
-
-1. 下载依赖包
-
-   ```
-   yarn add url-loader file-loader -D
-   ```
-
-2. 配置loader
-
-   图片转成 base64 字符串,  
-
-   - 好处就是浏览器不用发请求了，直接可以读取
-   - 坏处就是如果图片太大，再转`base64`就会让图片的体积增大 30% 左右, 得不偿失
-
-   所以需要通过 options 配置选项进行配置 limit, 可以设置一个临界值, 大于这个值会整个文件直接打包到目录中, 得到是路径,
-
-   如果小于这个值, 就会转成 base64, 节约请求的次数
-
-   ```js
-   {
-     test: /\.(png|jpg|gif|jpeg)$/i,
-     use: [
-       {
-         loader: 'url-loader',
-         // 配置了limit, 超过8k, 不转, 
-         // 不到8k, 转base64字符串
-         options: {
-           limit: 8 * 1024,
-         },
-       },
-     ],
-   }
-   ```
-
-
-#### 配置图片的打包输出目录
-
-默认是直接输出到了 dist 根目录, 可以通过 options 进行配置
-
-```js
-{
-  test: /\.(png|jpg|gif)$/,
-  use: [
-    {
-      loader: 'url-loader',
-      options: {
-        // 超过 8k 就不转 base64, 小于 8k 才转字符串
-        limit: 8 * 1024,
-        // 配置输出的文件名
-        name: '[name].[ext]',
-        // 配置静态资源的引用路径
-        publicPath: "../images/",
-        // 配置输出的文件目录
-        outputPath: "images/"
-      }
-    }
-  ]
-}
-```
-
-#### webpack 配置字体图标 - url-loader 
-
-字体图标 和 图片的配置一致
-
-``` js
-// 处理字体图标的解析
-{
-  test: /\.(eot|svg|ttf|woff|woff2)$/,
-  use: [
-    {
-      loader: 'url-loader',
-      options: {
-        limit: 8 * 1024,
-        // 配置输出的文件名
-        name: '[name].[ext]',
-        // 配置静态资源的引用路径
-        publicPath: "../fonts/",
-        // 配置输出的文件目录
-        outputPath: "fonts/"
-      }
-    }
-  ]
-}
-```
-
-### webpack 使用 babel 处理高版本的 js 语法
-
-webpack 默认仅内置了 模块化的 兼容性处理   `import  export`
-
-babel 的介绍 => 用于处理高版本 js语法 的兼容性
-
-  1. 安装包
-
-     ```
-     yarn add -D babel-loader @babel/core @babel/preset-env
-     ```
-
-  2. 配置规则
-
-     ```js
-     module: {
-       rules: [
-         {
-           test: /\.js$/,
-           exclude: /(node_modules|bower_components)/,
-           use: {
-             loader: 'babel-loader',
-             options: {
-               presets: ['@babel/preset-env']
-             }
-           }
-         }
-       ]
-     }
-     ```
-
-### webpack开发服务器
-
-#### webpack-dev-server自动刷新
-
-1. 下载
-
-```
-yarn add webpack-dev-server -D
-```
-
-2. 配置scripts
-
-```js
-scripts: {
-	"build": "webpack --config webpack.config.js",
-	"dev": "webpack serve --config webpack.config.js"
-}
-```
-
-#### webpack-dev-server 的配置
-
-```js
-devServer: {
-  port: 3000, // 端口号
-  open: true // 自动打开浏览器
-}
-```
-
-### source map 的说明 
-
-#### 生产环境遇到的问题
-
-前端项目在投入生产环境之前，都需要对 JavaScript 源代码进行压缩混淆，从而减小文件的体积，
-
-提高文件的加载效率。此时就不可避免的产生了另一个问题：
-
-对压缩混淆之后的代码除错（debug）是一件极其困难的事情
-
-- 变量被替换成没有任何语义的名称
-- 空行和注释被剔除
-
-#### source map 介绍
-
-Source Map 就是一个信息文件，里面储存着位置信息。
-
-也就是说: Source Map 文件中 **存储着** 压缩混淆后代码 对应的 **转换前的位置**。有了它，出错的时候，除错工具将直接显示原始代码，而不是转换后的代码，能够极大的方便后期的调试。
-
-##### 开发环境的 source map
-
-在开发环境下，webpack 默认启用了 Source Map 功能。
-
-当程序运行出错时，可以直接在控制台提示错误行的位置，并定位到具体的源代码：
-
-**但是, 默认的行数不对应, 加上如下配置即可解决行数不对应的问题**
-
-```jsx
-module.exports = {
-  ...,
-  
-  mode: 'development',
-  // eval-source-map 开发模式下使用, 保证运行时的行数 和 源代码行数 一致
-  devtool: 'eval-source-map',
-  
-  ...
-}
-```
-
-##### 生产环境的 source map
-
-在生产环境下，如果省略了 devtool 选项，则最终生成的文件中不包含 Source Map。
-
-这能够防止原始代码通过 Source Map 的形式暴露给别有所图之人。
-
-1. 在生产环境下，如果只想 **定位报错的具体行数，且不想暴露源码**。 (推荐)
-
-   此时可以将devtool 的值设置为  nosources-source-map
-
-   ```jsx
-   devtool: 'nosources-source-map',
-   ```
-
-2. 在生产环境下，如果想在定位报错行数的同时，展示具体报错的源码。
-
-   此时可以将 devtool 的值设置为 source-map。
-
-   ```jsx
-   devtool: 'source-map',
-   ```
-
-## Vue（初）
-
-### 开发vue有两种方式
-
-+ 传统开发模式：基于html/css/js文件开发vue
-+ 工程化开发方式：在webpack环境中开发vue，这是最推荐的方式。现代化的项目也都是在webpack环境下进行开发的。
-
-### vue-cli的使用
-
-> `vue-cli`也叫vue脚手架,`vue-cli`是vue官方提供的一个全局命令工具，这个命令可以帮助我们快速的创建一个vue项目的基础架子。
-
-- 全局安装命令
-
-  ```bash
-  npm install -g @vue/cli
-  # OR
-  yarn global add @vue/cli
+  ```jsx
+  <h1>{{ gaga }}</h1>
+  /*
+  data() {
+      return {
+          gaga: "Hello",
+      };
+  },
+  */
   ```
 
-- 查看版本`vue`
+- 能使用表达式, 但是不能使用 if  for
 
-  ```bash
-  vue --version
+  ```jsx
+  //不行
+  <h1>{{ if (obj.age > 18 ) { }   }}</h1>
   ```
 
-- 初始化一个vue项目
+- 不能在标签属性中使用
 
-  ```bash
-  vue create 项目名
+  ```jsx
+  //不行
+  <h1 id="box" class="box" title="{{ msg }}"></h1>
   ```
 
-### 如何覆盖webpack配置
+## vue指令
 
-> 项目无法找到webpack.config.js文件，因为vue把它隐藏
+> vue指令, 实质上就是特殊的 html 标签属性, 特点:  v- 开头
 >
-> 如果需要覆盖webpack的配置，可以创建一个vue.config.js文件，覆盖webpack配置文件
+> 每个 v- 开头的指令, 都有着自己独立的功能, 将来vue解析时, 会根据不同的指令提供不同的功能
 
-```js
-/* 覆盖webpack的配置 */
-module.exports = {
-  devServer: {
-    open: true,
-    port: 3000
+### v-bind指令
+
+- 描述：插值表达式不能用在html的属性上，如果想要动态的设置html元素的属性，需要使用v-bind指令
+
+- 作用：动态的设置html的属性
+
+- 语法：`v-bind:title="msg"`
+
+- 简写：`:title="msg"`
+
+  ```html
+  <!-- 完整语法 -->
+  <a v-bind:href="url"></a>
+  <!-- 缩写 -->
+  <a :href="url"></a>
+  ```
+
+### v-on指令
+
+#### 基本使用
+
+- `v-on:事件名="要执行的代码"`
+
+  ``` jsx
+  <button v-on:click="isShow = !isShow">切换显示隐藏</button>
+  /* isShow要先定义 */
+  ```
+
+- `v-on:事件名="methods中的函数"`
+
+  ```jsx
+  <button v-on:click="fn">(不用传参，可以不写括号)</button>
+  ```
+
+- `v-on:事件名="methods中的函数(实参)"`
+
+  ```jsx
+  <button v-on:click="fn(1, 2)">点击时调用函数并传值</button>
+  ```
+
+- **简写：**`v-on:事件名---@事件名`
+
+  ```jsx
+  <button @click="isShow = !isShow">切换显示隐藏</button>
+  <button @click="fn1">(不用传参，可以不写括号)</button>
+  <button @click="fn2(1, 2)">点击时调用函数并传值</button>
+  ```
+
+#### vue中获取事件对象
+
+- 没有传参, 通过形参接收 `e`
+
+- 传参了, 通过`$event`指代事件对象` e`
+
+  ```jsx
+  <template>
+    <div id="app">
+      <a @click="fn" href="http://www.baidu.com">去百度</a>
+      <a @click="fn2(100, $event)" href="http://www.baidu.com">去百度2</a>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    methods: {
+      fn(e) {
+        /* 可阻止默认行为 */
+        e.preventDefault()
+      },
+      fn2(num, e) {
+        /* 可阻止默认行为 */
+        e.preventDefault()
+      }
+    }
   }
-}
+  </script>
+  ```
+
+#### v-on 事件修饰符
+
+- **vue**中提供的事件修饰符
+
+- `.prevent `阻止默认行为
+
+- `.stop` 阻止冒泡
+
+- ……
+
+  ```html
+  <div id="app">
+    <a @click.prevent="fn" href="http://www.baidu.com">去百度</a>
+  </div>
+  ```
+
+#### 按键修饰符
+
+- `@keyup.enter`  回车
+
+- `@keyup.esc`  返回
+
+- ……
+
+  ```html
+  <div id="app">
+    <input type="text" @keyup="fn"> <hr>
+    <input type="text" @keyup.enter="fn2">
+  </div>
+  ```
+
+### v-if 和 v-show
+
+> 控制盒子的显示隐藏
+
+#### v-show
+
+- `v-show="布尔值" `   (true显示, false隐藏)
+- 实质是在控制元素的 css 样式,  `display: none;`
+- 有较高的初始渲染消耗(如果布尔值是false)
+
+#### v-if
+
+- `v-if="布尔值"`   (true显示, false隐藏)
+- 实质是在动态的创建 或者 删除元素节点
+- 有较高的频繁切换消耗
+
+#### 基本使用
+
+```html
+<template>
+  <div id="app">
+    <h1 v-show="isShow">v-show盒子-{{ msg }}</h1>
+    <h1 v-if="isShow">v-if盒子-{{ msg }}</h1>
+  </div>
+</template>
 ```
 
-### vue单文件组件的说明
+### v-else 和 v-else if
 
-一个`.vue`文件就是一个组件,后续开发vue，所有的功能都是基于组件实现。
+#### 基本使用
 
-一个单文件组件由三部分构成
+```html
+<div id="app">
+  <h1 v-if="isLogin">尊敬的超级vip, 你好</h1>
+  <h1 v-else>你谁呀, 赶紧登陆~</h1>
+  
+  <h1 v-if="age >= 60">60岁以上, 广场舞</h1>
+  <h1 v-else-if="age >= 30">30岁以上, 搓麻将</h1>
+  <h1 v-else-if="age >= 20">20岁以上, 蹦迪</h1>
+  <h1 v-else>20岁以下, 唱跳rap篮球</h1>
+</div>
+```
 
-+ **template(必须) ** 影响组件渲染的结构  html
-  + 只能有一个根元素
-+ **script：**逻辑   js
-+ **style：**样式   css less scss
-  + style用于提供组件的样式，默认只能用css
-  + 可以通过`lang="less"`开启less的功能，需要安装依赖包
