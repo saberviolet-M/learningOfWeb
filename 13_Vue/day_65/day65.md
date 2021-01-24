@@ -202,3 +202,52 @@
 </div>
 ```
 
+### v-model
+
+> 给表单元素使用, 双向数据绑定 
+>
+> - 数据变化了, 视图会跟着变
+> - 视图变化了, 数据要跟着变
+
+#### 基本使用
+
+```jsx
+<input type="text" v-model="msg">
+```
+
+#### v-model 处理其他表单元素
+
+- v-model 会忽略掉表单元素原本的value, checked等初始值
+
+- v-model 用于**复选框**单独出现，绑定一个**布尔值**
+- v-model 用于**复选框**多个出现，值`(value)`绑定一个**数组**
+- v-model 用于**下拉列表**，绑定`option`的value值（字符串）
+  - `multiple`属性用于当前下拉列表的多选（字符串数组）
+
+#### v-model 修饰符
+
+- **number**
+
+  如果想自动将用户的输入值, 用parseFloat转成数字类型, ，可以给 `v-model` 添加 `number` 修饰符：
+
+  ```html
+  <input v-model.number="age" type="number">
+  ```
+
+  如果这个值如果这个值无法转数字，则会返回原始的值
+
+- **trim**
+
+  如果要自动过滤用户输入的首尾空白字符，可以给 `v-model` 添加 `trim` 修饰符：
+
+  ```html
+  <input v-model.trim="msg">
+  ```
+
+- **lazy**
+
+  在`change`时而非`input`时更新，可以给 `v-model` 添加 `lazy` 修饰符：
+
+  ```html
+  <input v-model.lazy="msg">
+  ```
