@@ -25,3 +25,7 @@
         - `Object.func`指向Object
         - `func`指向`window`
         - **异步调用**指向`window`
+
+## Object.create(null)初始化对象
+
+- 使用Object.create(null)创建的对象是一个没有继承关系的对象，并且原型上的所有方法和属性全部被抛弃
