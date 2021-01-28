@@ -16,7 +16,7 @@
 - 通过组件的`components`配置 局部注册组件
 
   ```jsx
-  import 【别名】 from './components/HmHeader'
+  import 【别名】 from 'url'
   export default {
     // data methods filters computed watch……同级
     components: {
@@ -45,7 +45,7 @@
 - 在`main.js`中通过`Vue.component()`全局注册组件
 
   ```jsx
-  import 【别名】 from './components/HmHeader'
+  import 【别名】 from 'url'
   // 全局注册
   // Vue.component(名字, 组件)
   Vue.component('组件名', 【别名】)
@@ -180,7 +180,8 @@ Vue.component(CmpntButton.name, CmpntButton)  // 等价于 app.component('CmpntB
 #### 单向数据流
 
 - 父组件的数据发生了改变，子组件会自动跟着变
-2. 子组件**不能直接修改**父组件传递过来的`props`，`  props`是只读的
+
+- 子组件**不允许直接修改**父组件传递过来的`props`，`  props`是只读的
 
 #### 组件通信 - 子传父
 
