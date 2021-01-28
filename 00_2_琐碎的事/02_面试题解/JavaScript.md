@@ -30,3 +30,16 @@
 
 - 使用Object.create(null)创建的对象是一个没有继承关系的对象，并且原型上的所有方法和属性全部被抛弃
 
+## 证明判断json
+
+```js
+function isJson(str){
+    try{
+        if(typeof JSON.parse(str) == 'object'){
+            return true
+        }
+    }catch(e){}
+    return false
+}
+```
+
