@@ -43,3 +43,11 @@ function isJson(str){
 }
 ```
 
+### 判断对象的属性名是否在对象本身上而不是原型上
+
+```js
+function hasOwn(obj,key){
+    return Object.prototype.hasOwnProperty.call(obj,key)
+}
+```
+
