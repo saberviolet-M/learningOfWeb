@@ -379,7 +379,6 @@ export default {
 ### 自定义指令 - 全局注册
 
 ```jsx
-
 // 注册全局自定义指令
 Vue.directive('focus', {
   inserted (el) {
