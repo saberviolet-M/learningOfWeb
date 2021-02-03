@@ -436,7 +436,7 @@ export default {
   > bootstrap徽章: https://v4.bootcss.com/docs/components/badge/
 
   ```jsx
-  // // CommonTable.vue
+  // CommonTable.vue
   <template #tbody="{ item, index }">
     <td>{{ index + 1 }}</td>
     <td>{{ item.goods_name }}</td>
@@ -463,4 +463,115 @@ export default {
   </style>
   ```
 
+#### table功能
+
+- 删除
+
+  > 由于没有对应删除接口，因此暂定为在**goodsList** 中删除对应项
+
+  ```jsx
+  // GoodsList.vue
+  <button class="btn btn-danger btn-sm" @click="del(item.id)">
+    删除
+  </button>
   
+  del(id) {
+    this.goodsList = this.goodsList.filter((item) => item.id !== id);
+  },
+  ```
+
+- 控制**+tag**和**input**的显示和影藏
+
+  ```jsx
+  <td>
+    <input
+      v-if="item.inputVisible"
+      class="tag-input form-control"
+      type="text"
+    />
+    <button
+      v-else
+      @click="item.inputVisible = true"
+      class="btn btn-primary btn-sm add-tag"
+    >
+      +Tag
+    </button>
+    <span
+      v-for="tag in item.tags"
+      :key="tag"
+      class="badge badge-warning"
+      >{{ tag }}</span
+    >
+  </td>
+  ```
+
+-  **input** 自动获取焦点
+
+  ```jsx
+  // GoodsList.vue 局部注册自定义指令
+  directives: {
+    focus: {
+      // 指令的定义
+      inserted: function (el) {
+        el.focus()
+      }
+    }
+  }
+  
+  // 使用时v-自定义指令
+  <input
+    v-if="item.inputVisible"
+    class="tag-input form-control"
+    type="text"
+    v-focus
+  />
+  ```
+
+- 文本失去焦点时自动隐藏
+
+  ```jsx
+  <input
+    v-if="item.inputVisible"
+    class="tag-input form-control"
+    type="text"
+    v-focus
+    @blur="item.inputVisible = false"
+  />
+  ```
+
+- 回车新增 **tag** 标签
+
+  ```jsx
+  // GoodsList.vue
+  <input
+    v-if="item.inputVisible"
+    class="tag-input form-control"
+    type="text"
+    v-focus
+    @blur="item.inputVisible = false"
+    @keyup.enter="addTag(item, $event)"
+  />
+  
+  addTag(arrOfTag, e) {
+    if (e.target.value.trim() == "") return alert("输入为空");
+    arrOfTag.tags.push(e.target.value);
+    arrOfTag.inputVisible = false;
+  },
+  ```
+
+- 按下**esc**键清空文本框内容
+
+  ```jsx
+  <input
+    v-if="item.inputVisible"
+    class="tag-input form-control"
+    type="text"
+    v-focus
+    @blur="item.inputVisible = false"
+    @keyup.enter="addTag(item, $event)"
+    @keyup.esc="$event.target.value = ''"
+  />
+  ```
+
+### END
+
