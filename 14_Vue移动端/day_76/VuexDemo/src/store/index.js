@@ -44,7 +44,7 @@ export default new Vuex.Store({
     },
     subNAsync (context, step) {
       setTimeout(() => {
-        context.commit('addN', step)
+        context.commit('subN', step)
       }, 1000)
     }
   },
