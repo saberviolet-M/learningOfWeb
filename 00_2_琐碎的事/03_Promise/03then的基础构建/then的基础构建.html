@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>then的基础构建</title>
+    <script src="./then的基础构建.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p = new PROMISE((resolve, reject) => {
+      resolve('解决')
+    }).then((value) => {
+      console.log(value)
+    })
+  </script>
+</html>

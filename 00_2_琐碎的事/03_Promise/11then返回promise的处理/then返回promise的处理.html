@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>then返回promise的处理</title>
+    <script src="./then返回promise的处理.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p = new PROMISE((resolve, reject) => {
+      // resolve('解决')
+      // reject('拒绝')
+      setTimeout(() => {
+        // resolve('成功')
+        reject('拒绝')
+      }, 1000)
+    })
+      .then(
+        (value) => {
+          return new PROMISE((resolve, reject) => {
+            // resolve('PROMISE-resolve')
+            reject('PROMISE-reject')
+          })
+        },
+        (reason) => {
+          return new PROMISE((resolve, reject) => {
+            // resolve('PROMISE-resolve')
+            reject('PROMISE-reject')
+          })
+        }
+      )
+      .then(
+        (value) => {
+          console.log('value', value)
+        },
+        (reason) => {
+          console.log('reason+', reason)
+        }
+      )
+  </script>
+</html>

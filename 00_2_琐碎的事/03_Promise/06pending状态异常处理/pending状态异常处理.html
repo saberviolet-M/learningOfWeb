@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>pending状态异常处理</title>
+    <script src="./pending状态异常处理.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p = new PROMISE((resolve, reject) => {
+      setTimeout(() => {
+        resolve(a)
+      }, 1000)
+    }).then(
+      (value) => {
+        console.log(value)
+      },
+      (reason) => {
+        console.log(reason)
+      }
+    )
+    console.log('同步代码优先')
+  </script>
+</html>

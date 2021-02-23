@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>实现resolve与reject</title>
+    <script src="./实现resolve与reject.js"></script>
+  </head>
+  <body></body>
+  <script>
+    PROMISE.resolve('成功').then((value) => {
+      console.log('value', value)
+    })
+
+    let p1 = new PROMISE((resolve, reject) => {
+      // resolve('成功')
+      reject('拒绝')
+    })
+    PROMISE.resolve(p1).then(
+      (value) => {
+        console.log('PROMISE', value)
+      },
+      (reason) => {
+        console.log('PROMISE', reason)
+      }
+    )
+    let p2 = new PROMISE((resolve, reject) => {
+      // resolve('成功')
+      reject('拒绝')
+    })
+    PROMISE.reject('拒绝').then(null, (reason) => {
+      console.log('reason', reason)
+    })
+    PROMISE.reject(p2).then(null, (reason) => {
+      console.log('reason', reason)
+    })
+  </script>
+</html>

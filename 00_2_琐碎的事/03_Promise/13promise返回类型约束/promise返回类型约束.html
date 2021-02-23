@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>promise返回类型约束</title>
+    <script src="./promise返回类型约束.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let promise = new PROMISE((resolve, reject) => {
+      resolve('解决')
+    })
+    let p = promise.then((value) => {
+      return p
+    })
+  </script>
+</html>

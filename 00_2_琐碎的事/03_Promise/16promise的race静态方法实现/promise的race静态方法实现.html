@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>promise的race静态方法实现</title>
+    <script src="./promise的race静态方法实现.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p1 = new PROMISE((resolve) => {
+      setTimeout(() => {
+        resolve('P1')
+      }, 2000)
+    })
+    let p2 = new PROMISE((resolve, reject) => {
+      setTimeout(() => {
+        // resolve('P2')
+        reject('PP2')
+      }, 1000)
+    })
+    PROMISE.race([p1, p2]).then(
+      (value) => {
+        console.log('value', value)
+      },
+      (reason) => {
+        console.log('reason', reason)
+      }
+    )
+  </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>promise的all方法实现</title>
+    <script src="./promise的all方法实现.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p1 = new PROMISE((resolve) => {
+      resolve('P1')
+    })
+    let p2 = new PROMISE((resolve, reject) => {
+      resolve('P2')
+      // reject('拒绝')
+    })
+    PROMISE.all([p1, p2]).then(
+      (value) => {
+        console.log(value)
+      },
+      (reason) => {
+        console.log(reason)
+      }
+    )
+  </script>
+</html>

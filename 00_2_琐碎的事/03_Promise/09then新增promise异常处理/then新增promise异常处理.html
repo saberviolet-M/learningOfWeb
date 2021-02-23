@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>then新增promise异常处理</title>
+    <script src="./then新增promise异常处理.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p = new PROMISE((resolve, reject) => {
+      // resolve('解决')
+      // reject('失败')
+      setTimeout(() => {
+        resolve('setTimeout')
+      }, 1000)
+    })
+      .then(
+        (value) => {
+          // console.log(qwer)
+          throw new Error('throw new error')
+          return 'promise链式操作'
+        },
+        (reason) => {
+          console.log(reason)
+          return 'then的链式'
+        }
+      )
+      .then(
+        (value) => {
+          console.log('success：' + value)
+        },
+        (reason) => {
+          console.log('error+' + reason)
+        }
+      )
+  </script>
+</html>

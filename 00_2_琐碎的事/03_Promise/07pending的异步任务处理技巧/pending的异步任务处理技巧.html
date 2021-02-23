@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>pending的异步任务处理技巧</title>
+    <script src="./pending的异步任务处理技巧.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p = new PROMISE((resolve, reject) => {
+      setTimeout(() => {
+        resolve('解决')
+        console.log('Timeout')
+      }, 1000)
+    }).then(
+      (value) => {
+        console.log(value)
+      },
+      (reason) => {
+        console.log(reason)
+      }
+    )
+    console.log('同步代码优先')
+  </script>
+</html>

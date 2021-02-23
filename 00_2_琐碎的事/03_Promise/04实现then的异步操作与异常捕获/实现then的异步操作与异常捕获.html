@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>实现then的异步操作与异常捕获</title>
+    <script src="./实现then的异步操作与异常捕获.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p = new PROMISE((resolve, reject) => {
+      // resolve('解决')
+      reject('拒绝')
+    }).then(
+      (value) => {
+        console.log(value)
+      },
+      (reason) => {
+        console.log(reason)
+      }
+    )
+    console.log('同步代码优先')
+  </script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>实现then的穿透传递</title>
+    <script src="./实现then的穿透传递.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p = new PROMISE((resolve, reject) => {
+      reject('失败')
+    })
+      .then()
+      .then(
+        (value) => {
+          console.log('value++' + value)
+        },
+        (reason) => {
+          console.log('reason++' + reason)
+        }
+      )
+  </script>
+</html>
