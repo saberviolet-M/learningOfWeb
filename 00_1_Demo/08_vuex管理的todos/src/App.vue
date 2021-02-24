@@ -5,52 +5,64 @@
       <a-col :span="8"></a-col>
       <a-col :span="8">
         <!-- 添加任务 -->
-        <a-input-search placeholder="请输入任务"
-                        enter-button="添加"
-                        size="large"
-                        @search="handleInputChange"
-                        v-model="iptVal" />
+        <a-input-search
+          placeholder="请输入任务"
+          enter-button="添加"
+          size="large"
+          @search="handleInputChange"
+          v-model="iptVal"
+        />
       </a-col>
       <a-col :span="8"></a-col>
     </a-row>
-    <br>
+    <br />
     <a-row>
       <a-col :span="8"></a-col>
       <a-col :span="8">
-        <a-list bordered
-                :data-source="infoList">
-          <a-list-item slot="renderItem"
-                       slot-scope="item">
-            <a-checkbox @change="(e)=>{cbChange(e,item.id)}"
-                        :checked="item.done"></a-checkbox>
+        <a-list bordered :data-source="infoList">
+          <a-list-item slot="renderItem" slot-scope="item">
+            <a-checkbox
+              @change="
+                e => {
+                  cbChange(e, item.id)
+                }
+              "
+              :checked="item.done"
+            ></a-checkbox>
             {{ item.info }}
-            <a slot="actions"
-               @click="handledelItem(item.id)">删除</a>
+            <a slot="actions" @click="handledelItem(item.id)">删除</a>
           </a-list-item>
         </a-list>
-        <br>
+        <br />
         <!-- 事项 -->
         <footer>
-          <a-col :span="5">{{unfinished}}条剩余</a-col>
+          <a-col :span="5">{{ unfinished }}条剩余</a-col>
           <a-col :span="14">
             <a-button-group>
-              <a-button :type="viewKey==='all'?'primary':'default'"
-                        @click="handleChangeList('all')">
+              <a-button
+                :type="viewKey === 'all' ? 'primary' : 'default'"
+                @click="handleChangeList('all')"
+              >
                 全部
               </a-button>
-              <a-button :type="viewKey==='hasDone'?'primary':'default'"
-                        @click="handleChangeList('hasDone')">
+              <a-button
+                :type="viewKey === 'hasDone' ? 'primary' : 'default'"
+                @click="handleChangeList('hasDone')"
+              >
                 未完成
               </a-button>
-              <a-button :type="viewKey==='hasNotDone'?'primary':'default'"
-                        @click="handleChangeList('hasNotDone')">
+              <a-button
+                :type="viewKey === 'hasNotDone' ? 'primary' : 'default'"
+                @click="handleChangeList('hasNotDone')"
+              >
                 已完成
               </a-button>
             </a-button-group>
           </a-col>
           <a-col :span="5">
-            <a-button type="link"
-                      @click="handleBtnClearFinished">清除已完成</a-button>
+            <a-button type="link" @click="handleBtnClearFinished"
+              >清除已完成</a-button
+            >
           </a-col>
         </footer>
       </a-col>
@@ -127,7 +139,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     h1 {
       background-image: -webkit-linear-gradient(bottom, #ead6ee, #a0f1ea);
-      background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-align: center;
       font-weight: 700;
