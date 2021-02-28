@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>绘制圆</title>
+</head>
+
+<body>
+  <header>
+    <h1>绘制圆</h1>
+  </header>
+  <main>
+    <canvas id="cvs" width="300px" height="300px" style="border: 5px solid blueviolet;"></canvas>
+  </main>
+
+</body>
+<script>
+  let canvas = document.querySelector('#cvs')
+  console.log(canvas)
+  // 开启画布(上下文环境)
+  let cxt = canvas.getContext('2d') // 平面画布
+
+  cxt.beginPath()
+  cxt.arc(200, 200, 50, 0, Math.PI * 2, true) // (圆心x,圆心y,半径,起始角度,终止角度,true逆时针[false顺时针])
+  // →(0deg) ↓(90deg) ←(180deg) ↑(360deg)
+  // → ↓ ← ↑ 顺时针 false
+  // → ↑ ← ↓ 逆时针 true
+  cxt.closePath()
+  cxt.fillStyle = '#c0392b'
+  cxt.fill()
+
+  cxt.beginPath()
+  cxt.arc(100, 100, 50, 0, Math.PI / 2, false) // (圆心x,圆心y,半径,起始角度,终止角度,true逆时针[false顺时针])
+  // →(0deg) ↓(90deg) ←(180deg) ↑(360deg)
+  // → ↓ ← ↑ 顺时针 false
+  // → ↑ ← ↓ 逆时针 true
+  cxt.closePath()
+  cxt.fillStyle = '#27ae60'
+  cxt.fill()
+
+  cxt.beginPath()
+  cxt.arc(50, 50, 50, 0, Math.PI / 2, true) // (圆心x,圆心y,半径,起始角度,终止角度,true逆时针[false顺时针])
+  // →(0deg) ↓(90deg) ←(180deg) ↑(360deg)
+  // → ↓ ← ↑ 顺时针 false
+  // → ↑ ← ↓ 逆时针 true
+  cxt.closePath()
+  cxt.fillStyle = '#d35400'
+  cxt.fill()
+
+</script>
+
+</html>

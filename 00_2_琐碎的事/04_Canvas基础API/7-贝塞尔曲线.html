@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贝塞尔曲线</title>
+</head>
+
+<body>
+  <header>
+    <h1>贝塞尔曲线</h1>
+  </header>
+  <main>
+    <canvas id="cvs" width="300px" height="300px" style="border: 5px solid blueviolet;"></canvas>
+  </main>
+
+</body>
+<script>
+  let canvas = document.querySelector('#cvs')
+  console.log(canvas)
+  // 开启画布(上下文环境)
+  let cxt = canvas.getContext('2d') // 平面画布
+
+  // 二次贝塞尔曲线
+  quadraticCurveTo() // (cpx[控制点x],cpy[控制点y],x[终点x],y[终点y])
+
+  // 三次贝塞尔曲线
+  bezierCurveTo() // // (cp1x[控制点1x],cp1y[控制点1y],cp2x[控制点2x],cp2y[控制点2y],x[终点x],y[终点y])
+</script>
+
+</html>

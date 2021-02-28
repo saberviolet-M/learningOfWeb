@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>坐标变换</title>
+</head>
+
+<body>
+  <header>
+    <h1>坐标变换</h1>
+  </header>
+  <main>
+    <canvas id="cvs" width="300px" height="300px" style="border: 5px solid blueviolet;"></canvas>
+  </main>
+
+</body>
+<script>
+  let canvas = document.querySelector('#cvs')
+  console.log(canvas)
+  // 开启画布(上下文环境)
+  let cxt = canvas.getContext('2d') // 平面画布
+
+  cxt.save() // 保存起始点坐标
+  cxt.translate(50, 50) // 位移
+  cxt.scale(0.5, 1.5) // 缩放
+  cxt.rotate(30) // 旋转
+  cxt.fillStyle = '#8e44ad'
+  cxt.fillRect(0, 0, 100, 100)
+  cxt.restore() // 恢复到起始点坐标
+
+  cxt.save()
+  cxt.translate(100, 100) // 位移
+  cxt.scale(2, 2) // 缩放
+  cxt.rotate(90) // 旋转
+  cxt.fillStyle = '#2980b9'
+  cxt.fillRect(0, 0, 100, 100)
+  cxt.restore()
+
+
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>怎么使用Canvas三角</title>
+</head>
+
+<body>
+  <header>
+    <h1>怎么使用Canvas三角</h1>
+  </header>
+  <main>
+    <canvas id="cvs" width="300px" height="300px" style="border: 5px solid blueviolet;"></canvas>
+  </main>
+
+</body>
+<script>
+  let canvas = document.querySelector('#cvs')
+  console.log(canvas)
+  // 开启画布(上下文环境)
+  let cxt = canvas.getContext('2d') // 平面画布
+
+  // 基于状态绘制，标点→连线
+  cxt.moveTo(100, 100) // 起点
+  cxt.lineTo(100, 200) // 下一点
+  cxt.lineTo(200, 100) // 下一点
+  cxt.lineTo(100, 100) // 下一点
+
+  // 填充之前画边框会遮盖一半的边框
+  cxt.strokeStyle = 'violet' //设置边框颜色，同css
+  cxt.fillStyle = '#2980b9' // 选择填充色，同css
+  cxt.fill() // 填充
+
+  cxt.moveTo(150, 150) // 起点
+  cxt.lineTo(150, 250) // 下一点
+  cxt.lineTo(250, 150) // 下一点
+  cxt.lineTo(150, 150) // 下一点
+
+  cxt.fillStyle = '#e74c3c' // 选择填充色，同css
+  cxt.fill() // 填充
+  cxt.strokeStyle = '#f1c40f' //设置边框颜色，同css
+
+  cxt.stroke() // 绘制到Canvas上，写在状态之后
+</script>
+
+</html>

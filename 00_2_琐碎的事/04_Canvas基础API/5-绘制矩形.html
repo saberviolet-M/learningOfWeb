@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>绘制矩形</title>
+</head>
+
+<body>
+  <header>
+    <h1>绘制矩形</h1>
+  </header>
+  <main>
+    <canvas id="cvs" width="300px" height="300px" style="border: 5px solid blueviolet;"></canvas>
+  </main>
+
+</body>
+<script>
+  let canvas = document.querySelector('#cvs')
+  console.log(canvas)
+  // 开启画布(上下文环境)
+  let cxt = canvas.getContext('2d') // 平面画布
+
+  /* cxt.rect(50, 100, 200, 100) // 绘制矩形的API(x,y,width,height)
+  cxt.stroke() // 绘制到Canvas上，写在状态之后 */
+
+  // 绘制矩形
+  // cxt.strokeRect(50, 100, 200, 100)
+  // 绘制填充色的矩形
+  cxt.fillStyle = '#e74c3c'
+  cxt.fillRect(50, 100, 200, 100)
+  // 清除矩形区域
+  cxt.clearRect(60, 120, 50, 50)
+  // 基于状态的绘制，先设置状态值，最后会在画布上
+
+</script>
+
+</html>
